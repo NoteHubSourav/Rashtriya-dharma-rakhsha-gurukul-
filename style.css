@@ -1,116 +1,115 @@
-<!DOCTYPE html><html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Dharmraksha Gurukul</title>
-  <style>
-    :root {
-      --sunrise1: #FFB347;
-      --sunrise2: #FFD700;
-      --sunrise3: #FF7E5F;
-      --sunrise4: #FFE5B4;
-      --dark: #3E2723;
-    }html {
-  scroll-behavior: smooth;
-}
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Open+Sans&display=swap');
 
 body {
-  font-family: 'Segoe UI', sans-serif;
   margin: 0;
-  padding: 0;
-  background: linear-gradient(120deg, var(--sunrise1), var(--sunrise2));
-  color: var(--dark);
+  font-family: 'Open Sans', sans-serif;
+  background: linear-gradient(to bottom right, #FFE5B4, #FFCC70, #FF9966);
+  color: #3a2d0a;
 }
 
 header {
-  background-color: var(--sunrise3);
-  color: white;
-  padding: 1rem 2rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 15px 30px;
+  background: rgba(255, 245, 210, 0.85);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
   position: sticky;
   top: 0;
-  z-index: 1000;
+}
+
+.logo img {
+  height: 60px;
+  animation: zoomIn 1.2s ease-out;
 }
 
 nav a {
-  margin-left: 20px;
+  margin: 0 15px;
   text-decoration: none;
-  color: white;
-  font-weight: bold;
+  color: #cc3300;
+  font-weight: 600;
+  font-size: 1.1rem;
   transition: color 0.3s;
 }
 
 nav a:hover {
-  color: var(--sunrise4);
+  color: #800000;
 }
 
-section {
+.hero {
+  text-align: center;
+  padding: 80px 20px;
+  animation: fadeIn 1.5s ease;
+}
+
+.hero h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.8rem;
+  color: #b32600;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  margin: 20px 0;
+}
+
+.btn {
+  background: #cc3300;
+  color: white;
+  padding: 12px 25px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background 0.3s ease;
+}
+
+.btn:hover {
+  background: #990000;
+}
+
+.gallery {
+  text-align: center;
+  padding: 40px;
+}
+
+.gallery .grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.gallery img {
+  width: 300px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  transition: transform 0.3s;
+}
+
+.gallery img:hover {
+  transform: scale(1.05);
+}
+
+.about, .donation {
   padding: 60px 20px;
-  min-height: 100vh;
-  opacity: 0;
-  transform: translateY(50px);
-  transition: all 0.6s ease-out;
-}
-
-section.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-.home, .donation, .gallery {
-  background: white;
-  margin: 40px auto;
-  max-width: 900px;
-  box-shadow: 0 0 15px rgba(0,0,0,0.1);
-  border-radius: 20px;
-  padding: 30px;
+  text-align: center;
 }
 
 footer {
-  background-color: var(--sunrise3);
+  background: #fff8e1;
   text-align: center;
-  padding: 1rem;
-  color: white;
+  padding: 20px;
+  font-size: 0.9rem;
 }
 
-  </style>
-</head>
-<body>
-  <header>
-    <h1>Rashtriya Dharmraksha Gurukul</h1>
-    <nav>
-      <a href="#home">Home</a>
-      <a href="#donation">Donation</a>
-      <a href="#gallery">Gallery</a>
-    </nav>
-  </header>  <section id="home" class="home">
-    <h2>Welcome to Gurukul</h2>
-    <p>This is a sacred place of knowledge, tradition, and spirituality. We are preserving ancient Vedic culture and preparing future generations with strong values.</p>
-  </section>  <section id="donation" class="donation">
-    <h2>Support Us</h2>
-    <p>You can support us by donating for the cause of education and spiritual upliftment. Your contribution ensures that our Gurukul runs uninterrupted and flourishes.</p>
-    <p>[QR Code will be placed here]</p>
-  </section>  <section id="gallery" class="gallery">
-    <h2>Gallery</h2>
-    <p>Here are some glimpses of the Gurukul activities.</p>
-    <p>[Real Images will be placed here]</p>
-  </section>  <footer>
-    <p>&copy; 2025 Rashtriya Dharmraksha Gurukul | All Rights Reserved</p>
-  </footer>  <script>
-    // Animation on scroll
-    const sections = document.querySelectorAll('section');
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-        }
-      });
-    }, { threshold: 0.1 });
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
 
-    sections.forEach(section => {
-      observer.observe(section);
-    });
-  </script></body>
-</html>
+@keyframes zoomIn {
+  from { transform: scale(0.7); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
