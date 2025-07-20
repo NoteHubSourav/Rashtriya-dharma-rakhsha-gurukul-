@@ -1,64 +1,120 @@
+/* Shared Stylesheet for Rashtriya Dharma Raksha Gurukul */
 body {
-  font-family: 'Segoe UI', sans-serif;
   margin: 0;
-  padding: 0;
-  background: #fff5e1;
-  color: #3b2f2f;
+  font-family: 'Mukta', sans-serif;
+  background-color: #FFFDD0; /* Cream background */
+  color: #800000; /* Maroon text */
+  line-height: 1.6;
 }
 header {
-  background: linear-gradient(to right, #702c1b, #d38c13);
-  color: white;
-  padding: 30px 20px;
-  text-align: center;
+  background-color: #FF9933; /* Saffron */
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
-nav {
-  background: #d38c13;
-  text-align: center;
-  padding: 10px;
+header .logo {
+  height: 50px;
 }
 nav a {
   margin: 0 15px;
-  color: white;
+  color: #800000;
   text-decoration: none;
-  font-weight: bold;
+  font-weight: 600;
 }
-.section {
+nav a:hover {
+  color: #FFD700; /* Gold on hover */
+}
+section {
   padding: 40px 20px;
-  max-width: 1000px;
-  margin: auto;
 }
-.gallery img {
+.hero {
+  text-align: center;
+  background-color: #F4C430; /* Saffron Gold */
+  color: #800000;
+  padding: 60px 20px;
+}
+.hero h1 {
+  font-size: 2.5em;
+  margin-bottom: 20px;
+}
+.hero p {
+  font-size: 1.2em;
+  margin-bottom: 30px;
+}
+.btn {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #800000; /* Maroon button */
+  color: #FFFDD0; /* Cream text */
+  text-decoration: none;
+  font-size: 1em;
+  border-radius: 5px;
+}
+.btn:hover {
+  background-color: #FFD700; /* Gold hover */
+  color: #800000;
+}
+.intro, .mission {
+  max-width: 800px;
+  margin: 0 auto;
+  background-color: #FFF5E6; /* very light saffron tint */
+  border-left: 5px solid #FF9933;
+}
+.intro h2, .mission h2 {
+  margin-top: 0;
+}
+.gallery h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+}
+.gallery-grid figure {
+  margin: 0;
+}
+.gallery-grid img {
   width: 100%;
-  max-width: 300px;
-  margin: 10px;
-  border-radius: 8px;
+  height: auto;
+  display: block;
+  border-radius: 5px;
 }
-.gallery {
+.gallery-grid figcaption {
+  text-align: center;
+  margin-top: 8px;
+  font-weight: 600;
+}
+.donate h2 {
+  text-align: center;
+}
+.qr-section {
   display: flex;
   flex-wrap: wrap;
+  align-items: center;
   justify-content: center;
+  margin: 20px 0;
 }
-.qr-box {
-  text-align: center;
-  background: #fff3cd;
-  padding: 20px;
-  border: 2px solid #d38c13;
-  border-radius: 10px;
+.qr-code {
+  max-width: 200px;
+  margin-right: 20px;
 }
 footer {
-  background: #333;
-  color: white;
+  background-color: #FF9933; /* Saffron */
+  color: #800000;
   text-align: center;
-  padding: 20px;
-  font-size: 14px;
+  padding: 10px;
 }
-.cta-button {
-  background: #702c1b;
-  color: white;
-  padding: 12px 20px;
-  border: none;
-  font-size: 16px;
-  cursor: pointer;
-  border-radius: 6px;
-  text-decoration: none;
+@media (max-width: 600px) {
+  header {
+    flex-direction: column;
+  }
+  .qr-section {
+    flex-direction: column;
+  }
+  .qr-section img {
+    margin: 0 0 20px 0;
+  }
 }
