@@ -1,31 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Donate - Dharmraksha Gurukul</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Donate - Rashtriya Dharma Raksha Gurukul</title>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Mukta:wght@300;600&display=swap" rel="stylesheet">
+  <!-- AOS CSS -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+  <!-- Custom Stylesheet -->
+  <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
+  <!-- Header / Navigation -->
   <header>
-    <h1>Support the Gurukul</h1>
+    <img src="images/logo.png" alt="Gurukul Logo" class="logo" />
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="donate.html">Donate</a>
+    </nav>
   </header>
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="gallery.html">Gallery</a>
-    <a href="donate.html">Donate</a>
-  </nav>
-  <div class="section qr-box">
-    <p><strong>Scan to Donate via UPI</strong></p>
-    <img src="images/qr-code.png" alt="QR Code" width="200" />
-    <p><strong>Account Details:</strong><br>
-    Name: Dharmraksha Gurukul Trust<br>
-    A/C No.: XXXXXXXXXXX<br>
-    IFSC: ABCD0123456<br>
-    UPI ID: dharmraksha@upi</p>
-    <a class="cta-button" href="https://forms.gle/your-form-link">Upload Payment Proof</a>
-  </div>
+
+  <!-- Donate Section -->
+  <section class="donate" data-aos="fade-up">
+    <h2>Support Our Mission</h2>
+    <p>Your contribution helps us run educational programs and community services. दानं हि धर्मस्य मूलम्।</p>
+    <div class="qr-section">
+      <img src="images/qr-placeholder.png" alt="QR Code" class="qr-code">
+      <div>
+        <p><strong>UPI ID:</strong> rashtriyadharama@upi</p>
+      </div>
+    </div>
+    <a href="https://forms.gle/your-form-link" target="_blank" class="btn">Donate via Google Form</a>
+  </section>
+
+  <!-- Footer -->
   <footer>
-    <p>&copy; 2025 Rashtriya Dharma Raksha Gurukul</p>
+    <p>&copy; 2025 Rashtriya Dharma Raksha Gurukul. All rights reserved.</p>
   </footer>
+
+  <!-- AOS JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
 </body>
 </html>
