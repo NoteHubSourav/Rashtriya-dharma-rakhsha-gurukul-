@@ -1,28 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Dharmraksha Gurukul - Home</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rashtriya Dharma Raksha Gurukul</title>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Mukta:wght@300;600&display=swap" rel="stylesheet">
+  <!-- AOS CSS -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+  <!-- Custom Stylesheet -->
+  <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
+  <!-- Header / Navigation -->
   <header>
-    <h1>Rashtriya Dharma Raksha Gurukul</h1>
-    <p>"In every age, Dharma is protected by the brave. Be one of them."</p>
+    <img src="images/logo.png" alt="Gurukul Logo" class="logo" />
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="donate.html">Donate</a>
+    </nav>
   </header>
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="gallery.html">Gallery</a>
-    <a href="donate.html">Donate</a>
-  </nav>
-  <div class="section">
-    <img src="images/kalki-bg.jpg" alt="Kalki Avatar Theme" style="width:100%; border-radius:10px;">
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <h1 data-aos="fade-up" data-aos-duration="1500">धर्मो रक्षति रक्षितः</h1>
+    <p data-aos="fade-up" data-aos-duration="1500">
+      Welcome to Rashtriya Dharma Raksha Gurukul – our mission is to preserve and promote the values of Dharma through education and community service.
+    </p>
+    <a href="donate.html" class="btn">Donate Now</a>
+  </section>
+
+  <!-- Introduction Section -->
+  <section class="intro" data-aos="fade-right">
+    <h2>About Our Gurukul</h2>
+    <p>
+      Rashtriya Dharma Raksha Gurukul is dedicated to reviving traditional education and moral values. We offer programs in philosophy, yoga, Sanskrit, and cultural arts. Our goal is to instill discipline and spiritual wisdom in students of all backgrounds.
+    </p>
+  </section>
+
+  <!-- Mission Section -->
+  <section class="mission" data-aos="fade-left">
     <h2>Our Mission</h2>
-    <p>We are building a Gurukul that revives the teachings of Sanatan Dharma through traditional education. Join us on this divine mission to awaken Dharma and serve Bharat Mata.</p>
-    <a class="cta-button" href="donate.html">Support the Cause</a>
-  </div>
+    <p>
+      Our mission is to safeguard Dharma (righteousness) by educating future generations. We focus on holistic development – intellectual, physical, and spiritual. By integrating modern knowledge with ancient wisdom, we aim to build a community rooted in harmony and service.
+    </p>
+  </section>
+
+  <!-- Footer -->
   <footer>
-    <p>&copy; 2025 Rashtriya Dharma Raksha Gurukul</p>
+    <p>&copy; 2025 Rashtriya Dharma Raksha Gurukul. All rights reserved.</p>
   </footer>
+
+  <!-- AOS JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
 </body>
-</html>
+  </html>
