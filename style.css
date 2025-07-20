@@ -8,7 +8,7 @@
 
 body {
   font-family: 'Open Sans', sans-serif;
-  background: linear-gradient(to bottom right, #FFE5B4, #FFCC70, #FF9966);
+  background: linear-gradient(to bottom right, #FFE5B4, #FFCC70, #FF9966); /* Sunrise tones */
   color: #3a2d0a;
   line-height: 1.6;
 }
@@ -50,33 +50,85 @@ nav a:hover {
   text-align: center;
   padding: 100px 20px 60px;
   animation: fadeIn 1.5s ease;
+  background: url('assets/sunrise.jpg') no-repeat center center/cover;
+  color: #fff;
 }
 
 .hero h1 {
   font-family: 'Playfair Display', serif;
   font-size: 3rem;
-  color: #b32600;
+  color: #fff7e6;
   margin-bottom: 20px;
+  text-shadow: 2px 2px 4px #000;
 }
 
 .hero p {
   font-size: 1.2rem;
   margin-bottom: 30px;
-  color: #4a3200;
+  color: #ffeccc;
 }
 
-.btn {
+/* Dual Language Button */
+.support-buttons {
+  margin-top: 20px;
+}
+
+.support-buttons .btn {
   background: #cc3300;
   color: white;
   padding: 12px 25px;
   border-radius: 30px;
   text-decoration: none;
   font-weight: bold;
+  margin: 0 10px;
   transition: background 0.3s ease;
+  animation: pulse 2s infinite;
 }
 
-.btn:hover {
+.support-buttons .btn:hover {
   background: #990000;
+}
+
+@keyframes pulse {
+  0% { box-shadow: 0 0 0 0 rgba(255, 111, 0, 0.6); }
+  70% { box-shadow: 0 0 0 15px rgba(255, 111, 0, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(255, 111, 0, 0); }
+}
+
+/* Progress Bar */
+.progress-container {
+  margin-top: 40px;
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: left;
+}
+
+.progress-text {
+  margin-bottom: 5px;
+  font-size: 1rem;
+  color: #fff;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+}
+
+.progress-bar {
+  background-color: #ffe5b4;
+  border-radius: 20px;
+  overflow: hidden;
+  height: 20px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+
+.progress {
+  height: 100%;
+  background: linear-gradient(90deg, #ffa726, #fb8c00, #f4511e);
+  width: 0;
+  animation: fillProgress 2s ease-out forwards;
+}
+
+@keyframes fillProgress {
+  from { width: 0; }
+  to { width: 72%; }
 }
 
 /* Gallery Section */
@@ -149,4 +201,4 @@ footer {
 @keyframes zoomIn {
   from { transform: scale(0.7); opacity: 0; }
   to { transform: scale(1); opacity: 1; }
-}
+  }
