@@ -1,158 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>राष्ट्रीय धर्म रक्षा गुरुकुल</title>
-  <link rel="stylesheet" href="style.css" />
-  <link rel="icon" href="assets/logo.png" type="image/png" />
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Segoe UI', sans-serif;
-      background: url('assets/sunrise.jpg') no-repeat center center fixed;
-      background-size: cover;
-      color: white;
-    }
-
-    header {
-      background: rgba(0, 0, 0, 0.6);
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 10px 30px;
-    }
-
-    .logo img {
-      height: 60px;
-    }
-
-    nav a {
-      color: white;
-      margin: 0 15px;
-      text-decoration: none;
-      font-weight: bold;
-    }
-
-    .hero {
-      text-align: center;
-      padding: 100px 20px 40px;
-      background: rgba(0, 0, 0, 0.5);
-    }
-
-    .hero h1 {
-      font-size: 40px;
-      margin-bottom: 10px;
-    }
-
-    .hero p {
-      font-size: 20px;
-      margin-bottom: 20px;
-    }
-
-    .btn {
-      padding: 12px 25px;
-      background: #ffcc00;
-      color: black;
-      font-weight: bold;
-      text-decoration: none;
-      border-radius: 8px;
-      margin: 5px;
-      display: inline-block;
-    }
-
-    .about {
-      background: rgba(0, 0, 0, 0.6);
-      padding: 40px 20px;
-      text-align: center;
-    }
-
-    .about h2 {
-      font-size: 28px;
-      margin-bottom: 15px;
-    }
-
-    .about p {
-      font-size: 18px;
-      max-width: 800px;
-      margin: auto;
-    }
-
-    .donation-info {
-      background: rgba(255, 255, 255, 0.1);
-      padding: 30px 20px;
-      text-align: center;
-    }
-
-    .donation-info h3 {
-      font-size: 22px;
-      margin-bottom: 15px;
-    }
-
-    .donation-info p {
-      font-size: 18px;
-      margin: 10px 0;
-    }
-
-    footer {
-      background: rgba(0, 0, 0, 0.8);
-      padding: 15px;
-      text-align: center;
-      font-size: 14px;
-      color: #ccc;
-    }
-
-    @media (max-width: 600px) {
-      .hero h1 {
-        font-size: 28px;
-      }
-      .hero p {
-        font-size: 16px;
-      }
-    }
-  </style>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="assets/logo.png" type="image/png">
 </head>
 <body>
-  <header>
-    <div class="logo">
-      <img src="assets/logo.png" alt="Gurukul Logo" />
+  <div class="hero-section">
+    <header>
+      <div class="logo">
+        <img src="assets/logo.png" alt="Gurukul Logo">
+      </div>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="donation.html">Donate</a>
+      </nav>
+    </header>
+
+    <div class="hero-content">
+      <h1>राष्ट्रीय धर्म रक्षा गुरुकुल</h1>
+      <p class="tagline">Blending ancient Vedic wisdom with modern education. 🌞</p>
+      <p class="emotion-line">Your ₹11 can light up a child's life. ₹501 sponsors a child for a full month. 🙏</p>
+      <a href="donation.html" class="donate-btn">Support Us / साथ दीजिए</a>
+
+      <div class="progress-container">
+        <div class="progress-text">₹ 72,000 raised of ₹ 1,00,000 goal</div>
+        <div class="progress-bar">
+          <div class="progress" style="width: 72%;"></div>
+        </div>
+      </div>
     </div>
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="gallery.html">Gallery</a>
-      <a href="donation.html">Donate</a>
-    </nav>
-  </header>
-
-  <section class="hero">
-    <h1>राष्ट्रीय धर्म रक्षा गुरुकुल</h1>
-    <p>Blending ancient Vedic knowledge with modern education for a brighter tomorrow.</p>
-    <p><strong>हर एक दान, एक मुस्कान देता है।</strong></p>
-    <p><strong>Help us give orphaned children a loving home, education, and hope.</strong></p>
-    <a href="donation.html" class="btn">Support Us</a>
-    <a href="donation.html" class="btn">साथ दीजिए</a>
-  </section>
-
-  <section class="about">
-    <h2>Our Mission</h2>
-    <p>
-      We believe every child deserves a safe place to grow, learn, and shine.
-      Through your kind donations, we provide food, education, shelter, and love to orphan children.
-    </p>
-  </section>
-
-  <section class="donation-info">
-    <h3>Donation Tiers</h3>
-    <p>🌱 Start with just ₹11 — every rupee helps.</p>
-    <p>👶 Sponsor a child's needs for a month with ₹501.</p>
-    <p><strong>Account Details:</strong><br>
-    A/C No: 22640100007928<br>
-    IFSC: FDRL0002264<br>
-    Bank: Federal Bank</p>
-  </section>
+  </div>
 
   <footer>
-    <p>© 2025 राष्ट्रीय धर्म रक्षा गुरुकुल | वसुधैव कुटुम्बकम् 🌅</p>
+    <p>© 2025 राष्ट्रीय धर्म रक्षा गुरुकुल | वसुधैव कुटुम्बकम् 🌍</p>
   </footer>
 </body>
-      </html>
+</html>
