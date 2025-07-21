@@ -1,42 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>राष्ट्रीय धर्म रक्षा गुरुकुल</title>
-  <link rel="stylesheet" href="style.css">
-  <link rel="icon" href="assets/logo.png" type="image/png">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rashtriya Dharma Raksha Gurukul</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Open+Sans&display=swap" rel="stylesheet">
 </head>
 <body>
-  <div class="hero-section">
-    <header>
-      <div class="logo">
-        <img src="assets/logo.png" alt="Gurukul Logo">
-      </div>
-      <nav>
-        <a href="index.html">Home</a>
-        <a href="gallery.html">Gallery</a>
-        <a href="donation.html">Donate</a>
-      </nav>
-    </header>
 
-    <div class="hero-content">
-      <h1>राष्ट्रीय धर्म रक्षा गुरुकुल</h1>
-      <p class="tagline">Blending ancient Vedic wisdom with modern education. 🌞</p>
-      <p class="emotion-line">Your ₹11 can light up a child's life. ₹501 sponsors a child for a full month. 🙏</p>
-      <a href="donation.html" class="donate-btn">Support Us / साथ दीजिए</a>
+  <!-- Navigation -->
+  <header class="navbar">
+    <img src="logo.png" alt="Gurukul Logo" class="logo" />
+    <nav>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#donate">Donate</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+      </ul>
+    </nav>
+  </header>
 
-      <div class="progress-container">
-        <div class="progress-text">₹ 72,000 raised of ₹ 1,00,000 goal</div>
-        <div class="progress-bar">
-          <div class="progress" style="width: 72%;"></div>
-        </div>
-      </div>
+  <!-- Hero Section -->
+  <section class="hero" data-aos="fade-up">
+    <div class="hero-text">
+      <h1>Rashtriya Dharma Raksha Gurukul</h1>
+      <p>Reviving the roots of Sanatan Dharma through Vedic education, culture, and seva.</p>
+      <a href="#donate" class="cta-btn">Donate Now</a>
     </div>
-  </div>
+  </section>
+
+  <!-- About Section -->
+  <section class="about" id="about" data-aos="fade-right">
+    <h2>Our Mission</h2>
+    <p>
+      Rashtriya Dharma Raksha Gurukul is dedicated to preserving and promoting the values of Sanatan Dharma.
+      We provide Vedic education, support spiritual practices, and nurture young minds in traditional gurukul culture.
+    </p>
+  </section>
+
+  <!-- Donation Section -->
+  <section class="donation" id="donate" data-aos="fade-up">
+    <h2>Support the Sacred Mission</h2>
+    <p>
+      Even a small act of generosity can help preserve ancient wisdom.
+      <strong>You can start donating from just ₹11.</strong> Every contribution protects dharma.
+    </p>
+    <a href="donation.html" class="donate-btn">Give Your Support</a>
+  </section>
+
+  <!-- Gallery Section Placeholder -->
+  <section class="gallery" id="gallery" data-aos="zoom-in">
+    <h2>Glimpses of Our Journey</h2>
+    <p>Images from our rituals, students, and vedic practices coming soon...</p>
+  </section>
 
   <footer>
-    <p>© 2025 राष्ट्रीय धर्म रक्षा गुरुकुल | वसुधैव कुटुम्बकम् 🌍</p>
+    <p>© 2025 Rashtriya Dharma Raksha Gurukul | All Rights Reserved</p>
   </footer>
+
+  <!-- AOS for animations -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
+
 </body>
 </html>
