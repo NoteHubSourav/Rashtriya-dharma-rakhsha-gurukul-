@@ -1,60 +1,87 @@
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Open+Sans&display=swap');
 
 body {
-  margin: 0;
   font-family: 'Open Sans', sans-serif;
-  background: linear-gradient(to bottom right, #FFF3E0, #FFCC80, #FFB74D);
-  color: #3a2c1d;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(to bottom right, #FFE5B4, #FFCC70, #FF9966);
+  color: #3a2c1e;
 }
 
-.donation-section {
-  padding: 60px 20px;
-  background: #fff8f0;
+header {
   text-align: center;
-  border-radius: 20px;
-  margin: 40px auto;
-  max-width: 800px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-  animation: fadeIn 1.2s ease-out;
+  padding: 2em 1em;
+  background-color: #fff5e1;
+  border-bottom: 2px solid #eaaa47;
 }
 
-.donation-title {
+header h1 {
   font-family: 'Playfair Display', serif;
-  font-size: 2.5rem;
-  color: #8B2500;
-  margin-bottom: 20px;
+  color: #b3541e;
+  font-size: 2em;
 }
 
-.donation-text {
-  font-size: 1.2rem;
-  line-height: 1.7;
-  color: #333;
-  margin-bottom: 30px;
-}
-
-.donate-btn {
-  padding: 14px 28px;
-  background-color: #FF6F00;
-  color: white;
-  font-size: 1rem;
-  border-radius: 10px;
-  text-decoration: none;
+.tagline {
   font-weight: bold;
-  transition: background-color 0.3s ease;
+  font-size: 1.2em;
+  margin: 0.5em 0;
 }
 
-.donate-btn:hover {
-  background-color: #e65c00;
+nav {
+  margin-top: 1em;
 }
 
-/* Optional animation */
-@keyframes fadeIn {
-  0% {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0px);
-  }
+nav a {
+  margin: 0 1em;
+  text-decoration: none;
+  color: #8b4513;
+  font-weight: bold;
+}
+
+.hero-img {
+  width: 180px;
+  margin-top: 1em;
+  border-radius: 10px;
+}
+
+section {
+  padding: 1.5em;
+  background-color: #fffdf7;
+  margin: 1em;
+  border-radius: 12px;
+  box-shadow: 0 0 10px #f5dcb2;
+}
+
+.gallery img {
+  width: 200px;
+  margin: 10px;
+  border-radius: 8px;
+  box-shadow: 2px 2px 6px rgba(0,0,0,0.2);
+}
+
+form input, form textarea {
+  display: block;
+  width: 90%;
+  margin: 0.5em auto;
+  padding: 0.8em;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+form button, button {
+  display: block;
+  margin: 0.5em auto;
+  padding: 0.8em 1.5em;
+  background-color: #e67e22;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+footer {
+  text-align: center;
+  padding: 1em;
+  background: #fbe7c6;
+  color: #5c4428;
 }
