@@ -5,10 +5,11 @@
     --color-peach: #FFA07A;   /* Soft coral/peach */
     --color-red-accent: #E63946; /* Subtle red for strong accents */
     --color-sky-blue: #ADD8E6; /* Light sky blue for subtle contrast */
-    --color-cream-light: #FDF5E6; /* Lightest background */
+    --color-cream-light: #FDF5E6; /* Lightest background - slightly warmer */
     --color-cream-dark: #FAEBD7; /* Slightly darker cream */
-    --color-brown-text: #5A3F1F; /* Deep traditional brown for text */
-    --color-dark-neutral: #333; /* General dark text/footer */
+    --color-brown-text: #4A2F0F; /* Deeper traditional brown for text */
+    --color-dark-neutral: #2C2C2C; /* Deeper general dark text/footer */
+    --color-deep-red: #C52F39; /* For strong accents */
 
     --font-heading: 'Merriweather', serif;
     --font-body: 'Open Sans', sans-serif;
@@ -23,7 +24,7 @@
 
 body {
     font-family: var(--font-body);
-    line-height: 1.6;
+    line-height: 1.7; /* Slightly increased for readability */
     color: var(--color-dark-neutral);
     background-color: var(--color-cream-light); /* Warm background */
     overflow-x: hidden; /* Prevents horizontal scroll from animations */
@@ -37,28 +38,31 @@ h1, h2, h3, h4, h5, h6 {
     text-align: center;
     margin-bottom: 0.8em;
     line-height: 1.2;
+    letter-spacing: 0.5px; /* Subtle letter spacing for elegance */
 }
 
-h1 { font-size: clamp(2.5em, 6vw, 4.5em); } /* Responsive font size */
-h2 { font-size: clamp(2em, 4vw, 3.2em); }
-h3 { font-size: clamp(1.5em, 3vw, 2.2em); }
+h1 { font-size: clamp(2.8em, 6.5vw, 5em); } /* Slightly larger for premium feel */
+h2 { font-size: clamp(2.2em, 4.5vw, 3.5em); }
+h3 { font-size: clamp(1.7em, 3.2vw, 2.5em); }
 
 p {
     text-align: center;
     max-width: 800px;
     margin-left: auto;
     margin-right: auto;
-    margin-bottom: 1em;
+    margin-bottom: 1.2em; /* Slightly more space */
+    line-height: 1.7;
 }
 
 a {
     color: var(--color-saffron);
     text-decoration: none;
-    transition: color 0.3s ease;
+    transition: color 0.3s ease, transform 0.2s ease;
 }
 
 a:hover {
     color: var(--color-gold);
+    transform: translateY(-1px); /* Subtle lift on links */
 }
 
 .sr-only { /* For accessible but visually hidden labels */
@@ -83,27 +87,28 @@ a:hover {
 
 .section-title {
     margin-top: 0;
-    margin-bottom: 15px;
+    margin-bottom: 20px; /* More space */
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.05); /* Subtle shadow */
 }
 
 .section-description {
-    font-size: 1.1em;
-    margin-bottom: 30px;
+    font-size: 1.2em; /* Slightly larger for better readability */
+    margin-bottom: 40px; /* More space */
     color: var(--color-dark-neutral);
-    max-width: 700px;
-    line-height: 1.5;
+    max-width: 750px; /* Increased max-width */
+    line-height: 1.6;
 }
 
 .note {
     font-style: italic;
-    color: var(--color-dark-neutral);
-    font-size: 1em;
+    color: var(--color-brown-text); /* Matches main text color */
+    font-size: 1.05em;
     margin-bottom: 25px;
 }
 
 .small-print {
-    font-size: 0.85em;
-    color: #666;
+    font-size: 0.8em;
+    color: #888;
     margin-top: 15px;
 }
 
@@ -114,41 +119,41 @@ a:hover {
     justify-content: center;
     background-color: var(--color-saffron);
     color: white;
-    padding: 12px 25px;
+    padding: 14px 30px; /* Slightly larger padding */
     border: none;
-    border-radius: 8px;
-    font-weight: 600;
-    font-size: 1em;
+    border-radius: 10px; /* More rounded */
+    font-weight: 700; /* Bolder text */
+    font-size: 1.05em;
     cursor: pointer;
     transition: background-color 0.3s ease-in-out, transform 0.2s ease-in-out, box-shadow 0.3s ease;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.25); /* Deeper shadow */
     text-transform: uppercase;
-    letter-spacing: 0.5px;
+    letter-spacing: 0.8px; /* More letter spacing */
 }
 
 .btn:hover {
     background-color: var(--color-gold);
-    transform: translateY(-3px);
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.25);
+    transform: translateY(-4px); /* More pronounced lift */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3); /* Even deeper shadow */
 }
 
 .btn:active {
     transform: translateY(0);
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
 }
 
 .primary-cta {
-    background-color: var(--color-red-accent);
-    box-shadow: 0 6px 15px rgba(230, 57, 70, 0.4);
-    margin-top: 25px;
-    padding: 15px 35px;
-    font-size: 1.1em;
+    background-color: var(--color-deep-red); /* Deeper red for premium feel */
+    box-shadow: 0 8px 20px rgba(197, 47, 57, 0.5); /* Matching deeper red shadow */
+    margin-top: 30px;
+    padding: 16px 40px; /* Even larger */
+    font-size: 1.2em;
 }
 
 .primary-cta:hover {
-    background-color: #d1303d; /* A slightly darker red */
-    transform: translateY(-4px);
-    box-shadow: 0 8px 20px rgba(230, 57, 70, 0.5);
+    background-color: #A92C36; /* A slightly darker red */
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(197, 47, 57, 0.6);
 }
 
 .secondary-btn {
@@ -156,13 +161,14 @@ a:hover {
     border: 2px solid var(--color-saffron);
     color: var(--color-saffron);
     box-shadow: none;
+    font-weight: 600; /* Slightly less bold than primary */
 }
 
 .secondary-btn:hover {
     background-color: var(--color-saffron);
     color: white;
-    transform: translateY(-3px);
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+    transform: translateY(-4px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
 }
 
 /* Copy Button Specifics */
@@ -170,20 +176,20 @@ a:hover {
     background: none;
     border: 1px solid var(--color-saffron);
     color: var(--color-saffron);
-    padding: 8px 15px; /* Increased padding */
-    margin-left: 10px;
-    font-size: 0.9em; /* Slightly larger text */
-    border-radius: 5px;
+    padding: 10px 18px; /* Adjusted padding */
+    margin-left: 12px; /* More space */
+    font-size: 0.95em;
+    border-radius: 6px;
     cursor: pointer;
     transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
-    box-shadow: none;
-    white-space: nowrap; /* Prevent button text from wrapping */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Subtle shadow for copy buttons */
 }
 
 .copy-btn:hover {
     background-color: var(--color-saffron);
     color: white;
-    transform: translateY(-1px);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
 }
 
 .copy-btn.copied {
@@ -196,79 +202,115 @@ a:hover {
 
 /* Preset Amount Buttons */
 .amount-buttons .preset-amount {
-    background-color: var(--color-cream-dark); /* Lighter background for these */
+    background-color: var(--color-cream-dark);
     color: var(--color-brown-text);
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    padding: 12px 22px; /* Adjusted padding */
-    margin: 5px;
-    font-size: 1em;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.1); /* More pronounced shadow */
+    padding: 14px 25px;
+    margin: 8px; /* More space between buttons */
+    font-size: 1.05em;
     border: 1px solid var(--color-cream-dark);
+    border-radius: 8px;
 }
 
 .amount-buttons .preset-amount:hover {
     background-color: var(--color-peach);
     color: var(--color-brown-text);
-    transform: translateY(-2px);
-    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.2);
 }
 
 .amount-buttons .preset-amount.active {
     background-color: var(--color-saffron);
     color: white;
     border-color: var(--color-gold);
-    transform: scale(1.05);
-    box-shadow: 0 5px 12px rgba(0,0,0,0.2);
+    transform: scale(1.08) translateY(-3px); /* Slightly more prominent active state */
+    box-shadow: 0 6px 15px rgba(0,0,0,0.3);
 }
 
 /* --- Header Section (Hero) --- */
 .main-header {
-    background: linear-gradient(135deg, var(--color-peach) 0%, var(--color-saffron) 50%, var(--color-red-accent) 100%); /* Full sunrise gradient */
+    background: linear-gradient(135deg, var(--color-peach) 0%, var(--color-saffron) 50%, var(--color-deep-red) 100%); /* Deeper red for premium */
     color: white;
     text-align: center;
-    padding: 100px 20px 80px; /* More padding at top */
-    min-height: 70vh; /* Make it a tall hero section */
+    padding: 100px 20px 150px; /* Increased padding-bottom for boy image */
+    min-height: 80vh; /* Taller hero section */
     display: flex;
+    flex-direction: column; /* Allows content and image to stack vertically */
     align-items: center;
     justify-content: center;
     position: relative;
     overflow: hidden;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4); /* Stronger header shadow */
+}
+
+.header-logo {
+    position: absolute;
+    top: 25px; /* Slightly more space from top */
+    left: 25px; /* Slightly more space from left */
+    z-index: 10;
+}
+
+.logo-image {
+    width: 90px; /* Slightly larger logo */
+    height: auto;
+    border-radius: 50%; /* If you want a circular logo */
+    box-shadow: 0 0 20px rgba(0,0,0,0.4); /* More prominent shadow for logo */
+    transition: transform 0.3s ease-in-out;
+}
+.logo-image:hover {
+    transform: scale(1.05); /* Subtle zoom on hover */
 }
 
 .header-content {
-    z-index: 2;
+    z-index: 5; /* Increased z-index */
     position: relative;
     max-width: 900px;
 }
 
 .main-header .hero-title {
     color: white;
-    text-shadow: 2px 2px 8px rgba(0,0,0,0.5); /* Stronger shadow */
-    margin-bottom: 15px;
+    text-shadow: 3px 3px 10px rgba(0,0,0,0.6); /* Even stronger shadow */
+    margin-bottom: 20px; /* More space */
     line-height: 1.1;
     text-transform: uppercase;
-    letter-spacing: 1px;
+    letter-spacing: 1.5px; /* More letter spacing for title */
 }
 
 .main-header .hero-tagline {
-    font-size: clamp(1.2em, 2.8vw, 1.8em);
-    color: rgba(255, 255, 255, 0.95);
+    font-size: clamp(1.4em, 3vw, 2em); /* Larger tagline */
+    color: rgba(255, 255, 255, 0.98); /* Whiter */
     margin-top: -5px;
-    text-shadow: 1px 1px 4px rgba(0,0,0,0.4);
-    margin-bottom: 20px;
+    text-shadow: 1px 1px 5px rgba(0,0,0,0.5);
+    margin-bottom: 25px;
 }
 
 .main-header .hero-mission {
-    font-size: clamp(1em, 2.2vw, 1.3em);
-    color: rgba(255, 255, 255, 0.9);
-    margin-bottom: 40px;
+    font-size: clamp(1.1em, 2.4vw, 1.4em); /* Larger mission text */
+    color: rgba(255, 255, 255, 0.95); /* Whiter */
+    margin-bottom: 50px; /* More space */
     max-width: 700px;
-    line-height: 1.5;
+    line-height: 1.6;
 }
 
 .main-header .hero-btn {
     margin-top: 0; /* Override primary-cta margin */
 }
+
+/* Hero Boy Image */
+.hero-boy-image {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    max-width: 350px; /* Increased size for prominence */
+    height: auto;
+    z-index: 4; /* Above overlay, below content */
+    opacity: 0; /* For animation */
+    /* Animation handled by delay-4 via JS observer */
+    transition: transform 0.8s ease-out, opacity 0.8s ease-out; /* Match fade-in-up transition */
+    filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.5)); /* Adds a shadow to the image itself */
+}
+
 
 /* Header overlays and traditional motifs for visual depth */
 .header-overlay {
@@ -277,8 +319,8 @@ a:hover {
     left: 0;
     width: 100%;
     height: 100%;
-    background: radial-gradient(circle at top right, rgba(255,255,255,0.1) 0%, transparent 50%),
-                radial-gradient(circle at bottom left, rgba(0,0,0,0.1) 0%, transparent 50%); /* Subtle light/dark gradient */
+    background: radial-gradient(circle at top right, rgba(255,255,255,0.15) 0%, transparent 50%),
+                radial-gradient(circle at bottom left, rgba(0,0,0,0.15) 0%, transparent 50%); /* Slightly stronger light/dark gradient */
     z-index: 1;
 }
 
@@ -290,282 +332,308 @@ a:hover {
     width: 100%;
     height: 100%;
     z-index: 0;
-    /* You can use a repeating SVG or a very light PNG/JPG here */
+    /* Example: Add a subtle background pattern here. You'll need an actual SVG/PNG pattern file. */
+    /* For a truly premium feel, consider a subtle abstract Indian pattern or a faint watercolor texture. */
     /* background-image: url('assets/patterns/subtle-indian-pattern.svg'); */
     /* background-size: cover; */
-    /* opacity: 0.1; */
-    /* animation: subtlePatternPan 30s linear infinite; */
+    /* opacity: 0.07; */ /* Very subtle */
+    /* animation: subtlePatternPan 30s linear infinite; */ /* If you want it to move */
 }
 
 /* --- Main Content Sections --- */
 main {
-    padding: 40px 0;
+    padding: 60px 0; /* More vertical padding for main content */
 }
 
 .section {
-    padding: 60px 20px;
-    margin: 40px auto;
+    padding: 80px 30px; /* Increased padding for sections */
+    margin: 60px auto; /* More margin between sections */
     max-width: 1200px;
-    background-color: var(--color-cream-light); /* Consistent background for sections */
-    border-radius: 15px; /* More rounded corners */
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15); /* Deeper shadow */
+    background-color: var(--color-cream-light);
+    border-radius: 20px; /* Even more rounded corners */
+    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.2); /* Much deeper, premium shadow */
     display: flex;
     flex-direction: column;
     align-items: center;
-    transition: transform 0.3s ease-in-out;
+    transition: transform 0.4s ease-in-out, box-shadow 0.4s ease-in-out; /* Smoother transition */
+    border: 1px solid rgba(0,0,0,0.05); /* Very subtle border for crispness */
 }
 
 .section:hover {
-    transform: translateY(-5px); /* Subtle lift on hover */
+    transform: translateY(-8px); /* More pronounced lift on hover */
+    box-shadow: 0 25px 55px rgba(0, 0, 0, 0.3); /* Even deeper shadow on hover */
 }
 
 /* Mission Section specific styles */
 .mission-content {
     display: flex;
-    flex-wrap: wrap; /* Allows wrapping on smaller screens */
-    gap: 30px;
+    flex-wrap: wrap;
+    gap: 40px; /* More space */
     align-items: center;
     justify-content: center;
     max-width: 1000px;
-    margin-top: 20px;
+    margin-top: 30px;
 }
 
 .mission-text {
-    flex: 1 1 500px; /* Allows text to take ample space */
+    flex: 1 1 500px;
     text-align: left;
-    padding: 10px;
+    padding: 15px; /* More padding */
 }
 .mission-text p {
     text-align: left;
-    margin-bottom: 1.2em;
-    max-width: none; /* Override section p max-width */
+    margin-bottom: 1.5em; /* More space */
+    max-width: none;
+    color: var(--color-brown-text);
 }
 
 .mission-image-wrapper {
-    flex: 0 1 400px; /* Image takes less space, but can shrink */
-    padding: 5px;
-    border: 3px solid var(--color-saffron); /* Traditional border */
-    border-radius: 10px;
+    flex: 0 1 450px; /* Slightly larger image area */
+    padding: 8px; /* Thicker border padding */
+    border: 4px solid var(--color-saffron); /* Thicker traditional border */
+    border-radius: 15px; /* More rounded */
     overflow: hidden;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15); /* More shadow */
 }
 
 .section-image {
     width: 100%;
     height: auto;
     display: block;
-    border-radius: 8px; /* Slightly less rounded than wrapper */
-    transition: transform 0.5s ease;
+    border-radius: 12px; /* Slightly less rounded than wrapper */
+    transition: transform 0.6s ease; /* Smoother zoom */
 }
 
 .mission-image-wrapper:hover .section-image {
-    transform: scale(1.05); /* Zoom effect on hover */
+    transform: scale(1.08); /* More pronounced zoom effect on hover */
 }
 
 
 /* Impact Section Grid */
 .impact-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Responsive grid */
-    gap: 30px;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Slightly larger min-width */
+    gap: 40px; /* More space */
     width: 100%;
-    margin-top: 30px;
+    margin-top: 40px;
 }
 
 .impact-item {
-    background-color: var(--color-cream-dark); /* Slightly darker card background */
-    padding: 25px;
-    border-radius: 10px;
+    background-color: var(--color-cream-dark);
+    padding: 35px; /* More padding */
+    border-radius: 15px; /* More rounded */
     text-align: center;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
-    transition: transform 0.3s ease, background-color 0.3s ease;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1); /* Deeper shadow */
+    transition: transform 0.4s ease, background-color 0.4s ease, box-shadow 0.4s ease;
+    border: 1px solid rgba(0,0,0,0.08); /* Subtle border */
 }
 
 .impact-item:hover {
-    transform: translateY(-8px); /* More pronounced lift */
-    background-color: var(--color-gold); /* Changes color on hover */
-    color: white; /* Text becomes white on hover */
+    transform: translateY(-12px); /* Even more pronounced lift */
+    background: linear-gradient(45deg, var(--color-saffron), var(--color-gold)); /* Gradient on hover */
+    color: white;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3); /* Stronger shadow on hover */
 }
 .impact-item:hover h3,
 .impact-item:hover p {
-    color: white; /* Ensure text color changes on hover */
+    color: white;
 }
 
 .impact-item .icon-wrapper {
-    width: 80px;
-    height: 80px;
-    margin: 0 auto 15px auto;
+    width: 90px; /* Larger icons */
+    height: 90px;
+    margin: 0 auto 20px auto; /* More space */
     background-color: var(--color-saffron);
-    border-radius: 50%; /* Circle for icons */
+    border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    transition: background-color 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2); /* Stronger shadow */
+    transition: background-color 0.4s ease;
 }
 
 .impact-item:hover .icon-wrapper {
-    background-color: var(--color-red-accent); /* Icon background changes */
+    background-color: var(--color-deep-red); /* Icon background changes to deep red */
 }
 
 .impact-item .icon-wrapper img {
-    width: 50px; /* Size of the icon */
-    height: 50px;
-    filter: invert(100%); /* Make icons white if they are dark */
+    width: 60px; /* Larger icon images */
+    height: 60px;
+    filter: invert(100%);
 }
 
 /* Gurukul Life Section Gallery */
 .gurukul-gallery {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px; /* More space */
     width: 100%;
-    margin-top: 30px;
+    margin-top: 40px;
 }
 
 .gallery-image {
     width: 100%;
-    height: 250px; /* Fixed height for consistent look */
-    object-fit: cover; /* Cover the area, crop if necessary */
-    border-radius: 8px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    border: 2px solid var(--color-peach); /* Subtle border */
+    height: 280px; /* Slightly taller images */
+    object-fit: cover;
+    border-radius: 12px; /* More rounded */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15); /* Stronger shadow */
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    border: 3px solid var(--color-peach); /* Thicker border */
 }
 
 .gallery-image:hover {
-    transform: scale(1.03);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    transform: scale(1.05); /* More zoom */
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25); /* Stronger shadow on hover */
 }
 
 
 /* Donation Section Specific Styles */
 .donate-page-section {
-    background: linear-gradient(160deg, var(--color-saffron), var(--color-red-accent)); /* Stronger gradient for donation */
-    color: white; /* Ensure text is white over dark gradient */
-    padding: 80px 20px;
+    background: linear-gradient(160deg, var(--color-saffron) 0%, var(--color-deep-red) 100%); /* Deeper gradient for donation */
+    color: white;
+    padding: 100px 30px; /* More padding */
+    border-radius: 20px; /* Match other sections */
+    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.3); /* Stronger shadow */
 }
 
 .donate-page-section h2, .donate-page-section p {
     color: white;
 }
 .donate-page-section .section-description {
-    color: rgba(255,255,255,0.9);
+    color: rgba(255,255,255,0.95);
 }
 
 .donation-methods-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); /* Slightly larger min-width */
+    gap: 40px; /* More space */
     width: 100%;
-    max-width: 900px;
-    margin: 40px auto;
+    max-width: 950px;
+    margin: 50px auto; /* More margin */
 }
 
 .donation-card {
-    background-color: rgba(255, 255, 255, 0.15); /* Translucent white over gradient */
-    backdrop-filter: blur(5px); /* Frosted glass effect */
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    border-radius: 10px;
-    padding: 30px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    background-color: rgba(255, 255, 255, 0.2); /* Slightly less transparent */
+    backdrop-filter: blur(8px); /* More blur for frosted glass */
+    border: 1px solid rgba(255, 255, 255, 0.4); /* Stronger border */
+    border-radius: 15px; /* More rounded */
+    padding: 40px; /* More padding */
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3); /* Deeper shadow */
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
+    transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+}
+.donation-card:hover {
+    transform: translateY(-5px); /* Subtle lift */
+    background-color: rgba(255, 255, 255, 0.25); /* Slightly brighter on hover */
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.4);
 }
 
 .donation-card h3 {
     color: var(--color-gold); /* Gold for subheadings in donation section */
-    margin-bottom: 20px;
-    font-size: 1.8em;
+    margin-bottom: 25px; /* More space */
+    font-size: 2em; /* Larger */
+    letter-spacing: 0.8px;
 }
 
 .donation-card p {
-    color: rgba(255, 255, 255, 0.9);
-    margin-bottom: 10px;
-    font-size: 1.05em;
+    color: rgba(255, 255, 255, 0.95);
+    margin-bottom: 12px;
+    font-size: 1.1em;
 }
 
 .donation-card .detail-label {
-    font-weight: 600;
-    margin-top: 15px;
-    margin-bottom: 5px;
-    color: rgba(255, 255, 255, 0.7);
+    font-weight: 700; /* Bolder */
+    margin-top: 20px;
+    margin-bottom: 8px;
+    color: rgba(255, 255, 255, 0.8);
 }
 .donation-card .detail-value {
     font-weight: bold;
-    font-size: 1.2em;
+    font-size: 1.3em; /* Larger */
     color: white;
 }
 
 .copy-field {
     display: flex;
     align-items: center;
-    justify-content: center; /* Center content in copy field */
-    gap: 10px;
-    margin-top: 5px;
-    margin-bottom: 15px;
-    background-color: rgba(255, 255, 255, 0.2);
-    padding: 8px 10px;
-    border-radius: 5px;
+    justify-content: center;
+    gap: 15px; /* More space */
+    margin-top: 10px;
+    margin-bottom: 20px;
+    background-color: rgba(255, 255, 255, 0.25); /* Slightly brighter */
+    padding: 10px 15px;
+    border-radius: 8px; /* More rounded */
     width: 100%;
-    max-width: 300px; /* Limit width */
+    max-width: 350px; /* Increased max-width */
     word-break: break-all;
+    border: 1px solid rgba(255, 255, 255, 0.3); /* Subtle border */
 }
 
 .copy-field span {
     font-weight: bold;
     color: white;
-    font-size: 1.1em;
+    font-size: 1.2em; /* Larger */
 }
 
 .qr-upi-card .qr-image-wrapper {
-    background-color: white; /* White background for QR */
-    border: 5px solid var(--color-gold); /* Gold border for QR */
-    padding: 10px;
-    border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-    margin-top: 20px;
+    background-color: white;
+    border: 6px solid var(--color-gold); /* Thicker border */
+    padding: 15px; /* More padding */
+    border-radius: 15px; /* More rounded */
+    box-shadow: 0 8px 25px rgba(0,0,0,0.4); /* Stronger shadow */
+    margin-top: 25px;
 }
 .qr-upi-card .qr-image {
     width: 100%;
     height: auto;
-    max-width: 250px; /* Ensures QR doesn't get too large */
+    max-width: 280px; /* Slightly larger QR */
 }
 
 
 .amount-selection-area {
-    background-color: rgba(255, 255, 255, 0.15);
-    backdrop-filter: blur(5px);
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    border-radius: 10px;
-    padding: 30px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    background-color: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    border-radius: 15px;
+    padding: 40px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
     width: 100%;
-    max-width: 600px;
-    margin-top: 40px;
+    max-width: 650px;
+    margin-top: 50px;
 }
 
 .amount-selection-area h3 {
     color: var(--color-gold);
-    margin-bottom: 20px;
+    margin-bottom: 25px;
+    font-size: 2em;
 }
 .amount-selection-area .note {
-    color: rgba(255, 255, 255, 0.9);
+    color: rgba(255, 255, 255, 0.95);
 }
 
 .amount-selection-area .custom-amount-wrapper {
-    margin: 20px auto 25px auto;
+    margin: 25px auto 30px auto;
 }
 .custom-amount-input {
-    background-color: rgba(255, 255, 255, 0.8);
+    background-color: rgba(255, 255, 255, 0.95); /* Nearly opaque white */
     color: var(--color-brown-text);
-    border: 2px solid var(--color-gold);
+    border: 3px solid var(--color-gold); /* Thicker gold border */
+    padding: 15px 20px; /* More padding */
+    border-radius: 10px; /* More rounded */
+    width: 100%;
+    max-width: 350px;
+    font-size: 1.1em;
+    text-align: center;
+    outline: none;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: inset 0 1px 3px rgba(0,0,0,0.1); /* Subtle inner shadow */
 }
 .custom-amount-input:focus {
     border-color: var(--color-saffron);
-    box-shadow: 0 0 0 3px rgba(255, 215, 0, 0.3);
+    box-shadow: 0 0 0 4px rgba(255, 153, 51, 0.3), inset 0 1px 3px rgba(0,0,0,0.15); /* More prominent focus shadow */
 }
 
 
@@ -574,294 +642,31 @@ main {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 20px;
-    margin-top: 30px;
+    gap: 25px; /* More space */
+    margin-top: 40px;
 }
 
-
-/* --- Footer --- */
-.site-footer {
-    background-color: var(--color-dark-neutral);
-    color: white;
-    text-align: center;
-    padding: 40px 20px;
-    font-size: 0.9em;
-    margin-top: 60px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 15px;
-    position: relative;
-    overflow: hidden;
+/* --- About Us Section --- */
+.about-us-content {
+    max-width: 850px; /* Wider content area */
+    margin: 30px auto;
+    padding: 0 15px; /* Internal padding */
 }
-
-.footer-content {
-    z-index: 1; /* Ensure text is above any animations */
+.about-us-content p {
+    margin-bottom: 1.5em; /* More spacing */
+    text-align: justify; /* Justify text for a more formal look */
+    text-align-last: center; /* Helps last line look better with justify */
+    color: var(--color-brown-text);
+    font-size: 1.05em;
 }
-
-.site-footer .footer-moto {
-    font-style: italic;
-    color: rgba(255, 255, 255, 0.8);
-    font-size: 1.1em;
-    margin-bottom: 15px;
-}
-
-.site-footer .footer-links {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 10px 20px; /* Row gap, column gap */
-    margin-bottom: 10px;
-}
-
-.site-footer .animated-link {
-    color: var(--color-gold);
+.about-us-content p.sanskrit {
+    font-size: 1.15em; /* Larger for Sanskrit text */
     font-weight: 500;
-    transition: color 0.3s ease, transform 0.2s ease;
+    margin-bottom: 2.5em; /* More space after each Hindi pair */
+    color: var(--color-deep-red); /* Slightly different color for Hindi */
 }
 
-.site-footer .animated-link:hover {
-    color: white;
-    transform: translateY(-2px);
-}
-
-.site-footer .link-separator {
-    color: rgba(255, 255, 255, 0.5);
-}
-
-.site-footer .copyright {
-    color: rgba(255, 255, 255, 0.7);
-    margin-top: 5px;
-    line-height: 1.4;
-}
-.site-footer .copyright .sanskrit {
-    margin-left: 5px;
-}
-
-/* --- Animations --- */
-
-/* Keyframe for fade-in from top */
-@keyframes fadeInDown {
-    from { opacity: 0; transform: translateY(-30px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-
-/* Keyframe for fade-in from bottom */
-@keyframes fadeInUp {
-    from { opacity: 0; transform: translateY(50px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-
-/* Initial hidden state for elements that will animate on scroll */
-.fade-in-down,
-.fade-in-up {
-    opacity: 0;
-    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-}
-
-/* Elements that animate immediately on page load */
-.hero-title { animation: fadeInDown 1.2s ease-out forwards; }
-.hero-tagline { animation: fadeInDown 1.2s ease-out forwards; animation-delay: 0.3s; }
-.hero-mission { animation: fadeInDown 1.2s ease-out forwards; animation-delay: 0.6s; }
-.hero-btn { animation: fadeInDown 1.2s ease-out forwards; animation-delay: 0.9s; }
-
-
-/* Elements that animate on scroll into view (controlled by JS) */
-.fade-in-up.in-view {
-    opacity: 1;
-    transform: translateY(0);
-}
-.fade-in-down.in-view {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-/* Delay utility for staggered scroll animations */
-.delay-1 { transition-delay: 0.2s; animation-delay: 0.2s; }
-.delay-2 { transition-delay: 0.4s; animation-delay: 0.4s; }
-.delay-3 { transition-delay: 0.6s; animation-delay: 0.6s; }
-.delay-4 { transition-delay: 0.8s; animation-delay: 0.8s; }
-
-
-/* --- Responsive Adjustments --- */
-@media (max-width: 992px) {
-    .section {
-        padding: 50px 20px;
-    }
-    .mission-content {
-        flex-direction: column; /* Stack mission content on medium screens */
-        text-align: center;
-    }
-    .mission-text p {
-        text-align: center; /* Center text when stacked */
-    }
-    .mission-image-wrapper {
-        flex: none;
-        max-width: 90%;
-    }
-}
-
-@media (max-width: 768px) {
-    .main-header {
-        padding: 80px 15px 60px;
-        min-height: 60vh;
-    }
-    .main-header .hero-title {
-        font-size: 2.2em;
-    }
-    .main-header .hero-tagline {
-        font-size: 1.4em;
-    }
-    .main-header .hero-mission {
-        font-size: 1em;
-    }
-
-    .section {
-        padding: 40px 15px;
-        margin: 30px auto;
-    }
-    h2 { font-size: 1.8em; }
-    h3 { font-size: 1.3em; }
-
-    .btn {
-        padding: 10px 20px;
-        font-size: 0.9em;
-    }
-
-    .primary-cta {
-        padding: 12px 25px;
-        font-size: 1em;
-    }
-
-    .impact-grid {
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Adjust grid for tablets */
-        gap: 20px;
-    }
-    .gurukul-gallery {
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-        gap: 15px;
-    }
-    .gallery-image {
-        height: 200px;
-    }
-
-    .donation-methods-grid {
-        grid-template-columns: 1fr; /* Stack donation cards on smaller screens */
-        gap: 20px;
-    }
-    .donation-card {
-        padding: 25px;
-    }
-
-    .copy-field {
-        flex-direction: column; /* Stack text and copy button */
-        align-items: center;
-        width: auto; /* Allow to grow */
-    }
-    .copy-field span {
-        margin-bottom: 5px;
-        text-align: center;
-    }
-    .copy-btn {
-        margin-left: 0; /* Remove left margin */
-        width: 100%; /* Make copy button full width */
-        max-width: 150px; /* But not too wide */
-    }
-
-    .amount-buttons {
-        flex-direction: column; /* Stack amount buttons */
-        align-items: center;
-        gap: 10px;
-    }
-    .amount-buttons .preset-amount {
-        width: 80%; /* Make them wider when stacked */
-        max-width: 250px;
-    }
-    .custom-amount-input {
-        max-width: 250px;
-    }
-
-    .site-footer {
-        padding: 30px 15px;
-        margin-top: 40px;
-    }
-    .site-footer .footer-links {
-        flex-direction: column;
-        gap: 5px;
-    }
-    .site-footer .link-separator {
-        display: none; /* Hide separators when links are stacked */
-    }
-}
-
-@media (max-width: 480px) {
-    .main-header {
-        min-height: 50vh;
-        padding: 60px 10px 40px;
-    }
-    .main-header .hero-title {
-        font-size: 1.8em;
-    }
-    .main-header .hero-tagline {
-        font-size: 1.1em;
-    }
-    .main-header .hero-mission {
-        font-size: 0.9em;
-    }
-    .hero-btn {
-        padding: 10px 20px;
-        font-size: 0.9em;
-    }
-
-    .section {
-        padding: 30px 10px;
-        margin: 20px auto;
-        border-radius: 10px;
-    }
-    h2 { font-size: 1.5em; }
-    h3 { font-size: 1.2em; }
-
-    .section-description {
-        font-size: 0.9em;
-        margin-bottom: 15px;
-    }
-
-    .impact-grid {
-        grid-template-columns: 1fr; /* Single column on very small phones */
-        gap: 15px;
-    }
-    .impact-item {
-        padding: 20px;
-    }
-    .impact-item .icon-wrapper {
-        width: 60px;
-        height: 60px;
-    }
-    .impact-item .icon-wrapper img {
-        width: 40px;
-        height: 40px;
-    }
-
-    .gurukul-gallery {
-        grid-template-columns: 1fr;
-        gap: 10px;
-    }
-    .gallery-image {
-        height: 180px;
-    }
-
-    .donation-card {
-        padding: 20px;
-    }
-    .donation-card h3 {
-        font-size: 1.5em;
-    }
-    .copy-field span {
-        font-size: 1em;
-    }
-
-    .amount-selection-area {
-        padding: 25px;
-        margin-top: 25px;
-    }
-}
+/* --- Contact Us Section --- */
+.contact-details-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Slightl
