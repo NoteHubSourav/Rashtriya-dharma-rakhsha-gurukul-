@@ -1,18 +1,19 @@
-/* --- CSS Variables for Sunrise Color Palette --- */
+/* --- CSS Variables for Modern-Traditional Indian Color Palette --- */
 :root {
-    --color-saffron: #FF9933; /* Primary warm orange */
-    --color-gold: #FFD700;    /* Bright gold/yellow */
-    --color-peach: #FFA07A;   /* Soft coral/peach */
-    --color-red-accent: #E63946; /* Subtle red for strong accents */
-    --color-sky-blue: #ADD8E6; /* Light sky blue for subtle contrast */
-    --color-cream-light: #FDF5E6; /* Lightest background - slightly warmer */
-    --color-cream-dark: #FAEBD7; /* Slightly darker cream */
-    --color-brown-text: #4A2F0F; /* Deeper traditional brown for text */
-    --color-dark-neutral: #2C2C2C; /* Deeper general dark text/footer */
-    --color-deep-red: #C52F39; /* For strong accents */
+    /* Deep Maroon & Light Gray with Gold Accents (Inspired by Indian festivities) */
+    --color-primary-maroon: #9A031E; /* Carmine - Deep Red/Maroon for strong accents [1, 2] */
+    --color-secondary-gold: #FB8B24; /* Beer - Vibrant Gold/Orange for highlights [1, 2] */
+    --color-light-gray: #E0E0E0; /* A soft, modern light gray */
+    --color-dark-neutral: #4A2F0F; /* Deep traditional brown for text  */
+    --color-cream-background: #FDF5E6; /* Lightest background - slightly warmer cream */
+    --color-cream-dark: #FAEBD7; /* Slightly darker cream for cards */
+    --color-text-light: #FFFFFF; /* White for text on dark backgrounds */
+    --color-text-dark: #2C2C2C; /* Very dark neutral for general text */
 
     --font-heading: 'Merriweather', serif;
     --font-body: 'Open Sans', sans-serif;
+    --font-hindi-heading: 'Tiro Devanagari Hindi', serif; /* For prominent Hindi text [3] */
+    --font-hindi-body: 'Noto Sans Devanagari', sans-serif; /* For supporting Hindi text [4] */
 }
 
 /* --- Global Styles & Resets --- */
@@ -24,24 +25,24 @@
 
 body {
     font-family: var(--font-body);
-    line-height: 1.7; /* Slightly increased for readability */
+    line-height: 1.7;
     color: var(--color-dark-neutral);
-    background-color: var(--color-cream-light); /* Warm background */
-    overflow-x: hidden; /* Prevents horizontal scroll from animations */
-    -webkit-font-smoothing: antialiased; /* Improves font rendering */
+    background-color: var(--color-cream-background);
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
     scroll-behavior: smooth;
 }
 
 h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-heading);
-    color: var(--color-brown-text);
+    color: var(--color-dark-neutral);
     text-align: center;
     margin-bottom: 0.8em;
     line-height: 1.2;
-    letter-spacing: 0.5px; /* Subtle letter spacing for elegance */
+    letter-spacing: 0.5px;
 }
 
-h1 { font-size: clamp(2.8em, 6.5vw, 5em); } /* Slightly larger for premium feel */
+h1 { font-size: clamp(2.8em, 6.5vw, 5em); }
 h2 { font-size: clamp(2.2em, 4.5vw, 3.5em); }
 h3 { font-size: clamp(1.7em, 3.2vw, 2.5em); }
 
@@ -50,22 +51,22 @@ p {
     max-width: 800px;
     margin-left: auto;
     margin-right: auto;
-    margin-bottom: 1.2em; /* Slightly more space */
+    margin-bottom: 1.2em;
     line-height: 1.7;
 }
 
 a {
-    color: var(--color-saffron);
+    color: var(--color-primary-maroon);
     text-decoration: none;
     transition: color 0.3s ease, transform 0.2s ease;
 }
 
 a:hover {
-    color: var(--color-gold);
-    transform: translateY(-1px); /* Subtle lift on links */
+    color: var(--color-secondary-gold);
+    transform: translateY(-1px);
 }
 
-.sr-only { /* For accessible but visually hidden labels */
+.sr-only {
     position: absolute;
     width: 1px;
     height: 1px;
@@ -79,29 +80,28 @@ a:hover {
 
 /* --- Utility Classes --- */
 .sanskrit {
-    /* Using a fallback that tries to render Sanskrit if possible */
-    font-family: "Noto Sans Devanagari", "Devanagari MT", Arial, sans-serif;
-    font-weight: bold;
+    font-family: var(--font-hindi-body); /* Noto Sans Devanagari for general Hindi text [4] */
+    font-weight: 500;
     letter-spacing: 0.5px;
 }
 
 .section-title {
     margin-top: 0;
-    margin-bottom: 20px; /* More space */
-    text-shadow: 1px 1px 2px rgba(0,0,0,0.05); /* Subtle shadow */
+    margin-bottom: 20px;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.05);
 }
 
 .section-description {
-    font-size: 1.2em; /* Slightly larger for better readability */
-    margin-bottom: 40px; /* More space */
+    font-size: 1.2em;
+    margin-bottom: 40px;
     color: var(--color-dark-neutral);
-    max-width: 750px; /* Increased max-width */
+    max-width: 750px;
     line-height: 1.6;
 }
 
 .note {
     font-style: italic;
-    color: var(--color-brown-text); /* Matches main text color */
+    color: var(--color-dark-neutral);
     font-size: 1.05em;
     margin-bottom: 25px;
 }
@@ -117,24 +117,24 @@ a:hover {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    background-color: var(--color-saffron);
-    color: white;
-    padding: 14px 30px; /* Slightly larger padding */
+    background-color: var(--color-secondary-gold);
+    color: var(--color-text-light);
+    padding: 14px 30px;
     border: none;
-    border-radius: 10px; /* More rounded */
-    font-weight: 700; /* Bolder text */
+    border-radius: 10px;
+    font-weight: 700;
     font-size: 1.05em;
     cursor: pointer;
     transition: background-color 0.3s ease-in-out, transform 0.2s ease-in-out, box-shadow 0.3s ease;
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.25); /* Deeper shadow */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.25);
     text-transform: uppercase;
-    letter-spacing: 0.8px; /* More letter spacing */
+    letter-spacing: 0.8px;
 }
 
 .btn:hover {
-    background-color: var(--color-gold);
-    transform: translateY(-4px); /* More pronounced lift */
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3); /* Even deeper shadow */
+    background-color: #FFC107; /* Slightly brighter gold on hover */
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
 }
 
 .btn:active {
@@ -143,30 +143,30 @@ a:hover {
 }
 
 .primary-cta {
-    background-color: var(--color-deep-red); /* Deeper red for premium feel */
-    box-shadow: 0 8px 20px rgba(197, 47, 57, 0.5); /* Matching deeper red shadow */
+    background-color: var(--color-primary-maroon);
+    box-shadow: 0 8px 20px rgba(154, 3, 30, 0.5);
     margin-top: 30px;
-    padding: 16px 40px; /* Even larger */
+    padding: 16px 40px;
     font-size: 1.2em;
 }
 
 .primary-cta:hover {
-    background-color: #A92C36; /* A slightly darker red */
+    background-color: #C52F39; /* A slightly darker red */
     transform: translateY(-5px);
-    box-shadow: 0 10px 25px rgba(197, 47, 57, 0.6);
+    box-shadow: 0 10px 25px rgba(154, 3, 30, 0.6);
 }
 
 .secondary-btn {
     background-color: transparent;
-    border: 2px solid var(--color-saffron);
-    color: var(--color-saffron);
+    border: 2px solid var(--color-secondary-gold);
+    color: var(--color-secondary-gold);
     box-shadow: none;
-    font-weight: 600; /* Slightly less bold than primary */
+    font-weight: 600;
 }
 
 .secondary-btn:hover {
-    background-color: var(--color-saffron);
-    color: white;
+    background-color: var(--color-secondary-gold);
+    color: var(--color-text-light);
     transform: translateY(-4px);
     box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
 }
@@ -174,26 +174,26 @@ a:hover {
 /* Copy Button Specifics */
 .copy-btn {
     background: none;
-    border: 1px solid var(--color-saffron);
-    color: var(--color-saffron);
-    padding: 10px 18px; /* Adjusted padding */
-    margin-left: 12px; /* More space */
+    border: 1px solid var(--color-secondary-gold);
+    color: var(--color-secondary-gold);
+    padding: 10px 18px;
+    margin-left: 12px;
     font-size: 0.95em;
     border-radius: 6px;
     cursor: pointer;
     transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Subtle shadow for copy buttons */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
 .copy-btn:hover {
-    background-color: var(--color-saffron);
-    color: white;
+    background-color: var(--color-secondary-gold);
+    color: var(--color-text-light);
     transform: translateY(-2px);
     box-shadow: 0 4px 8px rgba(0,0,0,0.15);
 }
 
 .copy-btn.copied {
-    background-color: #28a745; /* Green for success */
+    background-color: #28a745;
     border-color: #28a745;
     color: white;
     font-weight: bold;
@@ -201,99 +201,131 @@ a:hover {
 }
 
 /* Preset Amount Buttons */
-.amount-buttons .preset-amount {
+.amount-buttons.preset-amount {
     background-color: var(--color-cream-dark);
-    color: var(--color-brown-text);
-    box-shadow: 0 3px 8px rgba(0,0,0,0.1); /* More pronounced shadow */
+    color: var(--color-dark-neutral);
+    box-shadow: 0 3px 8px rgba(0,0,0,0.1);
     padding: 14px 25px;
-    margin: 8px; /* More space between buttons */
+    margin: 8px;
     font-size: 1.05em;
     border: 1px solid var(--color-cream-dark);
     border-radius: 8px;
 }
 
-.amount-buttons .preset-amount:hover {
-    background-color: var(--color-peach);
-    color: var(--color-brown-text);
+.amount-buttons.preset-amount:hover {
+    background-color: var(--color-secondary-gold);
+    color: var(--color-text-light);
     transform: translateY(-3px);
     box-shadow: 0 6px 12px rgba(0,0,0,0.2);
 }
 
-.amount-buttons .preset-amount.active {
-    background-color: var(--color-saffron);
-    color: white;
-    border-color: var(--color-gold);
-    transform: scale(1.08) translateY(-3px); /* Slightly more prominent active state */
+.amount-buttons.preset-amount.active {
+    background-color: var(--color-primary-maroon);
+    color: var(--color-text-light);
+    border-color: var(--color-secondary-gold);
+    transform: scale(1.08) translateY(-3px);
     box-shadow: 0 6px 15px rgba(0,0,0,0.3);
 }
 
 /* --- Header Section (Hero) --- */
 .main-header {
-    background: linear-gradient(135deg, var(--color-peach) 0%, var(--color-saffron) 50%, var(--color-deep-red) 100%); /* Deeper red for premium */
-    color: white;
+    /* Background Image - Replace with your chosen image in assets/images */
+    background: linear-gradient(135deg, rgba(154, 3, 30, 0.8) 0%, rgba(251, 139, 36, 0.8) 100%), url('assets/images/hero-background.jpg') no-repeat center center/cover;
+    /* For video background, uncomment and adjust: */
+    /*
+    video {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        min-width: 100%;
+        min-height: 100%;
+        width: auto;
+        height: auto;
+        z-index: -1;
+        transform: translate(-50%, -50%);
+        background-size: cover;
+    }
+    */
+    color: var(--color-text-light);
     text-align: center;
-    padding: 100px 20px 150px; /* Increased padding-bottom for boy image */
-    min-height: 80vh; /* Taller hero section */
+    padding: 100px 20px 150px;
+    min-height: 80vh;
     display: flex;
-    flex-direction: column; /* Allows content and image to stack vertically */
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     position: relative;
     overflow: hidden;
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4); /* Stronger header shadow */
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
 }
 
 .header-logo {
     position: absolute;
-    top: 25px; /* Slightly more space from top */
-    left: 25px; /* Slightly more space from left */
+    top: 25px;
+    left: 25px;
     z-index: 10;
 }
 
+/* Centered Circular Logo */
 .logo-image {
-    width: 90px; /* Slightly larger logo */
-    height: auto;
-    border-radius: 50%; /* If you want a circular logo */
-    box-shadow: 0 0 20px rgba(0,0,0,0.4); /* More prominent shadow for logo */
+    width: 90px;
+    height: 90px; /* Make height equal to width for perfect circle */
+    border-radius: 50%; /* Makes the image circular */
+    object-fit: cover; /* Ensures the image covers the circle without distortion */
+    box-shadow: 0 0 20px rgba(0,0,0,0.4);
     transition: transform 0.3s ease-in-out;
+    display: block; /* Ensures it behaves as a block element for margin auto */
+    margin: 0 auto; /* Centers the logo horizontally if it were in a flex container */
 }
 .logo-image:hover {
-    transform: scale(1.05); /* Subtle zoom on hover */
+    transform: scale(1.05);
 }
 
 .header-content {
-    z-index: 5; /* Increased z-index */
+    z-index: 5;
     position: relative;
     max-width: 900px;
 }
 
-.main-header .hero-title {
-    color: white;
-    text-shadow: 3px 3px 10px rgba(0,0,0,0.6); /* Even stronger shadow */
-    margin-bottom: 20px; /* More space */
+/* Hindi Name Styling */
+.main-header.hero-title-hindi {
+    font-family: var(--font-hindi-heading); /* Tiro Devanagari Hindi for main Hindi title [3] */
+    font-size: clamp(3.5em, 8vw, 6em); /* Larger for prominence */
+    color: var(--color-text-light);
+    text-shadow: 4px 4px 12px rgba(0,0,0,0.7);
+    margin-bottom: 10px; /* Less space to keep it close to English title */
     line-height: 1.1;
-    text-transform: uppercase;
-    letter-spacing: 1.5px; /* More letter spacing for title */
+    letter-spacing: 2px;
 }
 
-.main-header .hero-tagline {
-    font-size: clamp(1.4em, 3vw, 2em); /* Larger tagline */
-    color: rgba(255, 255, 255, 0.98); /* Whiter */
+.main-header.hero-title {
+    color: var(--color-text-light);
+    text-shadow: 3px 3px 10px rgba(0,0,0,0.6);
+    margin-top: 0; /* Adjust margin to be closer to Hindi title */
+    margin-bottom: 20px;
+    line-height: 1.1;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+}
+
+.main-header.hero-tagline {
+    font-size: clamp(1.4em, 3vw, 2em);
+    color: rgba(255, 255, 255, 0.98);
     margin-top: -5px;
     text-shadow: 1px 1px 5px rgba(0,0,0,0.5);
     margin-bottom: 25px;
 }
 
-.main-header .hero-mission {
-    font-size: clamp(1.1em, 2.4vw, 1.4em); /* Larger mission text */
-    color: rgba(255, 255, 255, 0.95); /* Whiter */
-    margin-bottom: 50px; /* More space */
+.main-header.hero-mission {
+    font-size: clamp(1.1em, 2.4vw, 1.4em);
+    color: rgba(255, 255, 255, 0.95);
+    margin-bottom: 50px;
     max-width: 700px;
     line-height: 1.6;
 }
 
-.main-header .hero-btn {
-    margin-top: 0; /* Override primary-cta margin */
+.main-header.hero-btn {
+    margin-top: 0;
 }
 
 /* Hero Boy Image */
@@ -302,15 +334,13 @@ a:hover {
     bottom: 0;
     left: 50%;
     transform: translateX(-50%);
-    max-width: 350px; /* Increased size for prominence */
+    max-width: 350px;
     height: auto;
-    z-index: 4; /* Above overlay, below content */
+    z-index: 4;
     opacity: 0; /* For animation */
-    /* Animation handled by delay-4 via JS observer */
-    transition: transform 0.8s ease-out, opacity 0.8s ease-out; /* Match fade-in-up transition */
-    filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.5)); /* Adds a shadow to the image itself */
+    transition: transform 0.8s ease-out, opacity 0.8s ease-out;
+    filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.5));
 }
-
 
 /* Header overlays and traditional motifs for visual depth */
 .header-overlay {
@@ -320,7 +350,7 @@ a:hover {
     width: 100%;
     height: 100%;
     background: radial-gradient(circle at top right, rgba(255,255,255,0.15) 0%, transparent 50%),
-                radial-gradient(circle at bottom left, rgba(0,0,0,0.15) 0%, transparent 50%); /* Slightly stronger light/dark gradient */
+                radial-gradient(circle at bottom left, rgba(0,0,0,0.15) 0%, transparent 50%);
     z-index: 1;
 }
 
@@ -334,41 +364,49 @@ a:hover {
     z-index: 0;
     /* Example: Add a subtle background pattern here. You'll need an actual SVG/PNG pattern file. */
     /* For a truly premium feel, consider a subtle abstract Indian pattern or a faint watercolor texture. */
-    /* background-image: url('assets/patterns/subtle-indian-pattern.svg'); */
+    /* background-image: url('assets/images/patterns/subtle-indian-pattern.svg'); */
     /* background-size: cover; */
-    /* opacity: 0.07; */ /* Very subtle */
-    /* animation: subtlePatternPan 30s linear infinite; */ /* If you want it to move */
+    /* opacity: 0.07; */
+    /* animation: subtlePatternPan 30s linear infinite; */
 }
 
 /* --- Main Content Sections --- */
 main {
-    padding: 60px 0; /* More vertical padding for main content */
+    padding: 60px 0;
 }
 
 .section {
-    padding: 80px 30px; /* Increased padding for sections */
-    margin: 60px auto; /* More margin between sections */
+    padding: 80px 30px;
+    margin: 60px auto;
     max-width: 1200px;
-    background-color: var(--color-cream-light);
-    border-radius: 20px; /* Even more rounded corners */
-    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.2); /* Much deeper, premium shadow */
+    background-color: var(--color-cream-background);
+    border-radius: 20px;
+    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.2);
     display: flex;
     flex-direction: column;
     align-items: center;
-    transition: transform 0.4s ease-in-out, box-shadow 0.4s ease-in-out; /* Smoother transition */
-    border: 1px solid rgba(0,0,0,0.05); /* Very subtle border for crispness */
+    transition: transform 0.4s ease-in-out, box-shadow 0.4s ease-in-out;
+    border: 1px solid rgba(0,0,0,0.05);
+    opacity: 0; /* For scroll-reveal animation */
+    transform: translateY(20px); /* For scroll-reveal animation */
+}
+
+.section.in-view {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
 }
 
 .section:hover {
-    transform: translateY(-8px); /* More pronounced lift on hover */
-    box-shadow: 0 25px 55px rgba(0, 0, 0, 0.3); /* Even deeper shadow on hover */
+    transform: translateY(-8px);
+    box-shadow: 0 25px 55px rgba(0, 0, 0, 0.3);
 }
 
 /* Mission Section specific styles */
 .mission-content {
     display: flex;
     flex-wrap: wrap;
-    gap: 40px; /* More space */
+    gap: 40px;
     align-items: center;
     justify-content: center;
     max-width: 1000px;
@@ -378,86 +416,85 @@ main {
 .mission-text {
     flex: 1 1 500px;
     text-align: left;
-    padding: 15px; /* More padding */
+    padding: 15px;
 }
 .mission-text p {
     text-align: left;
-    margin-bottom: 1.5em; /* More space */
+    margin-bottom: 1.5em;
     max-width: none;
-    color: var(--color-brown-text);
+    color: var(--color-dark-neutral);
 }
 
 .mission-image-wrapper {
-    flex: 0 1 450px; /* Slightly larger image area */
-    padding: 8px; /* Thicker border padding */
-    border: 4px solid var(--color-saffron); /* Thicker traditional border */
-    border-radius: 15px; /* More rounded */
+    flex: 0 1 450px;
+    padding: 8px;
+    border: 4px solid var(--color-secondary-gold);
+    border-radius: 15px;
     overflow: hidden;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.15); /* More shadow */
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
 }
 
 .section-image {
     width: 100%;
     height: auto;
     display: block;
-    border-radius: 12px; /* Slightly less rounded than wrapper */
-    transition: transform 0.6s ease; /* Smoother zoom */
+    border-radius: 12px;
+    transition: transform 0.6s ease;
 }
 
-.mission-image-wrapper:hover .section-image {
-    transform: scale(1.08); /* More pronounced zoom effect on hover */
+.mission-image-wrapper:hover.section-image {
+    transform: scale(1.08);
 }
-
 
 /* Impact Section Grid */
 .impact-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Slightly larger min-width */
-    gap: 40px; /* More space */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
     width: 100%;
     margin-top: 40px;
 }
 
 .impact-item {
     background-color: var(--color-cream-dark);
-    padding: 35px; /* More padding */
-    border-radius: 15px; /* More rounded */
+    padding: 35px;
+    border-radius: 15px;
     text-align: center;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1); /* Deeper shadow */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
     transition: transform 0.4s ease, background-color 0.4s ease, box-shadow 0.4s ease;
-    border: 1px solid rgba(0,0,0,0.08); /* Subtle border */
+    border: 1px solid rgba(0,0,0,0.08);
 }
 
 .impact-item:hover {
-    transform: translateY(-12px); /* Even more pronounced lift */
-    background: linear-gradient(45deg, var(--color-saffron), var(--color-gold)); /* Gradient on hover */
-    color: white;
-    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3); /* Stronger shadow on hover */
+    transform: translateY(-12px);
+    background: linear-gradient(45deg, var(--color-secondary-gold), var(--color-primary-maroon));
+    color: var(--color-text-light);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
 }
 .impact-item:hover h3,
 .impact-item:hover p {
-    color: white;
+    color: var(--color-text-light);
 }
 
-.impact-item .icon-wrapper {
-    width: 90px; /* Larger icons */
+.impact-item.icon-wrapper {
+    width: 90px;
     height: 90px;
-    margin: 0 auto 20px auto; /* More space */
-    background-color: var(--color-saffron);
+    margin: 0 auto 20px auto;
+    background-color: var(--color-secondary-gold);
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.2); /* Stronger shadow */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
     transition: background-color 0.4s ease;
 }
 
-.impact-item:hover .icon-wrapper {
-    background-color: var(--color-deep-red); /* Icon background changes to deep red */
+.impact-item:hover.icon-wrapper {
+    background-color: var(--color-primary-maroon);
 }
 
-.impact-item .icon-wrapper img {
-    width: 60px; /* Larger icon images */
+.impact-item.icon-wrapper img {
+    width: 60px;
     height: 60px;
     filter: invert(100%);
 }
@@ -466,59 +503,58 @@ main {
 .gurukul-gallery {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px; /* More space */
+    gap: 30px;
     width: 100%;
     margin-top: 40px;
 }
 
 .gallery-image {
     width: 100%;
-    height: 280px; /* Slightly taller images */
+    height: 280px;
     object-fit: cover;
-    border-radius: 12px; /* More rounded */
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15); /* Stronger shadow */
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
     transition: transform 0.4s ease, box-shadow 0.4s ease;
-    border: 3px solid var(--color-peach); /* Thicker border */
+    border: 3px solid var(--color-secondary-gold);
 }
 
 .gallery-image:hover {
-    transform: scale(1.05); /* More zoom */
-    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25); /* Stronger shadow on hover */
+    transform: scale(1.05);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
 }
-
 
 /* Donation Section Specific Styles */
 .donate-page-section {
-    background: linear-gradient(160deg, var(--color-saffron) 0%, var(--color-deep-red) 100%); /* Deeper gradient for donation */
-    color: white;
-    padding: 100px 30px; /* More padding */
-    border-radius: 20px; /* Match other sections */
-    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.3); /* Stronger shadow */
+    background: linear-gradient(160deg, var(--color-secondary-gold) 0%, var(--color-primary-maroon) 100%);
+    color: var(--color-text-light);
+    padding: 100px 30px;
+    border-radius: 20px;
+    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.3);
 }
 
-.donate-page-section h2, .donate-page-section p {
-    color: white;
+.donate-page-section h2,.donate-page-section p {
+    color: var(--color-text-light);
 }
-.donate-page-section .section-description {
+.donate-page-section.section-description {
     color: rgba(255,255,255,0.95);
 }
 
 .donation-methods-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); /* Slightly larger min-width */
-    gap: 40px; /* More space */
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 40px;
     width: 100%;
     max-width: 950px;
-    margin: 50px auto; /* More margin */
+    margin: 50px auto;
 }
 
 .donation-card {
-    background-color: rgba(255, 255, 255, 0.2); /* Slightly less transparent */
-    backdrop-filter: blur(8px); /* More blur for frosted glass */
-    border: 1px solid rgba(255, 255, 255, 0.4); /* Stronger border */
-    border-radius: 15px; /* More rounded */
-    padding: 40px; /* More padding */
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3); /* Deeper shadow */
+    background-color: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    border-radius: 15px;
+    padding: 40px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -526,15 +562,15 @@ main {
     transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
 }
 .donation-card:hover {
-    transform: translateY(-5px); /* Subtle lift */
-    background-color: rgba(255, 255, 255, 0.25); /* Slightly brighter on hover */
+    transform: translateY(-5px);
+    background-color: rgba(255, 255, 255, 0.25);
     box-shadow: 0 12px 35px rgba(0, 0, 0, 0.4);
 }
 
 .donation-card h3 {
-    color: var(--color-gold); /* Gold for subheadings in donation section */
-    margin-bottom: 25px; /* More space */
-    font-size: 2em; /* Larger */
+    color: var(--color-secondary-gold);
+    margin-bottom: 25px;
+    font-size: 2em;
     letter-spacing: 0.8px;
 }
 
@@ -544,54 +580,53 @@ main {
     font-size: 1.1em;
 }
 
-.donation-card .detail-label {
-    font-weight: 700; /* Bolder */
+.donation-card.detail-label {
+    font-weight: 700;
     margin-top: 20px;
     margin-bottom: 8px;
     color: rgba(255, 255, 255, 0.8);
 }
-.donation-card .detail-value {
+.donation-card.detail-value {
     font-weight: bold;
-    font-size: 1.3em; /* Larger */
-    color: white;
+    font-size: 1.3em;
+    color: var(--color-text-light);
 }
 
 .copy-field {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 15px; /* More space */
+    gap: 15px;
     margin-top: 10px;
     margin-bottom: 20px;
-    background-color: rgba(255, 255, 255, 0.25); /* Slightly brighter */
+    background-color: rgba(255, 255, 255, 0.25);
     padding: 10px 15px;
-    border-radius: 8px; /* More rounded */
+    border-radius: 8px;
     width: 100%;
-    max-width: 350px; /* Increased max-width */
+    max-width: 350px;
     word-break: break-all;
-    border: 1px solid rgba(255, 255, 255, 0.3); /* Subtle border */
+    border: 1px solid rgba(255, 255, 255, 0.3);
 }
 
 .copy-field span {
     font-weight: bold;
-    color: white;
-    font-size: 1.2em; /* Larger */
+    color: var(--color-text-light);
+    font-size: 1.2em;
 }
 
-.qr-upi-card .qr-image-wrapper {
-    background-color: white;
-    border: 6px solid var(--color-gold); /* Thicker border */
-    padding: 15px; /* More padding */
-    border-radius: 15px; /* More rounded */
-    box-shadow: 0 8px 25px rgba(0,0,0,0.4); /* Stronger shadow */
+.qr-upi-card.qr-image-wrapper {
+    background-color: var(--color-text-light);
+    border: 6px solid var(--color-secondary-gold);
+    padding: 15px;
+    border-radius: 15px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.4);
     margin-top: 25px;
 }
-.qr-upi-card .qr-image {
+.qr-upi-card.qr-image {
     width: 100%;
     height: auto;
-    max-width: 280px; /* Slightly larger QR */
+    max-width: 280px;
 }
-
 
 .amount-selection-area {
     background-color: rgba(255, 255, 255, 0.2);
@@ -606,67 +641,423 @@ main {
 }
 
 .amount-selection-area h3 {
-    color: var(--color-gold);
+    color: var(--color-secondary-gold);
     margin-bottom: 25px;
     font-size: 2em;
 }
-.amount-selection-area .note {
+.amount-selection-area.note {
     color: rgba(255, 255, 255, 0.95);
 }
 
-.amount-selection-area .custom-amount-wrapper {
+.amount-selection-area.custom-amount-wrapper {
     margin: 25px auto 30px auto;
 }
 .custom-amount-input {
-    background-color: rgba(255, 255, 255, 0.95); /* Nearly opaque white */
-    color: var(--color-brown-text);
-    border: 3px solid var(--color-gold); /* Thicker gold border */
-    padding: 15px 20px; /* More padding */
-    border-radius: 10px; /* More rounded */
+    background-color: rgba(255, 255, 255, 0.95);
+    color: var(--color-dark-neutral);
+    border: 3px solid var(--color-secondary-gold);
+    padding: 15px 20px;
+    border-radius: 10px;
     width: 100%;
     max-width: 350px;
     font-size: 1.1em;
     text-align: center;
     outline: none;
     transition: border-color 0.3s ease, box-shadow 0.3s ease;
-    box-shadow: inset 0 1px 3px rgba(0,0,0,0.1); /* Subtle inner shadow */
+    box-shadow: inset 0 1px 3px rgba(0,0,0,0.1);
 }
 .custom-amount-input:focus {
-    border-color: var(--color-saffron);
-    box-shadow: 0 0 0 4px rgba(255, 153, 51, 0.3), inset 0 1px 3px rgba(0,0,0,0.15); /* More prominent focus shadow */
+    border-color: var(--color-primary-maroon);
+    box-shadow: 0 0 0 4px rgba(154, 3, 30, 0.3), inset 0 1px 3px rgba(0,0,0,0.15);
 }
-
 
 /* --- Call to Action Section --- */
 .cta-buttons {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 25px; /* More space */
+    gap: 25px;
     margin-top: 40px;
 }
 
 /* --- About Us Section --- */
 .about-us-content {
-    max-width: 850px; /* Wider content area */
+    max-width: 850px;
     margin: 30px auto;
-    padding: 0 15px; /* Internal padding */
+    padding: 0 15px;
 }
 .about-us-content p {
-    margin-bottom: 1.5em; /* More spacing */
-    text-align: justify; /* Justify text for a more formal look */
-    text-align-last: center; /* Helps last line look better with justify */
-    color: var(--color-brown-text);
+    margin-bottom: 1.5em;
+    text-align: justify;
+    text-align-last: center;
+    color: var(--color-dark-neutral);
     font-size: 1.05em;
 }
 .about-us-content p.sanskrit {
-    font-size: 1.15em; /* Larger for Sanskrit text */
+    font-family: var(--font-hindi-body); /* Noto Sans Devanagari for Hindi body text [4] */
+    font-size: 1.15em;
     font-weight: 500;
-    margin-bottom: 2.5em; /* More space after each Hindi pair */
-    color: var(--color-deep-red); /* Slightly different color for Hindi */
+    margin-bottom: 2.5em;
+    color: var(--color-primary-maroon);
 }
 
 /* --- Contact Us Section --- */
 .contact-details-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Slightl
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+    width: 100%;
+    max-width: 1000px;
+    margin-top: 40px;
+}
+
+.contact-card {
+    background-color: var(--color-cream-dark);
+    padding: 35px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.4s ease, background-color 0.4s ease, box-shadow 0.4s ease;
+    border: 1px solid rgba(0,0,0,0.08);
+}
+
+.contact-card:hover {
+    transform: translateY(-8px);
+    background-color: var(--color-light-gray);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+}
+
+.contact-card.icon-wrapper {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 20px auto;
+    background-color: var(--color-primary-maroon);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.contact-card.icon-wrapper img {
+    width: 50px;
+    height: 50px;
+    filter: invert(100%);
+}
+
+.contact-card h3 {
+    color: var(--color-dark-neutral);
+    margin-bottom: 15px;
+}
+
+.contact-card p {
+    color: var(--color-dark-neutral);
+    font-size: 1.05em;
+}
+
+.contact-card a {
+    color: var(--color-primary-maroon);
+    font-weight: 600;
+}
+
+.map-placeholder {
+    background-color: var(--color-light-gray);
+    height: 300px;
+    width: 100%;
+    max-width: 800px;
+    margin-top: 40px;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #666;
+    font-style: italic;
+    box-shadow: inset 0 0 10px rgba(0,0,0,0.1);
+}
+
+/* --- Footer --- */
+.site-footer {
+    background-color: var(--color-dark-neutral);
+    color: rgba(255, 255, 255, 0.8);
+    padding: 50px 20px;
+    text-align: center;
+    box-shadow: 0 -10px 20px rgba(0, 0, 0, 0.3);
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-moto {
+    font-size: 1.1em;
+    margin-bottom: 25px;
+    color: var(--color-text-light);
+}
+
+.footer-links {
+    margin-bottom: 25px;
+}
+
+.footer-links a {
+    color: rgba(255, 255, 255, 0.7);
+    margin: 0 15px;
+    font-size: 0.95em;
+    transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: var(--color-secondary-gold);
+}
+
+.link-separator {
+    color: rgba(255, 255, 255, 0.4);
+    margin: 0 5px;
+}
+
+.copyright {
+    font-size: 0.85em;
+    color: rgba(255, 255, 255, 0.6);
+    margin-top: 20px;
+}
+
+.copyright.sanskrit {
+    font-family: var(--font-hindi-body);
+    font-weight: 400;
+}
+
+/* --- Social Media Buttons --- */
+.social-media-buttons {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Space between icons */
+}
+
+.social-icon-link {
+    display: inline-block;
+    width: 50px; /* Size of the circular button */
+    height: 50px;
+    border-radius: 50%; /* Makes the container circular */
+    background-color: var(--color-secondary-gold); /* Background color for the button */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.social-icon-link:hover {
+    transform: translateY(-5px) scale(1.1); /* Lift and slight scale on hover */
+    background-color: var(--color-primary-maroon); /* Change color on hover */
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.4);
+}
+
+.social-icon {
+    width: 60%; /* Size of the SVG/PNG icon inside the button */
+    height: 60%;
+    filter: invert(100%); /* Makes the icons white if they are black SVGs */
+}
+
+/* --- Animations --- */
+/* Fade In Down for Header Content */
+.fade-in-down {
+    opacity: 0;
+    transform: translateY(-20px);
+    animation: fadeInDown 1s ease-out forwards;
+}
+
+.fade-in-down.delay-1 { animation-delay: 0.3s; }
+.fade-in-down.delay-2 { animation-delay: 0.6s; }
+.fade-in-down.delay-3 { animation-delay: 0.9s; }
+
+@keyframes fadeInDown {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Fade In Up for Hero Boy Image */
+.fade-in-up {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 1s ease-out forwards;
+}
+
+.fade-in-up.delay-4 { animation-delay: 1.2s; }
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Scroll Reveal for Sections */
+/* Initial state for elements that will be revealed on scroll */
+.scroll-reveal {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+/* State when element is in view */
+.scroll-reveal.in-view {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* --- Responsive Design --- */
+@media (max-width: 768px) {
+   .main-header {
+        padding: 80px 15px 120px;
+        min-height: 70vh;
+    }
+
+   .header-logo {
+        top: 15px;
+        left: 15px;
+    }
+
+   .logo-image {
+        width: 70px;
+        height: 70px;
+    }
+
+   .main-header.hero-title-hindi {
+        font-size: clamp(2.5em, 7vw, 4em);
+    }
+
+   .main-header.hero-title {
+        font-size: clamp(2em, 5vw, 3em);
+    }
+
+   .main-header.hero-tagline {
+        font-size: clamp(1.2em, 2.8vw, 1.8em);
+    }
+
+   .main-header.hero-mission {
+        font-size: clamp(1em, 2.2vw, 1.2em);
+        margin-bottom: 30px;
+    }
+
+   .hero-boy-image {
+        max-width: 250px;
+    }
+
+   .section {
+        padding: 50px 20px;
+        margin: 40px auto;
+    }
+
+   .mission-content {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+   .mission-text {
+        text-align: center;
+        padding: 0;
+    }
+   .mission-text p {
+        text-align: center;
+    }
+
+   .mission-image-wrapper {
+        flex: 0 1 auto;
+        max-width: 100%;
+    }
+
+   .impact-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+   .donation-methods-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+   .copy-field {
+        flex-direction: column;
+        gap: 10px;
+        padding: 15px;
+    }
+   .copy-field span {
+        font-size: 1em;
+    }
+   .copy-btn {
+        margin-left: 0;
+        width: 80%;
+    }
+
+   .amount-buttons {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+        gap: 10px;
+    }
+
+   .custom-amount-input {
+        max-width: 100%;
+    }
+
+   .cta-buttons {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+   .contact-details-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+   .footer-links {
+        flex-direction: column;
+        gap: 10px;
+    }
+   .footer-links a {
+        margin: 5px 0;
+    }
+   .link-separator {
+        display: none;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 { font-size: clamp(2em, 8vw, 3.5em); }
+    h2 { font-size: clamp(1.8em, 6vw, 2.5em); }
+    h3 { font-size: clamp(1.5em, 5vw, 2em); }
+
+   .main-header.hero-title-hindi {
+        font-size: clamp(2.8em, 9vw, 4.5em);
+    }
+
+   .main-header.hero-title {
+        font-size: clamp(1.8em, 7vw, 3em);
+    }
+
+   .main-header.hero-tagline {
+        font-size: clamp(1.1em, 3.5vw, 1.6em);
+    }
+
+   .main-header.hero-mission {
+        font-size: clamp(0.9em, 2.8vw, 1.1em);
+    }
+
+   .btn {
+        padding: 12px 25px;
+        font-size: 0.95em;
+    }
+
+   .primary-cta {
+        padding: 14px 30px;
+        font-size: 1.1em;
+    }
+
+   .social-icon-link {
+        width: 45px;
+        height: 45px;
+    }
+}
+
