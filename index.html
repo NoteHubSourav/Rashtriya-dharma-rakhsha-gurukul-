@@ -54,10 +54,11 @@
       </div>
     </div>
     <div class="header-overlay"></div>
-    <div class="traditional-motif"></div>
-  </header>
+    </header>
 
   <main>
+    <div class="section-divider wave-top"></div>
+
     <section id="about-us-section" class="section card-section fade-in-up">
       <h2 class="section-title">About Our Vision</h2>
       <h2 class="section-title sanskrit">हमारे बारे में – राष्ट्रीय धर्म रक्षा गुरुकुल</h2>
@@ -114,18 +115,40 @@
       </div>
     </section>
 
+    <div class="section-divider wave-bottom"></div>
+
     <section id="gurukul-life-section" class="section card-section fade-in-up delay-1">
-      <h2 class="section-title">Images of Gurukul Life</h2>
+      <h2 class="section-title">Glimpses of Gurukul Life</h2>
       <p class="section-description">Experience the serene and disciplined rhythm of life at Rashtriya Dharma Raksha Gurukul, where every day is a step towards holistic growth.</p>
       <div class="gurukul-gallery">
-        <img src="assets/images/gurukul-life-1.jpg" alt="Morning prayers at Gurukul" class="gallery-image"/>
-        <img src="assets/images/gurukul-life-2.jpg" alt="Children studying in Gurukul" class="gallery-image"/>
-        <img src="assets/images/gurukul-life-3.jpg" alt="Yoga practice at Gurukul" class="gallery-image"/>
-        <img src="assets/images/gurukul-life-4.jpg" alt="Outdoor learning at Gurukul" class="gallery-image"/>
-        <img src="assets/images/gurukul-life-5.jpg" alt="Gurukul children performing duties" class="gallery-image"/>
-        <img src="assets/images/gurukul-life-6.jpg" alt="Cultural activities at Gurukul" class="gallery-image"/>
+        <div class="gallery-item">
+          <img src="assets/images/gurukul-life-1.jpg" alt="Morning prayers at Gurukul" class="gallery-image"/>
+          <div class="gallery-overlay">Morning Prayers</div>
+        </div>
+        <div class="gallery-item">
+          <img src="assets/images/gurukul-life-2.jpg" alt="Children studying in Gurukul" class="gallery-image"/>
+          <div class="gallery-overlay">Vedic Studies</div>
+        </div>
+        <div class="gallery-item">
+          <img src="assets/images/gurukul-life-3.jpg" alt="Yoga practice at Gurukul" class="gallery-image"/>
+          <div class="gallery-overlay">Yoga & Meditation</div>
+        </div>
+        <div class="gallery-item">
+          <img src="assets/images/gurukul-life-4.jpg" alt="Outdoor learning at Gurukul" class="gallery-image"/>
+          <div class="gallery-overlay">Outdoor Learning</div>
+        </div>
+        <div class="gallery-item">
+          <img src="assets/images/gurukul-life-5.jpg" alt="Gurukul children performing duties" class="gallery-image"/>
+          <div class="gallery-overlay">Community Seva</div>
+        </div>
+        <div class="gallery-item">
+          <img src="assets/images/gurukul-life-6.jpg" alt="Cultural activities at Gurukul" class="gallery-image"/>
+          <div class="gallery-overlay">Cultural Arts</div>
+        </div>
       </div>
     </section>
+
+    <div class="section-divider wave-top reverse-colors"></div>
 
     <section id="donate-section" class="section donate-page-section card-section fade-in-up delay-2">
       <h2 class="section-title">Support Our Sacred Cause</h2>
@@ -178,6 +201,8 @@
       </div>
     </section>
 
+    <div class="section-divider wave-bottom reverse-colors"></div>
+
     <section id="contact-us-section" class="section card-section fade-in-up delay-3">
       <h2 class="section-title">Contact Us</h2>
       <h2 class="section-title sanskrit">हमसे संपर्क करें</h2>
@@ -227,9 +252,9 @@
         <span class="link-separator">|</span>
         <a href="#" class="animated-link sanskrit">गोपनीयता नीति</a>
         <span class="link-separator">|</span>
-        <a href="#" class="animated-link english-text">Terms of Service</a>
+        <a href="#" class="animated-link english-text">Terms & Conditions</a>
         <span class="link-separator">|</span>
-        <a href="#" class="animated-link sanskrit">सेवा की शर्तें</a>
+        <a href="#" class="animated-link sanskrit">नियम और शर्तें</a>
         <span class="link-separator">|</span>
         <a href="#contact-us-section" class="animated-link english-text">Contact Us</a>
         <span class="link-separator">|</span>
@@ -320,10 +345,14 @@
             });
           }
           // Close menu after clicking a link (important for mobile)
+          const mainNav = document.getElementById('main-nav');
+          const hamburger = document.getElementById('hamburger-menu');
+          const body = document.body;
+
           if (mainNav.classList.contains('nav-open')) {
             mainNav.classList.remove('nav-open');
             hamburger.classList.remove('open');
-            document.body.classList.remove('no-scroll');
+            body.classList.remove('no-scroll');
           }
         });
       });
@@ -340,14 +369,16 @@
               body.classList.toggle('no-scroll'); // Prevents scrolling behind the open menu
           });
 
-          // Close menu if clicked outside or on a link within the menu
-          mainNav.querySelectorAll('.nav-link').forEach(link => {
-            link.addEventListener('click', () => {
-              mainNav.classList.remove('nav-open');
-              hamburger.classList.remove('open');
-              body.classList.remove('no-scroll');
-            });
-          });
+          // Close menu if clicked outside of it (optional, but good UX)
+          // document.addEventListener('click', (event) => {
+          //     if (!mainNav.contains(event.target) && !hamburger.contains(event.target) && mainNav.classList.contains('nav-open')) {
+          //         mainNav.classList.remove('nav-open');
+          //         hamburger.classList.remove('open');
+          //         body.classList.remove('no-scroll');
+          //     }
+          // });
+
+          // Close menu if clicked on a link within the menu (already covered by the general anchor click listener)
       }
 
       // --- Contact Form Submission (AJAX) ---
@@ -363,13 +394,19 @@
 
               const formData = new FormData(this); // Get form data
 
+              // This is a dummy fetch for demonstration. Replace with your actual backend endpoint.
               fetch(this.action, {
                   method: 'POST',
                   body: formData
               })
-              .then(response => response.json()) // Expect a JSON response from PHP
+              .then(response => {
+                  if (!response.ok) {
+                      throw new Error('Network response was not ok');
+                  }
+                  return response.json(); // Expect a JSON response from PHP
+              })
               .then(data => {
-                  alert(data.message); // Show the message from the server
+                  alert(data.message || 'Message sent successfully!'); // Show the message from the server
                   if (data.success) {
                       contactForm.reset(); // Clear the form on success
                   }
@@ -387,5 +424,4 @@
     });
   </script>
 </body>
-            </html>
-            
+</html>
