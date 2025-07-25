@@ -1,1 +1,819 @@
+/* --- CSS Variables for Sunrise Color Palette --- */
+:root {
+    --color-saffron: #FF9933; /* Primary warm orange */
+    --color-gold: #FFD700;    /* Bright gold/yellow */
+    --color-peach: #FFA07A;   /* Soft coral/peach */
+    --color-red-accent: #E63946; /* Subtle red for strong accents */
+    --color-sky-blue: #ADD8E6; /* Light sky blue for subtle contrast */
+    --color-cream-light: #FDF5E6; /* Lightest background */
+    --color-cream-dark: #FAEBD7; /* Slightly darker cream */
+    --color-brown-text: #5A3F1F; /* Deep traditional brown for text */
+    --color-dark-neutral: #333; /* General dark text/footer */
+    --color-light-grey: #f2f2f2; /* For input backgrounds etc. */
 
+
+    --font-heading: 'Merriweather', serif;
+    --font-body: 'Open Sans', sans-serif;
+    --font-hindi: 'Noto Sans Devanagari', sans-serif; /* Specific for Hindi */
+}
+
+/* --- Global Styles & Resets --- */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--font-body);
+    line-height: 1.6;
+    color: var(--color-dark-neutral);
+    background-color: var(--color-cream-light); /* Warm background */
+    overflow-x: hidden; /* Prevents horizontal scroll from animations */
+    -webkit-font-smoothing: antialiased; /* Improves font rendering */
+    scroll-behavior: smooth;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+    color: var(--color-brown-text);
+    text-align: center;
+    margin-bottom: 0.8em;
+    line-height: 1.2;
+}
+
+h1 { font-size: clamp(2.5em, 6vw, 4.5em); } /* Responsive font size */
+h2 { font-size: clamp(2em, 4vw, 3.2em); }
+h3 { font-size: clamp(1.5em, 3vw, 2.2em); }
+
+p {
+    text-align: center;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 1em;
+}
+
+a {
+    color: var(--color-saffron);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: var(--color-gold);
+}
+
+.sr-only { /* For accessible but visually hidden labels */
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+/* --- Utility Classes --- */
+.sanskrit {
+    font-family: var(--font-hindi);
+    font-weight: 700; /* Bold for Hindi text */
+    letter-spacing: 0.5px;
+}
+
+.english-text {
+  font-family: var(--font-body);
+}
+
+.section-title {
+    margin-top: 0;
+    margin-bottom: 15px;
+}
+
+.section-description {
+    font-size: 1.1em;
+    margin-bottom: 30px;
+    color: var(--color-dark-neutral);
+    max-width: 700px;
+    line-height: 1.5;
+}
+
+.note {
+    font-style: italic;
+    color: var(--color-dark-neutral);
+    font-size: 1em;
+    margin-bottom: 25px;
+}
+
+.small-print {
+    font-size: 0.85em;
+    color: #666;
+    margin-top: 15px;
+}
+
+.italic-text {
+  font-style: italic;
+}
+
+/* --- Buttons --- */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--color-saffron);
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out, transform 0.2s ease-in-out, box-shadow 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.btn:hover {
+    background-color: var(--color-gold);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.25);
+}
+
+.btn:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.primary-cta {
+    background-color: var(--color-red-accent);
+    box-shadow: 0 6px 15px rgba(230, 57, 70, 0.4);
+    margin-top: 25px;
+    padding: 15px 35px;
+    font-size: 1.1em;
+}
+
+.primary-cta:hover {
+    background-color: #d1303d; /* A slightly darker red */
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(230, 57, 70, 0.5);
+}
+
+.secondary-btn {
+    background-color: transparent;
+    border: 2px solid var(--color-saffron);
+    color: var(--color-saffron);
+    box-shadow: none;
+}
+
+.secondary-btn:hover {
+    background-color: var(--color-saffron);
+    color: white;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+/* Copy Button Specifics */
+.copy-btn {
+    background: none;
+    border: 1px solid var(--color-saffron);
+    color: var(--color-saffron);
+    padding: 8px 15px; /* Increased padding */
+    margin-left: 10px;
+    font-size: 0.9em; /* Slightly larger text */
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
+    box-shadow: none;
+    white-space: nowrap; /* Prevent button text from wrapping */
+}
+
+.copy-btn:hover {
+    background-color: var(--color-saffron);
+    color: white;
+    transform: translateY(-1px);
+}
+
+.copy-btn.copied {
+    background-color: #28a745; /* Green for success */
+    border-color: #28a745;
+    color: white;
+    font-weight: bold;
+    transform: translateY(0);
+}
+
+/* Preset Amount Buttons */
+.amount-buttons .preset-amount {
+    background-color: var(--color-cream-dark); /* Lighter background for these */
+    color: var(--color-brown-text);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    padding: 12px 22px; /* Adjusted padding */
+    margin: 5px;
+    font-size: 1em;
+    border: 1px solid var(--color-cream-dark);
+}
+
+.amount-buttons .preset-amount:hover {
+    background-color: var(--color-peach);
+    color: var(--color-brown-text);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+.amount-buttons .preset-amount.active {
+    background-color: var(--color-saffron);
+    color: white;
+    border-color: var(--color-gold);
+    transform: scale(1.05);
+    box-shadow: 0 5px 12px rgba(0,0,0,0.2);
+}
+
+/* --- Header Section (Hero) --- */
+.main-header {
+    background: linear-gradient(135deg, var(--color-peach) 0%, var(--color-saffron) 50%, var(--color-red-accent) 100%); /* Full sunrise gradient */
+    color: white;
+    text-align: center;
+    padding: 100px 20px 80px; /* More padding at top */
+    min-height: 85vh; /* Make it a tall hero section */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+.header-top {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    z-index: 10; /* Ensure it's above other elements */
+}
+
+.hamburger-menu {
+    width: 30px;
+    height: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    cursor: pointer;
+    margin-right: auto; /* Push it to the left */
+}
+
+.hamburger-menu span {
+    display: block;
+    width: 100%;
+    height: 3px;
+    background-color: white;
+    border-radius: 2px;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Optional: Hamburger menu animation on click */
+.hamburger-menu.open span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+.hamburger-menu.open span:nth-child(2) {
+    opacity: 0;
+}
+.hamburger-menu.open span:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+}
+
+
+.logo-container {
+    flex-grow: 1; /* Allows logo to take available space and center */
+    text-align: center;
+}
+
+.logo {
+    max-width: 100px; /* Adjust logo size */
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    filter: drop-shadow(0 0 5px rgba(0,0,0,0.3));
+}
+
+.placeholder-div { /* To balance the hamburger menu on the other side if needed */
+    width: 30px; /* Same width as hamburger for centering */
+    margin-left: auto; /* Push it to the right */
+}
+
+
+.header-content {
+    z-index: 2;
+    position: relative;
+    max-width: 900px;
+    margin-top: 50px; /* Space from header-top */
+}
+
+.main-header .institute-name {
+    color: white;
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.5); /* Stronger shadow */
+    margin-bottom: 5px; /* Less space between English and Hindi names */
+    line-height: 1.1;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+.main-header .institute-name.sanskrit {
+  font-size: clamp(2em, 5vw, 4em); /* Slightly smaller for Hindi */
+  margin-bottom: 20px;
+}
+
+
+.quote-section {
+  margin-top: 30px;
+  margin-bottom: 40px;
+}
+
+.quote-text {
+  font-size: clamp(1.1em, 2.5vw, 1.6em);
+  color: rgba(255, 255, 255, 0.95);
+  text-shadow: 1px 1px 4px rgba(0,0,0,0.4);
+  line-height: 1.4;
+  font-weight: 700;
+}
+
+.english-quote-translation {
+  font-size: clamp(0.9em, 2vw, 1.2em);
+  color: rgba(255, 255, 255, 0.85);
+  margin-top: 10px;
+  line-height: 1.5;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+}
+
+.hero-image-and-button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  margin-top: 30px;
+}
+
+.namaste-boy-image {
+  width: 150px; /* Adjust size as needed */
+  height: auto;
+  border-radius: 50%; /* Make it circular */
+  border: 5px solid var(--color-gold); /* Golden border */
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.namaste-boy-image:hover {
+  transform: scale(1.05);
+}
+
+
+/* Header overlays and traditional motifs for visual depth */
+.header-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at top right, rgba(255,255,255,0.1) 0%, transparent 50%),
+                radial-gradient(circle at bottom left, rgba(0,0,0,0.1) 0%, transparent 50%); /* Subtle light/dark gradient */
+    z-index: 1;
+}
+
+/* For a very subtle traditional background texture or pattern */
+.traditional-motif {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    /* You can use a repeating SVG or a very light PNG/JPG here */
+    /* background-image: url('assets/patterns/subtle-indian-pattern.svg'); */
+    /* background-size: cover; */
+    /* opacity: 0.1; */
+    /* animation: subtlePatternPan 30s linear infinite; */
+}
+
+/* --- Main Content Sections --- */
+main {
+    padding: 40px 0;
+}
+
+.section {
+    padding: 60px 20px;
+    margin: 40px auto;
+    max-width: 1200px;
+    background-color: var(--color-cream-light); /* Consistent background for sections */
+    border-radius: 15px; /* More rounded corners */
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15); /* Deeper shadow */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: transform 0.3s ease-in-out;
+}
+
+.section:hover {
+    transform: translateY(-5px); /* Subtle lift on hover */
+}
+
+/* About Us Section specific styles */
+.about-us-content {
+    display: flex;
+    flex-wrap: wrap; /* Allows wrapping on smaller screens */
+    gap: 30px;
+    align-items: center;
+    justify-content: center;
+    max-width: 1000px;
+    margin-top: 20px;
+}
+
+.about-text {
+    flex: 1 1 500px; /* Allows text to take ample space */
+    text-align: left;
+    padding: 10px;
+}
+.about-text p {
+    text-align: left;
+    margin-bottom: 1.2em;
+    max-width: none; /* Override section p max-width */
+}
+.about-text p.last-paragraph {
+    margin-bottom: 0; /* No bottom margin for the very last paragraph */
+}
+
+.about-image-wrapper {
+    flex: 0 1 400px; /* Image takes less space, but can shrink */
+    padding: 5px;
+    border: 3px solid var(--color-saffron); /* Traditional border */
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.section-image {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 8px; /* Slightly less rounded than wrapper */
+    transition: transform 0.5s ease;
+}
+
+.about-image-wrapper:hover .section-image {
+    transform: scale(1.05); /* Zoom effect on hover */
+}
+
+
+/* Gurukul Life Section Gallery */
+.gurukul-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    width: 100%;
+    margin-top: 30px;
+}
+
+.gallery-image {
+    width: 100%;
+    height: 250px; /* Fixed height for consistent look */
+    object-fit: cover; /* Cover the area, crop if necessary */
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 2px solid var(--color-peach); /* Subtle border */
+}
+
+.gallery-image:hover {
+    transform: scale(1.03);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+
+/* Donation Section Specific Styles */
+.donate-page-section {
+    background: linear-gradient(160deg, var(--color-saffron), var(--color-red-accent)); /* Stronger gradient for donation */
+    color: white; /* Ensure text is white over dark gradient */
+    padding: 80px 20px;
+}
+
+.donate-page-section h2, .donate-page-section p {
+    color: white;
+}
+.donate-page-section .section-description {
+    color: rgba(255,255,255,0.9);
+}
+
+.donation-methods-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    width: 100%;
+    max-width: 900px;
+    margin: 40px auto;
+}
+
+.donation-card {
+    background-color: rgba(255, 255, 255, 0.15); /* Translucent white over gradient */
+    backdrop-filter: blur(5px); /* Frosted glass effect */
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.donation-card h3 {
+    color: var(--color-gold); /* Gold for subheadings in donation section */
+    margin-bottom: 20px;
+    font-size: 1.8em;
+}
+
+.donation-card p {
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 10px;
+    font-size: 1.05em;
+}
+
+.donation-card .detail-label {
+    font-weight: 600;
+    margin-top: 15px;
+    margin-bottom: 5px;
+    color: rgba(255, 255, 255, 0.7);
+}
+.donation-card .detail-value {
+    font-weight: bold;
+    font-size: 1.2em;
+    color: white;
+}
+
+.copy-field {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Center content in copy field */
+    gap: 10px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    background-color: rgba(255, 255, 255, 0.2);
+    padding: 8px 10px;
+    border-radius: 5px;
+    width: 100%;
+    max-width: 300px; /* Limit width */
+    word-break: break-all;
+}
+
+.copy-field span {
+    font-weight: bold;
+    color: white;
+    font-size: 1.1em;
+}
+
+.qr-upi-card .qr-image-wrapper {
+    background-color: white; /* White background for QR */
+    border: 5px solid var(--color-gold); /* Gold border for QR */
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    margin-top: 20px;
+}
+.qr-upi-card .qr-image {
+    width: 100%;
+    height: auto;
+    max-width: 250px; /* Ensures QR doesn't get too large */
+}
+
+
+.amount-selection-area {
+    background-color: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    max-width: 600px;
+    margin-top: 40px;
+}
+
+.amount-selection-area h3 {
+    color: var(--color-gold);
+    margin-bottom: 20px;
+}
+.amount-selection-area .note {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.amount-selection-area .custom-amount-wrapper {
+    margin: 20px auto 25px auto;
+}
+.custom-amount-input {
+    background-color: rgba(255, 255, 255, 0.8);
+    color: var(--color-brown-text);
+    border: 2px solid var(--color-gold);
+    padding: 10px 15px;
+    border-radius: 5px;
+    width: 100%;
+    max-width: 300px;
+    font-size: 1em;
+    text-align: center;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+.custom-amount-input:focus {
+    border-color: var(--color-saffron);
+    box-shadow: 0 0 0 3px rgba(255, 215, 0, 0.3);
+    outline: none;
+}
+
+
+/* --- Contact Us Section --- */
+.contact-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    width: 100%;
+    max-width: 900px;
+    margin-top: 30px;
+}
+
+.contact-info, .message-box-container {
+    background-color: var(--color-cream-dark);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    flex: 1 1 400px; /* Allows them to grow and shrink */
+    text-align: center;
+}
+
+.contact-info h3, .message-box-container h3 {
+    color: var(--color-brown-text);
+    margin-bottom: 15px;
+    font-size: 1.8em;
+}
+
+.email-address a {
+    font-size: 1.2em;
+    font-weight: 600;
+    color: var(--color-red-accent);
+    word-break: break-all;
+}
+.email-address a:hover {
+    color: var(--color-saffron);
+}
+
+.contact-note, .form-note {
+    font-size: 0.9em;
+    color: #777;
+    margin-top: 10px;
+    font-style: italic;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.form-group {
+    text-align: left;
+    width: 100%;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: var(--color-brown-text);
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-family: var(--font-body);
+    font-size: 1em;
+    color: var(--color-dark-neutral);
+    background-color: white;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-group input[type="text"]:focus,
+.form-group input[type="email"]:focus,
+.form-group textarea:focus {
+    border-color: var(--color-saffron);
+    box-shadow: 0 0 0 3px rgba(255, 153, 51, 0.2);
+    outline: none;
+}
+
+.form-group textarea {
+    resize: vertical; /* Allow vertical resizing */
+    min-height: 100px;
+}
+
+.contact-form .primary-cta {
+    margin-top: 15px;
+    align-self: center; /* Center the button */
+    width: fit-content;
+}
+
+
+/* --- Footer --- */
+.site-footer {
+    background-color: var(--color-dark-neutral);
+    color: white;
+    text-align: center;
+    padding: 40px 20px;
+    font-size: 0.9em;
+    margin-top: 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    position: relative;
+    overflow: hidden;
+}
+
+.footer-content {
+    z-index: 1; /* Ensure text is above any animations */
+}
+
+.site-footer .footer-moto {
+    font-style: italic;
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 1.1em;
+    margin-bottom: 5px; /* Less space between English and Hindi moto */
+}
+.site-footer .footer-moto.sanskrit {
+  margin-bottom: 15px;
+}
+
+
+.site-footer .footer-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px 20px; /* Row gap, column gap */
+    margin-bottom: 10px;
+}
+
+.site-footer .animated-link {
+    color: var(--color-gold);
+    font-weight: 500;
+    transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.site-footer .animated-link:hover {
+    color: white;
+    transform: translateY(-2px);
+}
+
+.site-footer .link-separator {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.site-footer .copyright {
+    color: rgba(255, 255, 255, 0.7);
+    margin-top: 5px;
+    line-height: 1.4;
+}
+.site-footer .copyright .sanskrit {
+    margin-left: 5px;
+}
+
+/* --- Animations --- */
+
+/* Keyframe for fade-in from top */
+@keyframes fadeInDown {
+    from { opacity: 0; transform: translateY(-30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Keyframe for fade-in from bottom */
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(50px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Initial hidden state for elements that will animate on scroll */
+.fade-in-down,
+.fade-in-up {
+    opacity: 0;
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+/* Elements that animate immediately on page load */
+.institute-name { animation: fadeInDown 1.2s ease-out forwards; }
+.institute-name.sanskrit { animation: fadeInDown 1.2s ease-out forwards; animation-delay: 0.2s; } /* Slightly delayed */
+.quote-text { animation: fadeInDown 1.2s ease-out forwards; animation-delay: 0.4s; }
+.english-quote-translation { animation: fadeInDown 1.2s ease-out forwards; animation-delay:
