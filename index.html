@@ -27,6 +27,14 @@
       <div class="placeholder-div"></div>
     </div>
 
+    <nav class="main-nav" id="main-nav">
+      <ul>
+        <li><a href="#about-us-section" class="nav-link">About Us</a></li>
+        <li><a href="#gurukul-life-section" class="nav-link">Gurukul Life</a></li>
+        <li><a href="#donate-section" class="nav-link">Donate</a></li>
+        <li><a href="#contact-us-section" class="nav-link">Contact Us</a></li>
+        </ul>
+    </nav>
     <div class="header-content">
       <h1 class="institute-name fade-in-down">Rashtriya Dharma Raksha Gurukul</h1>
       <h1 class="institute-name sanskrit fade-in-down delay-1">राष्ट्रीय धर्म रक्षा गुरुकुल</h1>
@@ -89,7 +97,7 @@
             Whether it is a 7-year-old reciting mantras or a teen contemplating Karma, every student here walks the path of wisdom and inner strength.
           </p>
           <p class="hindi-text sanskrit">
-            चाहे वह 7 वर्ष का बालक हो जो मंत्रों का जाप करता है, या कोई किशोर जो कर्म के रहस्य पर चिंतन करता है — हर विद्यार्थी यहाँ ज्ञान और आत्मबल के मार्ग पर अग्रसर होता है।
+            चाहे वह 7 वर्ष का बालक हो जो मंत्रों का जाप करता हो, या कोई किशोर जो कर्म के रहस्य पर चिंतन करता हो — हर विद्यार्थी यहाँ ज्ञान और आत्मबल के मार्ग पर अग्रसर होता है।
           </p>
           <p class="english-text last-paragraph">
             Join us as we build this movement—brick by brick, soul by soul.
@@ -186,7 +194,7 @@
 
         <div class="message-box-container">
           <h3>Send Us a Message</h3>
-          <form class="contact-form" action="#" method="POST">
+          <form class="contact-form" action="send_email.php" method="POST">
             <p class="form-note">
               Please note: This is a demo form. For actual email sending, a server-side script is required.
             </p>
@@ -311,22 +319,73 @@
               behavior: 'smooth'
             });
           }
+          // Close menu after clicking a link (important for mobile)
+          if (mainNav.classList.contains('nav-open')) {
+            mainNav.classList.remove('nav-open');
+            hamburger.classList.remove('open');
+            document.body.classList.remove('no-scroll');
+          }
         });
       });
 
-      // --- Hamburger Menu (Basic Toggle) ---
+      // --- Hamburger Menu (Functional Toggle) ---
       const hamburger = document.getElementById('hamburger-menu');
-      // In a real application, you'd toggle a navigation menu here.
-      // For this static site, it's just a visual element.
-      if (hamburger) {
+      const mainNav = document.getElementById('main-nav');
+      const body = document.body; // To disable scroll when menu is open
+
+      if (hamburger && mainNav && body) {
           hamburger.addEventListener('click', () => {
               hamburger.classList.toggle('open');
-              // Add/remove a class on a navigation element to show/hide it
-              // Example: document.querySelector('.main-nav').classList.toggle('nav-open');
-              alert('Hamburger menu clicked! (Navigation menu would appear here)');
+              mainNav.classList.toggle('nav-open');
+              body.classList.toggle('no-scroll'); // Prevents scrolling behind the open menu
+          });
+
+          // Close menu if clicked outside or on a link within the menu
+          mainNav.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', () => {
+              mainNav.classList.remove('nav-open');
+              hamburger.classList.remove('open');
+              body.classList.remove('no-scroll');
+            });
+          });
+      }
+
+      // --- Contact Form Submission (AJAX) ---
+      const contactForm = document.querySelector('.contact-form');
+      if (contactForm) {
+          contactForm.addEventListener('submit', function(e) {
+              e.preventDefault(); // Prevent default form submission
+
+              const submitButton = this.querySelector('button[type="submit"]');
+              const originalButtonText = submitButton.textContent;
+              submitButton.textContent = 'Sending...';
+              submitButton.disabled = true; // Disable button to prevent multiple submissions
+
+              const formData = new FormData(this); // Get form data
+
+              fetch(this.action, {
+                  method: 'POST',
+                  body: formData
+              })
+              .then(response => response.json()) // Expect a JSON response from PHP
+              .then(data => {
+                  alert(data.message); // Show the message from the server
+                  if (data.success) {
+                      contactForm.reset(); // Clear the form on success
+                  }
+              })
+              .catch(error => {
+                  console.error('Error:', error);
+                  alert('There was an error sending your message. Please try again later.');
+              })
+              .finally(() => {
+                  submitButton.textContent = originalButtonText; // Restore button text
+                  submitButton.disabled = false; // Re-enable button
+              });
           });
       }
     });
   </script>
 </body>
-</html>
+            </html>
+            
