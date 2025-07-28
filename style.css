@@ -192,6 +192,26 @@ a:hover {
     box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
 }
 
+/* New Volunteer Button in Header */
+.volunteer-btn {
+    background-color: var(--color-gold); /* Gold color for visibility */
+    color: var(--color-brown-text);
+    padding: 8px 15px;
+    font-size: 0.9em;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    margin-left: var(--spacing-md); /* Space from logo */
+    white-space: nowrap; /* Prevent text wrapping */
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.volunteer-btn:hover {
+    background-color: darken(var(--color-gold), 10%); /* Darken on hover */
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+}
+
+
 /* Copy Button Specifics */
 .copy-btn {
     background: none;
@@ -285,6 +305,7 @@ a:hover {
     position: relative; /* For animation origin */
     z-index: 110; /* Above nav when open */
     transition: all 0.3s ease-in-out;
+    margin-right: var(--spacing-md); /* Space from logo */
 }
 
 .hamburger-menu span {
@@ -313,6 +334,7 @@ a:hover {
 .logo-container {
     flex-grow: 1; /* Allows logo to take available space and center */
     text-align: center;
+    margin-left: var(--spacing-md); /* Space from hamburger */
 }
 
 .logo {
@@ -323,9 +345,8 @@ a:hover {
     filter: drop-shadow(0 0 5px rgba(0,0,0,0.3));
 }
 
-.placeholder-div { /* To balance the hamburger menu on the other side if needed */
-    width: 30px; /* Same width as hamburger for centering */
-}
+/* Removed placeholder-div as volunteer button now takes its place */
+
 
 .main-nav {
     position: fixed;
@@ -369,10 +390,13 @@ a:hover {
     opacity: 1;
     transform: translateY(0);
 }
-.main-nav.nav-open li:nth-child(1) { transition-delay: 0.1s; }
-.main-nav.nav-open li:nth-child(2) { transition-delay: 0.2s; }
-.main-nav.nav-open li:nth-child(3) { transition-delay: 0.3s; }
-.main-nav.nav-open li:nth-child(4) { transition-delay: 0.4s; }
+/* Adjust transition delays for new items */
+.main-nav.nav-open li:nth-child(1) { transition-delay: 0.1s; } /* About Us */
+.main-nav.nav-open li:nth-child(2) { transition-delay: 0.15s; } /* Mission */
+.main-nav.nav-open li:nth-child(3) { transition-delay: 0.2s; } /* Gurukul Life */
+.main-nav.nav-open li:nth-child(4) { transition-delay: 0.25s; } /* Donate */
+.main-nav.nav-open li:nth-child(5) { transition-delay: 0.3s; } /* Thank You Donators */
+.main-nav.nav-open li:nth-child(6) { transition-delay: 0.35s; } /* Contact Us */
 
 
 .main-nav a {
@@ -391,6 +415,27 @@ a:hover {
     color: var(--color-gold);
     background-color: rgba(255, 255, 255, 0.1);
     transform: translateX(5px);
+}
+
+.nav-social-icons {
+    margin-top: var(--spacing-xl);
+    display: flex;
+    gap: var(--spacing-lg);
+}
+
+.nav-social-icons a {
+    color: white;
+    font-size: 2em;
+    padding: var(--spacing-sm);
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.1);
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
+}
+
+.nav-social-icons a:hover {
+    color: var(--color-gold);
+    background-color: rgba(255, 255, 255, 0.2);
+    transform: scale(1.1);
 }
 
 
@@ -617,8 +662,58 @@ main {
     transition: transform 0.5s ease;
 }
 
-.about-image-wrapper:hover .section-image {
+.about-image-wrapper:hover .section-image,
+.mission-image-wrapper:hover .section-image { /* Apply to new mission section image too */
     transform: scale(1.05); /* Zoom effect on hover */
+}
+
+/* New Mission Section Styles */
+.mission-content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing-lg);
+    align-items: center;
+    justify-content: center;
+    max-width: 1000px;
+    margin-top: var(--spacing-md);
+}
+
+.mission-text-container {
+    flex: 1 1 500px;
+    text-align: left;
+    padding: var(--spacing-sm);
+}
+
+.mission-text-container p {
+    text-align: left;
+    margin-bottom: 1.2em;
+    max-width: none;
+}
+
+.mission-image-wrapper {
+    flex: 0 1 400px;
+    padding: var(--spacing-xs);
+    border: 3px solid var(--color-saffron);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+/* Video Section Styles */
+.video-container {
+    width: 100%;
+    max-width: 800px; /* Max width for the video player */
+    margin-top: var(--spacing-lg);
+    background-color: #000; /* Black background for video player */
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+}
+
+.video-container video {
+    width: 100%;
+    height: auto;
+    display: block;
 }
 
 
@@ -742,82 +837,142 @@ main {
 .copy-field {
     display: flex;
     align-items: center;
-    justify-content: center; /* Center content in copy field */
-    gap: var(--spacing-sm);
-    margin-top: var(--spacing-xs);
-    margin-bottom: var(--spacing-md);
     background-color: rgba(255, 255, 255, 0.2);
-    padding: 8px 10px;
     border-radius: 5px;
-    width: 100%;
-    max-width: 300px; /* Limit width */
-    word-break: break-all;
+    padding: 5px 10px;
+    margin-bottom: var(--spacing-sm);
+    box-shadow: inset 0 1px 3px rgba(0,0,0,0.1);
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .copy-field span {
-    font-weight: bold;
     color: white;
     font-size: 1.1em;
+    font-weight: 500;
+    margin-right: var(--spacing-sm);
+    user-select: all; /* Allows easy text selection */
 }
 
-.qr-upi-card .qr-image-wrapper {
-    background-color: white; /* White background for QR */
-    border: 5px solid var(--color-gold); /* Gold border for QR */
-    padding: var(--spacing-sm);
-    border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+.qr-image-wrapper {
     margin-top: var(--spacing-md);
-}
-.qr-upi-card .qr-image {
-    width: 100%;
-    height: auto;
-    max-width: 250px; /* Ensures QR doesn't get too large */
+    padding: var(--spacing-sm);
+    background-color: white; /* White background for QR code */
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
 }
 
+.qr-image {
+    width: 180px; /* Standard size for QR code */
+    height: 180px;
+    display: block;
+}
 
 .amount-selection-area {
+    margin-top: var(--spacing-xxl);
+    width: 100%;
+    max-width: 700px;
     background-color: rgba(255, 255, 255, 0.15);
     backdrop-filter: blur(5px);
     border: 1px solid rgba(255, 255, 255, 0.3);
     border-radius: 10px;
     padding: var(--spacing-lg);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-    width: 100%;
-    max-width: 600px;
-    margin-top: var(--spacing-xl);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
 }
-
 .amount-selection-area h3 {
     color: var(--color-gold);
     margin-bottom: var(--spacing-md);
 }
 .amount-selection-area .note {
-    color: rgba(255, 255, 255, 0.9);
+    color: rgba(255,255,255,0.8);
 }
 
-.amount-selection-area .custom-amount-wrapper {
-    margin: var(--spacing-md) auto var(--spacing-lg) auto;
+.amount-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: var(--spacing-sm);
+    margin-bottom: var(--spacing-md);
 }
+
+.custom-amount-wrapper {
+    margin-bottom: var(--spacing-lg);
+    text-align: center;
+}
+
 .custom-amount-input {
-    background-color: rgba(255, 255, 255, 0.8);
-    color: var(--color-brown-text);
-    border: 2px solid var(--color-gold);
-    padding: 10px 15px;
-    border-radius: 5px;
     width: 100%;
     max-width: 300px;
-    font-size: 1em;
+    padding: 12px 15px;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    border-radius: 8px;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: white;
+    font-size: 1.1em;
     text-align: center;
-    transition: border-color 0.3s ease, box-shadow 0.3s ease;
-}
-.custom-amount-input:focus {
-    border-color: var(--color-saffron);
-    box-shadow: 0 0 0 3px var(--color-form-focus);
     outline: none;
+    transition: border-color 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.custom-amount-input::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.custom-amount-input:focus {
+    border-color: var(--color-gold);
+    background-color: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 0 0 3px var(--color-form-focus);
 }
 
 
-/* --- Contact Us Section --- */
+/* New Thank You Section Styles */
+.donators-list-container {
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 10px;
+    padding: var(--spacing-lg);
+    margin-top: var(--spacing-xl);
+    width: 100%;
+    max-width: 700px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    color: var(--color-dark-neutral);
+}
+
+.donators-list-container h3 {
+    color: var(--color-brown-text);
+    margin-bottom: var(--spacing-md);
+}
+
+.donators-list-container ul {
+    list-style: none; /* Remove default bullets */
+    padding: 0;
+    margin: 0;
+    columns: 2; /* Display in two columns for better readability */
+    column-gap: var(--spacing-xl);
+    max-height: 300px; /* Limit height and make scrollable if many names */
+    overflow-y: auto;
+    border: 1px solid var(--color-cream-dark);
+    border-radius: 5px;
+    padding: var(--spacing-md);
+}
+
+.donators-list-container li {
+    background-color: var(--color-cream-light);
+    border-bottom: 1px dashed var(--color-light-grey);
+    padding: var(--spacing-sm) 0;
+    text-align: center;
+    font-weight: 500;
+    color: var(--color-brown-text);
+    page-break-inside: avoid; /* Prevent breaking inside a list item */
+    break-inside: avoid-column; /* CSS3 for column breaking */
+}
+
+.donators-list-container li:last-child {
+    border-bottom: none;
+}
+
+
+/* Contact Us Section Styles */
 .contact-content {
     display: flex;
     flex-wrap: wrap;
@@ -825,296 +980,260 @@ main {
     gap: var(--spacing-lg);
     width: 100%;
     max-width: 900px;
-    margin-top: var(--spacing-lg);
+    margin-top: var(--spacing-xl);
 }
 
-.contact-info, .message-box-container {
+.contact-info {
+    flex: 1 1 300px; /* Takes up space, can shrink */
     background-color: var(--color-cream-dark);
-    padding: var(--spacing-lg);
     border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-    flex: 1 1 400px; /* Allows them to grow and shrink */
+    padding: var(--spacing-lg);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
     text-align: center;
-}
-
-.contact-info h3, .message-box-container h3 {
-    color: var(--color-brown-text);
-    margin-bottom: 15px;
-    font-size: 1.8em;
-}
-
-.email-address a {
-    font-size: 1.2em;
-    font-weight: 600;
-    color: var(--color-red-accent);
-    word-break: break-all;
-}
-.email-address a:hover {
-    color: var(--color-saffron);
-}
-
-.contact-note, .form-note {
-    font-size: 0.9em;
-    color: #777;
-    margin-top: var(--spacing-sm);
-    font-style: italic;
-}
-
-.contact-form {
     display: flex;
     flex-direction: column;
-    gap: 15px;
-    margin-top: var(--spacing-md);
+    justify-content: center; /* Vertically center content */
 }
 
-.form-group {
-    text-align: left;
-    width: 100%;
-}
-
-.form-group label {
-    display: block;
-    margin-bottom: var(--spacing-xs);
-    font-weight: 600;
+.contact-info h3 {
     color: var(--color-brown-text);
+    margin-bottom: var(--spacing-md);
 }
 
-.form-group input[type="text"],
-.form-group input[type="email"],
-.form-group textarea {
-    width: 100%;
-    padding: 12px;
-    border: none; /* Remove box */
-    border-bottom: 2px solid var(--color-border-light); /* Only bottom border */
-    background-color: transparent; /* Transparent background */
-    border-radius: 0; /* Remove border-radius */
-    font-family: var(--font-body);
-    font-size: 1em;
-    color: var(--color-dark-neutral);
-    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+.contact-info .email-address a {
+    font-size: 1.2em;
+    font-weight: 600;
+    color: var(--color-saffron);
+    word-break: break-all; /* Ensures long emails don't overflow */
 }
 
-.form-group input[type="text"]:focus,
-.form-group input[type="email"]:focus,
-.form-group textarea:focus {
-    border-color: var(--color-saffron);
-    box-shadow: 0 2px 0 0 var(--color-saffron); /* Subtle bottom shadow */
-    outline: none;
+.contact-info .contact-note {
+    font-size: 0.9em;
+    color: #666;
+    margin-top: var(--spacing-sm);
 }
 
-.form-group textarea {
-    resize: vertical; /* Allow vertical resizing */
-    min-height: 100px;
-}
-
-.contact-form .primary-cta {
-    margin-top: 15px;
-    align-self: center; /* Center the button */
-    width: fit-content;
-}
+/* Removed message-box-container and contact-form styles as they are removed from HTML */
 
 
 /* --- Footer --- */
 .site-footer {
-    background: linear-gradient(135deg, var(--color-dark-neutral), #222); /* Darker, subtle gradient */
+    background-color: var(--color-brown-text);
     color: white;
+    padding: var(--spacing-xxl) var(--spacing-md);
     text-align: center;
-    padding: var(--spacing-xl) var(--spacing-md);
-    font-size: 0.9em;
-    margin-top: var(--spacing-xxl);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 15px;
-    position: relative;
-    overflow: hidden;
-    box-shadow: inset 0 10px 20px rgba(0, 0, 0, 0.3); /* Inner shadow for depth */
+    box-shadow: 0 -5px 15px rgba(0, 0, 0, 0.2);
 }
 
 .footer-content {
-    z-index: 1; /* Ensure text is above any animations */
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
-.site-footer .footer-moto {
-    font-style: italic;
-    color: rgba(255, 255, 255, 0.8);
+.footer-moto {
     font-size: 1.1em;
-    margin-bottom: var(--spacing-xs); /* Less space between English and Hindi moto */
-}
-.site-footer .footer-moto.sanskrit {
-  margin-bottom: var(--spacing-md);
+    margin-bottom: var(--spacing-md);
+    color: rgba(255, 255, 255, 0.9);
 }
 
-
-.site-footer .footer-links {
+.footer-links {
+    margin-top: var(--spacing-lg);
+    margin-bottom: var(--spacing-lg);
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: var(--spacing-sm) var(--spacing-md); /* Row gap, column gap */
-    margin-bottom: var(--spacing-sm);
+    gap: var(--spacing-sm);
 }
 
-.site-footer .animated-link {
-    color: var(--color-gold);
+.footer-links a {
+    color: white;
     font-weight: 500;
+    padding: var(--spacing-xs) var(--spacing-sm);
     transition: color 0.3s ease, transform 0.2s ease;
 }
 
-.site-footer .animated-link:hover {
-    color: white;
+.footer-links a:hover {
+    color: var(--color-gold);
     transform: translateY(-2px);
 }
 
-.site-footer .link-separator {
+.footer-links .link-separator {
     color: rgba(255, 255, 255, 0.5);
+    padding: var(--spacing-xs) 0;
 }
 
-.site-footer .copyright {
+.footer-social-icons {
+    margin-top: var(--spacing-lg);
+    margin-bottom: var(--spacing-lg);
+    display: flex;
+    justify-content: center;
+    gap: var(--spacing-md);
+}
+
+.footer-social-icons a {
+    color: white;
+    font-size: 1.8em;
+    transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.footer-social-icons a:hover {
+    color: var(--color-gold);
+    transform: scale(1.2);
+}
+
+
+.copyright {
+    font-size: 0.9em;
     color: rgba(255, 255, 255, 0.7);
-    margin-top: var(--spacing-xs);
-    line-height: 1.4;
-}
-.site-footer .copyright .sanskrit {
-    margin-left: var(--spacing-xs);
+    margin-top: var(--spacing-md);
 }
 
-/* --- Animations --- */
 
-/* Keyframe for fade-in from top */
-@keyframes fadeInDown {
-    from { opacity: 0; transform: translateY(-30px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-
-/* Keyframe for fade-in from bottom */
-@keyframes fadeInUp {
-    from { opacity: 0; transform: translateY(50px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-
-/* Initial hidden state for elements that will animate on scroll */
+/* --- Animations (already existing, ensuring consistency) --- */
+/* Base state for animated elements */
 .fade-in-down,
 .fade-in-up {
     opacity: 0;
+    transform: translateY(20px);
     transition: opacity 0.8s ease-out, transform 0.8s ease-out;
 }
 
-/* Class added by Intersection Observer when element is in view */
-.in-view {
+.fade-in-down {
+    transform: translateY(-20px);
+}
+
+/* State when element is in view */
+.fade-in-down.in-view,
+.fade-in-up.in-view {
     opacity: 1;
     transform: translateY(0);
 }
 
-/* Elements that animate immediately on page load (hero section) */
-.institute-name { animation: fadeInDown 1.2s ease-out forwards; }
-.institute-name.sanskrit { animation: fadeInDown 1.2s ease-out forwards; animation-delay: 0.2s; } /* Slightly delayed */
-.quote-text { animation: fadeInDown 1.2s ease-out forwards; animation-delay: 0.4s; }
-.english-quote-translation { animation: fadeInDown 1.2s ease-out forwards; animation-delay: 0.6s; }
-.hero-image-and-button { animation: fadeInUp 1.2s ease-out forwards; animation-delay: 0.8s; }
-
-/* Delay for sections animating on scroll */
-.section.delay-1.in-view { transition-delay: 0.1s; }
-.section.delay-2.in-view { transition-delay: 0.2s; }
-.section.delay-3.in-view { transition-delay: 0.3s; }
+/* Delay for sequential animations */
+.delay-1 { transition-delay: 0.2s; }
+.delay-2 { transition-delay: 0.4s; }
+.delay-3 { transition-delay: 0.6s; }
+.delay-4 { transition-delay: 0.8s; }
 
 
-/* --- Media Queries for Responsiveness --- */
+/* --- Responsive Design Adjustments --- */
 @media (max-width: 768px) {
-    .header-content {
-        margin-top: var(--spacing-xl);
-    }
-
-    .main-nav ul {
-        padding: 0 var(--spacing-md);
-    }
-    .main-nav li {
-        margin-bottom: var(--spacing-lg);
-    }
-    .main-nav a {
-        font-size: 1.5em;
-    }
-
-    .about-us-content {
-        flex-direction: column;
-        text-align: center;
-    }
-    .about-text p {
-        text-align: center;
-    }
-
-    .donation-methods-grid {
-        grid-template-columns: 1fr; /* Stack columns on smaller screens */
-    }
-
-    .contact-content {
-        flex-direction: column;
-    }
-    .contact-info, .message-box-container {
-        flex: 1 1 auto;
-    }
-    .contact-form .primary-cta {
-        width: 100%;
-    }
-
-    .site-footer .footer-links {
-        flex-direction: column;
-        gap: var(--spacing-sm);
-    }
-    .site-footer .link-separator {
-        display: none; /* Hide separators when stacked */
-    }
-}
-
-@media (max-width: 480px) {
-    h1 { font-size: 2.2em; }
-    h2 { font-size: 1.8em; }
-    h3 { font-size: 1.4em; }
-
     .main-header {
-        padding: 80px var(--spacing-md) var(--spacing-xl);
+        padding-top: 80px; /* Adjust header padding for smaller screens */
         min-height: 70vh;
+    }
+
+    .header-top {
+      padding: var(--spacing-sm);
     }
 
     .logo {
         max-width: 80px;
     }
 
+    .main-header .institute-name {
+        font-size: clamp(2em, 8vw, 3.5em);
+    }
+    .main-header .institute-name.sanskrit {
+      font-size: clamp(1.8em, 7vw, 3.2em);
+    }
+
+    .quote-text {
+        font-size: clamp(1em, 3.5vw, 1.4em);
+    }
+    .english-quote-translation {
+        font-size: clamp(0.8em, 3vw, 1em);
+    }
+
     .hero-image-and-button {
-      flex-direction: column;
+      margin-top: var(--spacing-lg);
+    }
+
+    .namaste-boy-image {
+      width: 120px;
+      border-width: 3px;
+    }
+
+    .main-nav a {
+        font-size: 1.5em; /* Smaller menu links */
+    }
+
+    .nav-social-icons {
+      margin-top: var(--spacing-lg);
       gap: var(--spacing-md);
     }
-    .namaste-boy-image {
-        width: 120px;
+    .nav-social-icons a {
+      font-size: 1.5em;
     }
-    .hero-btn {
-        padding: 12px 25px;
-        font-size: 1em;
-    }
+
 
     .section {
-        padding: var(--spacing-xl) var(--spacing-sm);
-        margin: var(--spacing-md) auto;
+        padding: var(--spacing-lg);
+        margin: var(--spacing-lg) auto;
     }
 
-    .gallery-image {
-        height: 200px; /* Smaller height for gallery images */
+    .about-us-content,
+    .mission-content {
+        flex-direction: column;
+        text-align: center;
     }
 
-    .donation-card, .amount-selection-area {
-        padding: var(--spacing-md);
+    .about-text, .mission-text-container {
+        padding: 0; /* Remove padding for smaller screens */
+    }
+    .about-text p, .mission-text-container p {
+        text-align: center; /* Center text on mobile */
+    }
+
+    .about-image-wrapper,
+    .mission-image-wrapper {
+        flex: none;
+        width: 90%; /* Take more width on smaller screens */
+        max-width: 400px;
+    }
+
+    .donation-methods-grid {
+        grid-template-columns: 1fr; /* Single column layout */
+    }
+
+    .copy-field {
+        width: 100%;
+        justify-content: center;
     }
 
     .amount-buttons {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
+        flex-direction: column; /* Stack amount buttons */
+        align-items: center;
     }
+
     .amount-buttons .preset-amount {
-        flex: 1 1 45%; /* Two buttons per row */
-        margin: var(--spacing-xs);
+        width: 80%; /* Make buttons wider */
+        max-width: 250px;
     }
+
     .custom-amount-input {
-        max-width: 100%;
+        max-width: 80%;
+    }
+
+    .contact-content {
+      flex-direction: column;
+    }
+
+    .donators-list-container ul {
+        columns: 1; /* Single column for donator names on small screens */
+        max-height: 250px; /* Adjust height */
+    }
+
+    .footer-links {
+      flex-direction: column;
+      gap: var(--spacing-xs);
+    }
+    .footer-links .link-separator {
+      display: none; /* Hide separators on small screens */
+    }
+
+    .footer-social-icons {
+        margin-top: var(--spacing-md);
+        margin-bottom: var(--spacing-md);
     }
 }
-
