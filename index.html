@@ -267,7 +267,7 @@
           <input type="number" id="custom-amount-input" placeholder="Enter custom amount (e.g., 500)" class="custom-amount-input" min="11" />
         </div>
         <button class="donate-button primary-cta btn">Proceed to Donate</button>
-        <p class="small-print">You will be redirected to a secure payment gateway. (This is a placeholder for integration.)</p>
+        <p class="small-print">You will be redirected to your UPI app to complete the payment.</p>
       </div>
     </section>
 
@@ -359,4 +359,129 @@
             setTimeout(() => {
               button.textContent = originalText;
               button.classList.remove('copied');
-            }, 2
+            }, 2000);
+          }).catch(err => {
+            console.error('Failed to copy: ', err);
+            alert('Failed to copy. Please copy manually: ' + textToCopy);
+          });
+        });
+      });
+
+      // --- Preset amount selection ---
+      const customAmountInput = document.getElementById('custom-amount-input');
+      const presetButtons = document.querySelectorAll('.preset-amount');
+
+      presetButtons.forEach(button => {
+        button.addEventListener('click', () => {
+          // Remove active class from all buttons
+          presetButtons.forEach(btn => btn.classList.remove('active'));
+          // Add active class to the clicked button
+          button.classList.add('active');
+          const amount = button.getAttribute('data-amount');
+          customAmountInput.value = amount;
+        });
+      });
+      // --- Main Donate Button functionality ---
+      document.querySelector('.donate-button').addEventListener('click', () => {
+        let donationAmount = customAmountInput.value;
+        if (!donationAmount || parseFloat(donationAmount) < 11) {
+          alert("Please enter a valid donation amount (minimum ₹11).");
+          return;
+        }
+
+        // Construct UPI deep link with the custom amount
+        const upiId = '917428689506@federal';
+        const payeeName = 'ROSHAN SINGH';
+        const merchantCode = '0000'; // Or actual merchant code if available
+        const purposeCode = '00'; // Or actual purpose code if available
+        const currency = 'INR';
+        const mode = '01'; // '01' for push mode (pay)
+        const orgId = '159049'; // Or actual organization ID if available
+        const signature = 'MEYCIQCuY2p5bzPOBIIG7BW7RkDn46Lwl4VtkyMDpIlW8M40HgIhAK0VFahWBLmPyL6PfTL7d7klWknZcieTJzmVHzVJfKlQ'; // This might need to be dynamically generated for production use
+
+        const upiLink = `upi://pay?pa=${upiId}&pn=${encodeURIComponent(payeeName)}&mc=${merchantCode}&purpose=${purposeCode}&cu=${currency}&am=${donationAmount}&mode=${mode}&orgid=${orgId}&sign=${signature}`;
+        
+        // Redirect to the UPI app
+        window.location.href = upiLink;
+      });
+
+      // --- Scroll Reveal Animations ---
+      const animateOnScroll = (entries, observer) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('in-view');
+            observer.unobserve(entry.target); // Stop observing once it's visible
+          }
+        });
+      };
+
+      const observer = new IntersectionObserver(animateOnScroll, {
+        root: null, // viewport
+        rootMargin: '0px',
+        threshold: 0.1 // 10% of element visible to trigger
+      });
+      document.querySelectorAll('.fade-in-up, .fade-in-down').forEach(element => {
+        observer.observe(element);
+      });
+      // --- Smooth scroll to anchor links ---
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+          e.preventDefault();
+          const target = document.querySelector(this.getAttribute('href'));
+          if (target) {
+            target.scrollIntoView({
+              behavior: 'smooth'
+            });
+          }
+          // Close menu after clicking a link (important for mobile)
+          const mainNav = document.getElementById('main-nav');
+          const hamburger = document.getElementById('hamburger-menu');
+          const body = document.body;
+
+          if (mainNav.classList.contains('nav-open')) {
+            mainNav.classList.remove('nav-open');
+            hamburger.classList.remove('open');
+            body.classList.remove('no-scroll');
+          }
+        });
+      });
+      // --- Hamburger Menu (Functional Toggle) ---
+      const hamburger = document.getElementById('hamburger-menu');
+      const mainNav = document.getElementById('main-nav');
+      const body = document.body; // To disable scroll when menu is open
+
+      if (hamburger && mainNav && body) {
+          hamburger.addEventListener('click', () => {
+              hamburger.classList.toggle('open');
+              mainNav.classList.toggle('nav-open');
+              body.classList.toggle('no-scroll'); // Prevents scrolling behind the open menu
+          });
+      }
+
+      // Placeholder for mission.txt loading
+      // You can implement this using Fetch API if you host mission.txt separately
+      // For now, I've placed placeholder text directly in the HTML.
+      // If you upload mission.txt, you can uncomment and adjust this:
+      /*
+      fetch('mission.txt')
+          .then(response => response.text())
+          .then(data => {
+              const missionTextElementEnglish = document.getElementById('mission-text-english');
+              const missionTextElementHindi = document.getElementById('mission-text-hindi');
+              if (missionTextElementEnglish) {
+                  // You might need to parse the content if mission.txt has both languages
+                  missionTextElementEnglish.textContent = data;
+              }
+              if (missionTextElementHindi) {
+                  // If mission.txt has distinct sections for languages
+                  // You'd need a more robust parsing logic here
+                  // For simplicity, let's assume mission.txt will replace the English text for now.
+              }
+          })
+          .catch(error => console.error('Error loading mission.txt:', error));
+      */
+
+    });
+  </script>
+</body>
+</html>
