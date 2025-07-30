@@ -1,17 +1,19 @@
 /* --- CSS Variables for Premium Spiritual Palette --- */
-:root {
-    --color-primary: #E87D00; /* Royal Saffron */
-    --color-secondary: #003D2E; /* Deep Forest Green */
-    --color-accent: #C6A300; /* Antique Gold */
-    --color-background-light: #FDF8F2; /* Ivory White */
-    --color-section-bg: #F9E5C2; /* Blush Beige */
-    --color-heading-text: #1C1C1C; /* Charcoal Black */
-    --color-body-text: #5A5A5A; /* Ash Grey */
-    --color-button-hover: #B65C00; /* Copper Orange */
 
-    --font-heading: 'Merriweather', serif; /* Retaining for now, but suggested 'Lora' or 'Playfair Display' are good alternatives. */
-    --font-body: 'Open Sans', sans-serif;
-    --font-hindi: 'Tiro Devanagari Sanskrit', sans-serif; /* Specific for Hindi. Suggested 'Tiro Devanagari' is good. */
+:root {
+    --color-primary: #FF6B00; /* Orange */
+    --color-secondary: #333333; /* Dark Grey for nav/dark elements */
+    --color-accent: #00B4D8; /* Sky Blue */
+    --color-background-light: #FFFFFF; /* White */
+    --color-section-bg: #F8F8F8; /* Very Light Grey for sections */
+    --color-heading-text: #1E1E1E; /* Blackish */
+    --color-body-text: #1E1E1E; /* Blackish */
+    --color-button-hover: #FDC500; /* Yellow for buttons and highlights */
+    --color-highlight-text: #FDC500; /* Yellow for highlights */
+
+    --font-heading: 'Inter', sans-serif;
+    --font-body: 'Inter', sans-serif;
+    --font-hindi: 'Tiro Devanagari Sanskrit', sans-serif;
 
     --spacing-xs: 5px;
     --spacing-sm: 10px;
@@ -22,6 +24,7 @@
 }
 
 /* --- Global Styles & Resets --- */
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -33,10 +36,10 @@ html {
 }
 
 body {
-    font-family: var(--font-body);
+    font-family: var(--font-body); /* Updated */
     line-height: 1.6;
-    color: var(--color-body-text); /* Ash Grey */
-    background-color: var(--color-background-light); /* Ivory White */
+    color: var(--color-body-text); /* Updated */
+    background-color: var(--color-background-light); /* Updated */
     overflow-x: hidden; /* Prevents horizontal scroll from animations */
     -webkit-font-smoothing: antialiased; /* Improves font rendering */
 }
@@ -47,8 +50,8 @@ body.no-scroll {
 }
 
 h1, h2, h3, h4, h5, h6 {
-    font-family: var(--font-heading);
-    color: var(--color-heading-text); /* Charcoal Black */
+    font-family: var(--font-heading); /* Updated */
+    color: var(--color-heading-text); /* Updated */
     text-align: center;
     margin-bottom: 0.8em;
     line-height: 1.2;
@@ -67,13 +70,13 @@ p {
 }
 
 a {
-    color: var(--color-primary); /* Royal Saffron */
+    color: var(--color-primary); /* Updated */
     text-decoration: none;
     transition: color 0.3s ease;
 }
 
 a:hover {
-    color: var(--color-accent); /* Antique Gold */
+    color: var(--color-accent); /* Updated */
 }
 
 .sr-only { /* For accessible but visually hidden labels */
@@ -89,6 +92,7 @@ a:hover {
 }
 
 /* --- Utility Classes --- */
+
 .sanskrit {
     font-family: var(--font-hindi);
     font-weight: 700; /* Bold for Hindi text */
@@ -102,12 +106,13 @@ a:hover {
 .section-title {
     margin-top: 0;
     margin-bottom: 15px;
+    color: var(--color-heading-text); /* Ensure it's blackish */
 }
 
 .section-description {
     font-size: 1.1em;
     margin-bottom: var(--spacing-lg);
-    color: var(--color-body-text); /* Ash Grey */
+    color: var(--color-body-text); /* Ensure it's blackish */
     max-width: 700px;
     line-height: 1.5;
 }
@@ -121,7 +126,7 @@ a:hover {
 
 .small-print {
     font-size: 0.85em;
-    color: #666;
+    color: #666; /* Keep a softer grey */
     margin-top: var(--spacing-md);
 }
 
@@ -130,11 +135,12 @@ a:hover {
 }
 
 /* --- Buttons --- */
+
 .btn {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    background-color: var(--color-primary); /* Royal Saffron */
+    background-color: var(--color-primary); /* Orange */
     color: white;
     padding: 12px 25px;
     border: none;
@@ -143,39 +149,39 @@ a:hover {
     font-size: 1em;
     cursor: pointer;
     transition: background-color 0.3s ease-in-out, transform 0.2s ease-in-out, box-shadow 0.3s ease;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Lighter shadow */
     text-transform: uppercase;
     letter-spacing: 0.5px;
 }
 
 .btn:hover {
-    background-color: var(--color-button-hover); /* Copper Orange */
+    background-color: var(--color-button-hover); /* Yellow */
     transform: translateY(-3px);
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.25);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
 }
 
 .btn:active {
     transform: translateY(0);
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .primary-cta {
-    background-color: var(--color-secondary); /* Deep Forest Green */
-    box-shadow: 0 6px 15px rgba(0, 61, 46, 0.4);
+    background-color: var(--color-primary); /* Orange */
+    box-shadow: 0 6px 15px rgba(255, 107, 0, 0.3); /* Orange shadow */
     margin-top: var(--spacing-md);
     padding: 15px 35px;
     font-size: 1.1em;
 }
 
 .primary-cta:hover {
-    background-color: var(--color-button-hover); /* Copper Orange for stronger accent */
+    background-color: var(--color-button-hover); /* Yellow */
     transform: translateY(-4px);
-    box-shadow: 0 8px 20px rgba(0, 61, 46, 0.5);
+    box-shadow: 0 8px 20px rgba(253, 197, 0, 0.4); /* Yellow shadow */
 }
 
 .secondary-btn {
     background-color: transparent;
-    border: 2px solid var(--color-primary); /* Royal Saffron */
+    border: 2px solid var(--color-primary); /* Orange */
     color: var(--color-primary);
     box-shadow: none;
 }
@@ -184,17 +190,17 @@ a:hover {
     background-color: var(--color-primary);
     color: white;
     transform: translateY(-3px);
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
 }
 
 /* Volunteer Button in Mission Section */
 .volunteer-btn-mission {
-    background-color: var(--color-accent); /* Antique Gold */
-    color: var(--color-heading-text); /* Charcoal Black */
+    background-color: var(--color-accent); /* Sky Blue */
+    color: white; /* Changed to white for better contrast */
     padding: 10px 20px;
     font-size: 1em;
     border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    box-shadow: 0 4px 8px rgba(0,180,216,0.3);
     margin-top: var(--spacing-lg); /* Space from text */
     margin-right: var(--spacing-sm);
     margin-left: var(--spacing-sm);
@@ -203,16 +209,15 @@ a:hover {
 }
 
 .volunteer-btn-mission:hover {
-    background-color: var(--color-button-hover); /* Copper Orange */
+    background-color: var(--color-button-hover); /* Yellow */
     transform: translateY(-2px);
-    box-shadow: 0 6px 12px rgba(0,0,0,0.3);
+    box-shadow: 0 6px 12px rgba(253,197,0,0.4);
 }
-
 
 /* Copy Button Specifics */
 .copy-btn {
     background: none;
-    border: 1px solid var(--color-primary); /* Royal Saffron */
+    border: 1px solid var(--color-primary); /* Orange */
     color: var(--color-primary);
     padding: 8px 15px; /* Increased padding */
     margin-left: var(--spacing-sm);
@@ -240,36 +245,34 @@ a:hover {
 
 /* Preset Amount Buttons */
 .amount-buttons .preset-amount {
-    background-color: var(--color-background-light); /* Ivory White */
-    color: var(--color-heading-text); /* Charcoal Black */
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    background-color: var(--color-background-light); /* White */
+    color: var(--color-body-text); /* Blackish */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
     padding: 12px 22px; /* Adjusted padding */
     margin: var(--spacing-xs);
     font-size: 1em;
-    border: 1px solid var(--color-section-bg); /* Blush Beige border */
+    border: 1px solid #E0E0E0; /* Lighter border */
 }
 
 .amount-buttons .preset-amount:hover {
-    background-color: var(--color-section-bg); /* Blush Beige */
+    background-color: #F0F0F0; /* Slightly darker white */
     color: var(--color-heading-text);
     transform: translateY(-2px);
-    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
 
 .amount-buttons .preset-amount.active {
-    background-color: var(--color-primary); /* Royal Saffron */
+    background-color: var(--color-primary); /* Orange */
     color: white;
-    border-color: var(--color-accent); /* Antique Gold */
+    border-color: var(--color-accent); /* Sky Blue */
     transform: scale(1.05);
-    box-shadow: 0 5px 12px rgba(0,0,0,0.2);
+    box-shadow: 0 5px 12px rgba(0,0,0,0.15);
 }
 
 /* --- Header Section (Hero) --- */
+
 .main-header {
-    /* Use a placeholder image or subtle pattern for the background */
-    background: var(--color-primary) url('assets/patterns/subtle-indian-pattern.svg') repeat; /* Example pattern */
-    background-size: cover; /* or adjust as needed */
-    background-blend-mode: multiply; /* To blend pattern with primary color */
+    background: var(--color-primary); /* Solid Orange */
     color: white;
     text-align: center;
     padding: 100px 20px var(--spacing-xxl); /* More padding at top */
@@ -280,18 +283,16 @@ a:hover {
     justify-content: center;
     position: relative;
     overflow: hidden;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); /* Lighter shadow */
 }
 
-/* Overlay for text readability on background image/pattern */
+/* Overlay for text readability on background image/pattern - REMOVED */
 .header-overlay {
-    background: linear-gradient(135deg, rgba(232, 125, 0, 0.7) 0%, rgba(198, 163, 0, 0.7) 100%); /* Primary to Accent with opacity */
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 1; /* Below content, above background */
+    background: none; /* Removed */
+    position: static; /* No need for absolute positioning */
+    width: auto;
+    height: auto;
+    z-index: auto;
 }
 
 .header-top {
@@ -323,7 +324,7 @@ a:hover {
     display: block;
     width: 100%;
     height: 3px;
-    background-color: white;
+    background-color: var(--color-background-light); /* White for hamburger lines */
     border-radius: 2px;
     transition: all 0.3s ease-in-out;
     transform-origin: center;
@@ -333,14 +334,15 @@ a:hover {
 .hamburger-menu.open span:nth-child(1) {
     transform: translateY(8.5px) rotate(45deg);
 }
+
 .hamburger-menu.open span:nth-child(2) {
     opacity: 0;
     transform: translateX(-10px);
 }
+
 .hamburger-menu.open span:nth-child(3) {
     transform: translateY(-8.5px) rotate(-45deg);
 }
-
 
 .logo-container {
     flex-grow: 1; /* Allows logo to take available space and center */
@@ -352,7 +354,7 @@ a:hover {
     height: auto;
     display: block;
     margin: 0 auto; /* Center the logo within its container */
-    filter: drop-shadow(0 0 5px rgba(0,0,0,0.3));
+    filter: drop-shadow(0 0 5px rgba(0,0,0,0.2));
 }
 
 .header-social-icons {
@@ -362,14 +364,14 @@ a:hover {
 }
 
 .header-social-icons a {
-    color: white;
+    color: var(--color-background-light); /* White */
     font-size: 1.5em;
     padding: var(--spacing-xs);
     transition: color 0.3s ease, transform 0.2s ease;
 }
 
 .header-social-icons a:hover {
-    color: var(--color-accent); /* Antique Gold */
+    color: var(--color-accent); /* Sky Blue */
     transform: scale(1.1);
 }
 
@@ -379,7 +381,7 @@ a:hover {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: var(--color-secondary); /* Deep Forest Green for nav background */
+    background-color: var(--color-secondary); /* Dark Grey for nav background */
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -415,15 +417,15 @@ a:hover {
     opacity: 1;
     transform: translateY(0);
 }
+
 /* Adjust transition delays for new items */
 .main-nav.nav-open li:nth-child(1) { transition-delay: 0.1s; } /* About Us */
 .main-nav.nav-open li:nth-child(2) { transition-delay: 0.15s; } /* Mission */
 .main-nav.nav-open li:nth-child(3) { transition-delay: 0.2s; } /* Gurukul Life */
 .main-nav.nav-open li:nth-child(4) { transition-delay: 0.25s; } /* Donate */
 .main-nav.nav-open li:nth-child(5) { transition-delay: 0.3s; } /* Thank You Donators */
-.main-nav.nav-open li:nth-child(6) { transition-delay: 0.35s; } /* Updates */
+.main-nav.nav-open li:nth-child(6) { transition-delay: 0.35s; } /* Updates (New) */
 .main-nav.nav-open li:nth-child(7) { transition-delay: 0.4s; } /* Contact Us */
-
 
 .main-nav a {
     color: white;
@@ -438,8 +440,8 @@ a:hover {
 }
 
 .main-nav a:hover {
-    color: var(--color-accent); /* Antique Gold */
-    background-color: rgba(255, 255, 255, 0.1);
+    color: var(--color-accent); /* Sky Blue */
+    background-color: rgba(255, 255, 255, 0.08); /* More subtle hover */
     transform: translateX(5px);
 }
 
@@ -459,11 +461,10 @@ a:hover {
 }
 
 .nav-social-icons a:hover {
-    color: var(--color-accent); /* Antique Gold */
-    background-color: rgba(255, 255, 255, 0.2);
+    color: var(--color-accent); /* Sky Blue */
+    background-color: rgba(255, 255, 255, 0.15);
     transform: scale(1.1);
 }
-
 
 .header-content {
     z-index: 2;
@@ -474,17 +475,17 @@ a:hover {
 
 .main-header .institute-name {
     color: white;
-    text-shadow: 2px 2px 8px rgba(0,0,0,0.5); /* Stronger shadow */
+    text-shadow: 1px 1px 5px rgba(0,0,0,0.3); /* Lighter shadow */
     margin-bottom: var(--spacing-xs); /* Less space between English and Hindi names */
     line-height: 1.1;
     text-transform: uppercase;
     letter-spacing: 1px;
 }
+
 .main-header .institute-name.sanskrit {
   font-size: clamp(2em, 5vw, 4em); /* Slightly smaller for Hindi */
   margin-bottom: var(--spacing-md);
 }
-
 
 .quote-section {
   margin-top: var(--spacing-lg);
@@ -493,18 +494,18 @@ a:hover {
 
 .quote-text {
   font-size: clamp(1.1em, 2.5vw, 1.6em);
-  color: rgba(255, 255, 255, 0.95);
-  text-shadow: 1px 1px 4px rgba(0,0,0,0.4);
+  color: rgba(255, 255, 255, 0.9); /* Slightly less opaque */
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
   line-height: 1.4;
   font-weight: 700;
 }
 
 .english-quote-translation {
   font-size: clamp(0.9em, 2vw, 1.2em);
-  color: rgba(255, 255, 255, 0.85);
+  color: rgba(255, 255, 255, 0.8); /* Slightly less opaque */
   margin-top: var(--spacing-sm);
   line-height: 1.5;
-  text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
 }
 
 .hero-image-and-button {
@@ -519,7 +520,7 @@ a:hover {
   width: 150px; /* Adjust size as needed */
   height: auto;
   border-radius: 50%; /* Make it circular */
-  border: 5px solid var(--color-accent); /* Antique Gold border */
+  border: 5px solid var(--color-accent); /* Sky Blue border */
   box-shadow: 0 5px 15px rgba(0,0,0,0.3);
   object-fit: cover;
   transition: transform 0.3s ease;
@@ -529,8 +530,8 @@ a:hover {
   transform: scale(1.05);
 }
 
-
 /* --- Section Dividers (Waves) --- */
+
 .section-divider {
   width: 100%;
   height: 100px; /* Height of the wave effect */
@@ -555,7 +556,7 @@ a:hover {
 
 .section-divider.wave-top::before {
   top: 0;
-  background-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 1000 100" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none"><path d="M0,0 L0,50 Q125,100 250,50 T500,50 T750,50 T1000,50 L1000,0 Z" fill="%23FDF8F2"/></svg>');
+  background-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 1000 100" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none"><path d="M0,0 L0,50 Q125,100 250,50 T500,50 T750,50 T1000,50 L1000,0 Z" fill="%23FFFFFF"/></svg>'); /* White */
   background-repeat: no-repeat;
   background-size: 100% 100px;
 }
@@ -567,28 +568,30 @@ a:hover {
 
 .section-divider.wave-bottom::before {
   bottom: 0;
-  background-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 1000 100" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none"><path d="M0,100 L0,50 Q125,0 250,50 T500,50 T750,50 T1000,50 L1000,100 Z" fill="%23FDF8F2"/></svg>');
+  background-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 1000 100" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none"><path d="M0,100 L0,50 Q125,0 250,50 T500,50 T750,50 T1000,50 L1000,100 Z" fill="%23FFFFFF"/></svg>'); /* White */
   background-repeat: no-repeat;
   background-size: 100% 100px;
 }
 
 /* Reverse colors for donation section separators */
 .section-divider.reverse-colors.wave-top {
-    background: linear-gradient(160deg, var(--color-primary), var(--color-secondary)); /* Background of the section it sits on top of */
+    background: var(--color-primary); /* Orange */
 }
+
 .section-divider.reverse-colors.wave-top::before {
-    background-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 1000 100" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none"><path d="M0,0 L0,50 Q125,100 250,50 T500,50 T750,50 T1000,50 L1000,0 Z" fill="%23E87D00"/></svg>');
+    background-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 1000 100" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none"><path d="M0,0 L0,50 Q125,100 250,50 T500,50 T750,50 T1000,50 L1000,0 Z" fill="%23FF6B00"/></svg>'); /* Orange */
 }
 
 .section-divider.reverse-colors.wave-bottom {
-    background: linear-gradient(160deg, var(--color-primary), var(--color-secondary)); /* Background of the section it sits below */
-}
-.section-divider.reverse-colors.wave-bottom::before {
-    background-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 1000 100" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none"><path d="M0,100 L0,50 Q125,0 250,50 T500,50 T750,50 T1000,50 L1000,100 Z" fill="%23E87D00"/></svg>');
+    background: var(--color-primary); /* Orange */
 }
 
+.section-divider.reverse-colors.wave-bottom::before {
+    background-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 1000 100" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none"><path d="M0,100 L0,50 Q125,0 250,50 T500,50 T750,50 T1000,50 L1000,100 Z" fill="%23FF6B00"/></svg>'); /* Orange */
+}
 
 /* --- Main Content Sections --- */
+
 main {
     padding: var(--spacing-xxl) 0;
 }
@@ -597,9 +600,9 @@ main {
     padding: var(--spacing-xxl) var(--spacing-md);
     margin: var(--spacing-xl) auto;
     max-width: 1200px;
-    background-color: var(--color-section-bg); /* Blush Beige for sections */
+    background-color: var(--color-section-bg); /* Very Light Grey for sections */
     border-radius: 15px; /* More rounded corners */
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15); /* Deeper shadow */
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1); /* Lighter shadow */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -609,10 +612,11 @@ main {
 
 .section:hover {
     transform: translateY(-5px); /* Subtle lift on hover */
-    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.2); /* Deeper shadow on hover */
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15); /* Deeper shadow on hover */
 }
 
 /* About Us Section specific styles */
+
 .about-us-content {
     display: flex;
     flex-wrap: wrap; /* Allows wrapping on smaller screens */
@@ -628,20 +632,24 @@ main {
     text-align: left;
     padding: var(--spacing-sm);
 }
+
 .about-text h3 { /* For highlighted headings */
-    color: var(--color-primary); /* Royal Saffron */
+    color: var(--color-primary); /* Orange */
     font-size: 1.6em;
     margin-bottom: 0.5em;
     text-align: left;
 }
+
 .about-text p {
     text-align: left;
     margin-bottom: 1.2em;
     max-width: none; /* Override section p max-width */
 }
+
 .about-text p.last-paragraph {
     margin-bottom: 0; /* No bottom margin for the very last paragraph */
 }
+
 .about-text ul { /* For bullet points */
     list-style: disc;
     margin-left: var(--spacing-md);
@@ -649,15 +657,15 @@ main {
     text-align: left;
     color: var(--color-body-text);
 }
+
 .about-text ul li {
     margin-bottom: 0.5em;
 }
 
-
 .about-image-wrapper {
     flex: 0 1 400px; /* Image takes less space, but can shrink */
     padding: var(--spacing-xs);
-    border: 3px solid var(--color-accent); /* Antique Gold border */
+    border: 3px solid var(--color-accent); /* Sky Blue border */
     border-radius: 10px;
     overflow: hidden;
     box-shadow: 0 5px 15px rgba(0,0,0,0.1);
@@ -677,6 +685,7 @@ main {
 }
 
 /* New Mission Section Styles */
+
 .mission-content {
     display: flex;
     flex-wrap: wrap;
@@ -711,11 +720,10 @@ main {
     width: 100%;
 }
 
-
 .mission-image-wrapper {
     flex: 0 1 400px;
     padding: var(--spacing-xs);
-    border: 3px solid var(--color-accent);
+    border: 3px solid var(--color-accent); /* Sky Blue */
     border-radius: 10px;
     overflow: hidden;
     box-shadow: 0 5px 15px rgba(0,0,0,0.1);
@@ -732,18 +740,18 @@ main {
 .hero-video-section .section-title,
 .hero-video-section .section-description {
     color: white; /* Match header text color */
-    text-shadow: 1px 1px 5px rgba(0,0,0,0.3);
+    text-shadow: 1px 1px 5px rgba(0,0,0,0.2);
 }
 
 .video-container {
     width: 100%;
     max-width: 800px; /* Max width for the video player */
     margin-top: var(--spacing-lg);
-    background-color: var(--color-heading-text); /* Charcoal Black background for video player */
+    background-color: var(--color-secondary); /* Dark Grey background for video player */
     border-radius: 15px; /* More rounded */
     overflow: hidden;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
-    border: 5px solid var(--color-accent); /* Decorative frame */
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    border: 5px solid var(--color-accent); /* Sky Blue Decorative frame */
     display: flex; /* To vertically center the video if it doesn't fill height */
     align-items: center;
     justify-content: center;
@@ -755,8 +763,8 @@ main {
     display: block;
 }
 
-
 /* Gurukul Life Section Gallery */
+
 .gurukul-gallery {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -776,7 +784,7 @@ main {
 
 .gallery-item:hover {
     transform: translateY(-5px);
-    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
 }
 
 .gallery-image {
@@ -811,40 +819,41 @@ main {
 }
 
 /* Donation Section Styles */
+
 .donate-page-section {
-    background: linear-gradient(160deg, var(--color-primary), var(--color-secondary)); /* Gradient background */
+    background: var(--color-primary); /* Solid Orange */
     color: white;
 }
 
 .donate-page-section .section-title,
 .donate-page-section .section-description {
     color: white;
-    text-shadow: 1px 1px 5px rgba(0,0,0,0.3);
+    text-shadow: 1px 1px 5px rgba(0,0,0,0.2);
 }
 
 .donation-methods-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Adjusted for 3 columns - now 2 columns for QR and Amount */
+    grid-template-columns: 1fr; /* Only one column for the amount card */
     gap: var(--spacing-lg);
     width: 100%;
-    max-width: 1000px; /* Increased max-width for 3 columns */
+    max-width: 600px; /* Max width for the single card */
     margin-top: var(--spacing-xl);
 }
 
 .donation-card {
-    background-color: var(--color-section-bg); /* Blush Beige */
+    background-color: var(--color-background-light); /* White */
     padding: var(--spacing-xl);
     border-radius: 10px;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); /* Lighter shadow */
     text-align: left;
     color: var(--color-body-text);
 }
 
 .donation-card h3 {
-    color: var(--color-heading-text);
+    color: var(--color-heading-text); /* Blackish */
     margin-bottom: var(--spacing-lg);
     font-size: 1.8em;
-    text-align: left;
+    text-align: center; /* Center align card headings */
 }
 
 .donation-card p {
@@ -854,7 +863,7 @@ main {
 
 .donation-card .detail-label {
     font-weight: 600;
-    color: var(--color-primary); /* Royal Saffron */
+    color: var(--color-primary); /* Orange */
     margin-bottom: 0;
     font-size: 0.9em;
 }
@@ -870,11 +879,11 @@ main {
 .copy-field {
     display: flex;
     align-items: center;
-    background-color: var(--color-background-light); /* Ivory White */
+    background-color: #F0F0F0; /* Slightly darker white */
     border-radius: 5px;
     padding: var(--spacing-xs) var(--spacing-sm);
     margin-bottom: var(--spacing-md);
-    border: 1px solid var(--color-section-bg);
+    border: 1px solid #E0E0E0;
 }
 
 .copy-field span {
@@ -885,27 +894,28 @@ main {
     color: var(--color-heading-text);
 }
 
-.qr-upi-card {
-    grid-column: span 1; /* Ensure it takes one column in a 3-column layout */
+.qr-upi-card { /* This card will be removed from HTML */
+    grid-column: span 1;
 }
-.qr-image-wrapper {
+
+.qr-image-wrapper { /* This will be removed from HTML */
     text-align: center;
     margin-top: var(--spacing-md);
 }
 
-.qr-image {
+.qr-image { /* This will be removed from HTML */
     width: 180px;
     height: 180px;
-    border: 5px solid var(--color-accent); /* Antique Gold border */
+    border: 5px solid var(--color-accent); /* Sky Blue border */
     border-radius: 8px;
     box-shadow: 0 5px 15px rgba(0,0,0,0.2);
 }
 
 .amount-selection-area { /* This class is no longer explicitly used, donation-card covers it now */
-    background-color: var(--color-section-bg); /* Blush Beige */
+    background-color: var(--color-background-light); /* White */
     padding: var(--spacing-xl);
     border-radius: 10px;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
     margin-top: var(--spacing-lg);
     width: 100%;
     max-width: 600px;
@@ -934,11 +944,11 @@ main {
     width: 100%;
     max-width: 300px;
     padding: 12px 15px;
-    border: 1px solid var(--color-border-light);
+    border: 1px solid #E0E0E0; /* Lighter border */
     border-radius: 8px;
     font-size: 1.1em;
     color: var(--color-heading-text);
-    background-color: var(--color-background-light); /* Ivory White */
+    background-color: var(--color-background-light); /* White */
     transition: border-color 0.3s ease, box-shadow 0.3s ease;
     text-align: center;
 }
@@ -946,7 +956,7 @@ main {
 .custom-amount-input:focus {
     outline: none;
     border-color: var(--color-primary);
-    box-shadow: 0 0 0 3px var(--color-form-focus);
+    box-shadow: 0 0 0 3px rgba(255, 107, 0, 0.2); /* Orange focus shadow */
 }
 
 .donate-button {
@@ -958,24 +968,25 @@ main {
 .trust-elements {
     margin-top: var(--spacing-md);
     font-size: 0.95em;
-    color: var(--color-heading-text); /* Use heading text color for emphasis */
+    color: var(--color-body-text); /* Blackish */
     font-weight: 500;
     line-height: 1.4;
 }
+
 .trust-elements .icon {
-    color: var(--color-secondary); /* Deep Forest Green for icon */
+    color: var(--color-primary); /* Orange for icon */
     margin-right: 5px;
 }
 
-/* Progress Bar Styles */
+/* Progress Bar Styles - NEW */
 .progress-bar-container {
     width: 90%;
     max-width: 800px;
-    background-color: rgba(255, 255, 255, 0.2);
+    background-color: rgba(255, 255, 255, 0.2); /* White with opacity */
     border-radius: 10px;
     overflow: hidden;
     margin: var(--spacing-lg) auto var(--spacing-xl);
-    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
     color: white;
     text-align: center;
 }
@@ -986,13 +997,14 @@ main {
     padding: var(--spacing-sm) var(--spacing-md);
     font-weight: 600;
     font-size: 0.95em;
-    text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+    color: white;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
 }
 
 .progress-bar {
     width: 100%;
     height: 25px;
-    background-color: rgba(0, 0, 0, 0.3); /* Darker background for the bar itself */
+    background-color: rgba(0, 0, 0, 0.2); /* Darker background for the bar itself */
     border-radius: 0 0 10px 10px; /* Only bottom rounded */
     position: relative;
     overflow: hidden;
@@ -1000,24 +1012,24 @@ main {
 
 .progress-bar-fill {
     height: 100%;
-    background-color: var(--color-accent); /* Antique Gold for the fill */
+    background-color: var(--color-accent); /* Sky Blue for the fill */
     width: 0%; /* Will be set by inline style in HTML */
     transition: width 1s ease-out;
     display: flex;
     align-items: center;
     justify-content: center;
     font-weight: 700;
-    color: var(--color-heading-text); /* Text color for percentage if added */
+    color: white; /* White text for percentage */
+    font-size: 0.9em;
 }
 
 
-/* Payment Proof/Volunteer Form Section */
-.form-card {
-    background-color: var(--color-section-bg); /* Blush Beige */
+/* Payment Proof/Volunteer Form Section - REMOVED from HTML */
+.form-card { /* Keeping styles in case similar forms are added later */
+    background-color: var(--color-background-light); /* White */
     padding: var(--spacing-xl);
     border-radius: 15px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
-    /* margin-top: var(--spacing-lg); */ /* Removed as section has its own margin */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
     width: 100%;
     max-width: 700px;
     text-align: center;
@@ -1036,7 +1048,7 @@ main {
 
 .form-card .form-header i {
     font-size: 2.5em;
-    color: var(--color-primary); /* Royal Saffron */
+    color: var(--color-primary); /* Orange */
     margin-right: var(--spacing-md);
 }
 
@@ -1063,7 +1075,7 @@ main {
 
 /* Success Message for forms */
 .success-message {
-    background-color: var(--color-secondary); /* Deep Forest Green */
+    background-color: var(--color-primary); /* Orange */
     color: white;
     padding: var(--spacing-md);
     border-radius: 8px;
@@ -1080,7 +1092,6 @@ main {
     transform: translateY(0);
 }
 
-
 /* Thank You Section (Donation Wall) */
 #thankyou-section {
     min-height: 600px; /* Make it significantly larger */
@@ -1089,11 +1100,12 @@ main {
     justify-content: center;
     align-items: center;
 }
+
 .donators-list-container {
-    background-color: var(--color-background-light); /* Ivory White */
+    background-color: var(--color-background-light); /* White */
     padding: var(--spacing-xl);
     border-radius: 10px;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); /* Lighter shadow */
     margin-top: var(--spacing-lg);
     width: 100%;
     max-width: 800px; /* Increased max-width */
@@ -1106,31 +1118,74 @@ main {
     font-size: 2em; /* Larger heading */
 }
 
+/* NEW: Styles for individual donator cards */
 #donators-list {
     list-style: none;
     padding: 0;
     margin-bottom: var(--spacing-lg);
     display: grid; /* Use grid for better layout of names */
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* 2-3 columns */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* 2-3 columns */
     gap: var(--spacing-md);
     text-align: left; /* Align list items left within their grid cell */
 }
 
-#donators-list li {
-    font-size: 1.15em; /* Slightly larger text */
-    padding: var(--spacing-sm); /* More padding for each entry */
-    color: var(--color-body-text);
-    background-color: rgba(255, 255, 255, 0.7); /* Slightly transparent background for entries */
-    border-radius: 5px;
+.donator-card-item { /* New class for individual donor cards */
+    background-color: #F8F8F8; /* Light grey background for donor cards */
+    border-radius: 10px;
     box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    padding: var(--spacing-md);
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid #E0E0E0;
 }
 
+.donator-card-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.donator-avatar { /* New style for donor avatars */
+    width: 60px; /* Larger avatar */
+    height: 60px;
+    border-radius: 50%;
+    background-color: var(--color-accent); /* Sky Blue placeholder */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: 700;
+    font-size: 1.2em;
+    flex-shrink: 0;
+    border: 2px solid var(--color-primary); /* Orange border */
+}
+
+.donator-info {
+    flex-grow: 1;
+    text-align: left;
+}
+
+.donator-info .name {
+    font-weight: 700;
+    color: var(--color-heading-text);
+    font-size: 1.1em;
+    margin-bottom: 5px;
+}
+
+.donator-info .location {
+    font-size: 0.9em;
+    color: var(--color-body-text);
+}
+
+
 /* Contact Us Section */
+
 .contact-content {
-    background-color: var(--color-background-light); /* Ivory White */
+    background-color: var(--color-background-light); /* White */
     padding: var(--spacing-xl);
     border-radius: 10px;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); /* Lighter shadow */
     margin-top: var(--spacing-lg);
     width: 100%;
     max-width: 600px;
@@ -1145,7 +1200,7 @@ main {
 .contact-info .email-address a {
     font-size: 1.2em;
     font-weight: 600;
-    color: var(--color-primary); /* Royal Saffron */
+    color: var(--color-primary); /* Orange */
     word-break: break-all; /* For long email addresses */
 }
 
@@ -1155,13 +1210,59 @@ main {
     margin-top: var(--spacing-sm);
 }
 
+/* --- Updates Section (NEW) --- */
+#updates-section {
+    background-color: var(--color-section-bg);
+    padding: var(--spacing-xxl) var(--spacing-md);
+    margin: var(--spacing-xl) auto;
+    max-width: 1200px;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#updates-content {
+    width: 100%;
+    max-width: 800px;
+    text-align: left;
+    line-height: 1.8;
+    color: var(--color-body-text);
+}
+
+#updates-content h3 {
+    color: var(--color-primary);
+    margin-top: var(--spacing-lg);
+    margin-bottom: var(--spacing-sm);
+    text-align: left;
+}
+
+#updates-content p {
+    margin-bottom: var(--spacing-md);
+    text-align: left;
+}
+
+#updates-content ul {
+    list-style: disc;
+    margin-left: var(--spacing-lg);
+    margin-bottom: var(--spacing-md);
+    text-align: left;
+}
+
+#updates-content li {
+    margin-bottom: var(--spacing-xs);
+}
+
+
 /* --- Footer --- */
+
 .site-footer {
-    background-color: var(--color-secondary); /* Deep Forest Green */
+    background-color: var(--color-secondary); /* Dark Grey */
     color: white;
     padding: var(--spacing-xxl) var(--spacing-md);
     text-align: center;
-    box-shadow: 0 -5px 15px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 -3px 10px rgba(0, 0, 0, 0.15); /* Lighter shadow */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -1184,14 +1285,14 @@ main {
 }
 
 .footer-section h3 {
-    color: var(--color-accent); /* Antique Gold for footer headings */
+    color: var(--color-accent); /* Sky Blue for footer headings */
     margin-bottom: var(--spacing-md);
     text-align: left;
     font-size: 1.4em;
 }
 
 .footer-section p, .footer-section ul {
-    color: rgba(255, 255, 255, 0.8);
+    color: rgba(255, 255, 255, 0.85);
     font-size: 0.95em;
     line-height: 1.5;
     text-align: left;
@@ -1207,14 +1308,13 @@ main {
 }
 
 .footer-section ul li a {
-    color: rgba(255, 255, 255, 0.8);
+    color: rgba(255, 255, 255, 0.85);
     transition: color 0.3s ease;
 }
 
 .footer-section ul li a:hover {
-    color: var(--color-primary); /* Royal Saffron on hover */
+    color: var(--color-primary); /* Orange on hover */
 }
-
 
 .footer-moto {
     font-size: 1.2em;
@@ -1224,6 +1324,7 @@ main {
     width: 100%; /* Ensure it spans full width */
     text-align: center; /* Center the moto */
 }
+
 .footer-moto.sanskrit {
   font-size: 1.3em;
   margin-bottom: var(--spacing-lg);
@@ -1248,7 +1349,7 @@ main {
 
 .footer-links-bottom a:hover {
     background-color: rgba(255, 255, 255, 0.1);
-    color: var(--color-accent); /* Antique Gold */
+    color: var(--color-accent); /* Sky Blue */
 }
 
 .link-separator {
@@ -1256,28 +1357,9 @@ main {
     padding: 0 5px;
 }
 
+/* Footer social icons - REMOVED from HTML */
 .footer-social-icons {
-    margin-top: var(--spacing-md);
-    margin-bottom: var(--spacing-lg);
-    display: flex;
-    justify-content: center;
-    gap: var(--spacing-lg);
-    width: 100%; /* Ensure it spans full width */
-}
-
-.footer-social-icons a {
-    color: white;
-    font-size: 2em;
-    padding: var(--spacing-sm);
-    border-radius: 50%;
-    background-color: rgba(255, 255, 255, 0.1);
-    transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
-}
-
-.footer-social-icons a:hover {
-    color: var(--color-accent); /* Antique Gold */
-    background-color: rgba(255, 255, 255, 0.2);
-    transform: scale(1.1);
+    display: none; /* Hide as per request */
 }
 
 .copyright {
@@ -1289,6 +1371,7 @@ main {
 }
 
 /* --- Animations --- */
+
 .fade-in-down {
   opacity: 0;
   transform: translateY(-20px);
@@ -1312,16 +1395,77 @@ main {
 .delay-4 { transition-delay: 0.4s; }
 .delay-5 { transition-delay: 0.5s; }
 
+/* --- Custom Modal for Alerts (NEW) --- */
+.custom-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease;
+}
+
+.custom-modal-overlay.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+.custom-modal-content {
+    background: var(--color-background-light);
+    padding: var(--spacing-xl);
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    max-width: 400px;
+    width: 90%;
+    transform: translateY(-20px);
+    transition: transform 0.3s ease;
+}
+
+.custom-modal-overlay.show .custom-modal-content {
+    transform: translateY(0);
+}
+
+.custom-modal-content p {
+    margin-bottom: var(--spacing-lg);
+    color: var(--color-body-text);
+    font-size: 1.1em;
+}
+
+.custom-modal-content button {
+    background-color: var(--color-primary);
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s ease;
+}
+
+.custom-modal-content button:hover {
+    background-color: var(--color-button-hover);
+}
+
 
 /* --- Media Queries for Responsiveness --- */
+
 @media (max-width: 768px) {
+
     /* Header Top & Navigation */
     .header-top {
         padding: var(--spacing-sm);
         /* Ensure hamburger is always visible and clickable */
         position: fixed; /* Keep header-top fixed on scroll */
         background-color: var(--color-primary); /* Give it a background so it's not transparent */
-        box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     }
 
     .logo {
@@ -1375,6 +1519,7 @@ main {
     .main-header .institute-name {
         font-size: clamp(2em, 8vw, 3.5em);
     }
+
     .main-header .institute-name.sanskrit {
         font-size: clamp(1.8em, 7vw, 3em);
     }
@@ -1386,6 +1531,7 @@ main {
         font-size: clamp(1em, 3vw, 1.4em);
         padding: 0 10px; /* Add horizontal padding for readability */
     }
+
     .english-quote-translation {
         font-size: clamp(0.8em, 2.5vw, 1.1em);
         padding: 0 10px; /* Add horizontal padding for readability */
@@ -1400,6 +1546,7 @@ main {
     .namaste-boy-image {
         width: 120px;
         border-width: 3px; /* Slightly thinner border */
+        border-color: var(--color-accent);
     }
 
     .btn {
@@ -1433,10 +1580,12 @@ main {
     .about-text h3 {
         text-align: center; /* Center align headings */
     }
+
     .about-text p, .mission-text-container p {
         text-align: center; /* Center align paragraphs */
         padding: 0 10px; /* Add horizontal padding */
     }
+
     .about-text ul {
         text-align: left; /* Keep lists left-aligned within their container */
         margin-left: 20px; /* Adjust as needed */
@@ -1447,21 +1596,23 @@ main {
         align-items: center;
         gap: var(--spacing-sm); /* Smaller gap for stacked buttons */
     }
+
     .volunteer-btn-mission {
         width: 90%; /* Make buttons wider on mobile */
         max-width: 300px; /* Limit max width */
         margin: var(--spacing-xs) auto; /* Center individual buttons */
     }
 
-
     .about-image-wrapper, .mission-image-wrapper {
         flex: 1 1 auto;
         max-width: 90%; /* Slightly smaller max-width for images */
         border-width: 2px; /* Thinner border */
+        border-color: var(--color-accent);
     }
 
     .video-container {
         border-width: 3px; /* Thinner video frame */
+        border-color: var(--color-accent);
     }
 
     /* Gallery */
@@ -1483,23 +1634,28 @@ main {
     .donation-card {
         padding: var(--spacing-lg); /* Reduced padding */
         margin: 0 var(--spacing-sm); /* Add horizontal margin */
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     }
+
     .donation-card h3 {
         text-align: center; /* Center align card headings */
     }
+
     .donation-card p {
         text-align: center; /* Center align card paragraphs */
     }
 
-    .qr-image {
+    .qr-image { /* Removed from HTML */
         width: 150px;
         height: 150px;
         border-width: 3px;
+        border-color: var(--color-accent);
     }
 
     .amount-buttons {
         gap: var(--spacing-xs); /* Smaller gap for amount buttons */
     }
+
     .amount-buttons .preset-amount {
         padding: 10px 15px; /* Smaller padding */
         font-size: 0.9em;
@@ -1509,30 +1665,37 @@ main {
         padding: 10px 12px;
         font-size: 1em;
     }
+
     .donate-button {
         padding: 15px 25px; /* Make donate button more prominent */
         font-size: 1.1em;
     }
 
-    /* Forms */
+    /* Forms - REMOVED from HTML */
     .form-card {
         padding: var(--spacing-lg);
         margin: var(--spacing-lg) auto; /* Adjust margin */
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
     }
+
     .form-card .form-header {
         flex-direction: column;
         margin-bottom: var(--spacing-md);
     }
+
     .form-card .form-header i {
         margin-right: 0;
         margin-bottom: var(--spacing-sm);
     }
+
     .form-card .form-header h3 {
         font-size: clamp(1.4em, 5vw, 2em);
     }
+
     .form-card .form-description {
         padding: 0 10px;
     }
+
     .form-container iframe {
         height: 400px; /* Smaller iframe height for mobile */
     }
@@ -1542,24 +1705,45 @@ main {
         min-height: auto; /* Allow height to adapt */
         padding-bottom: var(--spacing-xl);
     }
+
     .donators-list-container {
         padding: var(--spacing-lg);
         margin: var(--spacing-md) auto;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     }
+
     #donators-list {
         grid-template-columns: 1fr; /* Single column for names */
         gap: var(--spacing-sm);
     }
-    #donators-list li {
+
+    .donator-card-item {
         font-size: 1em; /* Smaller font size for list items */
         padding: var(--spacing-xs);
+        background-color: #F8F8F8;
+        border: 1px solid #E0E0E0;
+    }
+
+    .donator-avatar {
+        width: 50px; /* Smaller avatar on mobile */
+        height: 50px;
+    }
+
+    .donator-info .name {
+        font-size: 1em;
+    }
+
+    .donator-info .location {
+        font-size: 0.8em;
     }
 
     /* Contact Section */
     .contact-content {
         padding: var(--spacing-lg);
         margin: var(--spacing-md) auto;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     }
+
     .contact-info .email-address a {
         font-size: 1em;
     }
@@ -1568,20 +1752,24 @@ main {
     .site-footer {
         padding: var(--spacing-xl) var(--spacing-md);
     }
+
     .footer-content {
         flex-direction: column;
         align-items: center;
         text-align: center;
     }
+
     .footer-section {
         flex: 1 1 100%;
         padding: 0;
         text-align: center;
         margin-bottom: var(--spacing-md); /* Reduce margin between sections */
     }
+
     .footer-section h3, .footer-section p, .footer-section ul {
         text-align: center;
     }
+
     .footer-section ul {
         margin-left: 0; /* Remove left margin for centered lists */
     }
@@ -1594,26 +1782,38 @@ main {
     .link-separator {
         display: none;
     }
+
+    /* Footer social icons - REMOVED from HTML */
+    .footer-social-icons {
+        display: none;
+    }
+
 }
 
 /* Further refinements for even smaller screens, e.g., max-width: 480px */
+
 @media (max-width: 480px) {
+
     .main-header {
         padding-top: 80px; /* Ensure space for fixed header on smallest screens */
         min-height: 70vh;
     }
+
     .main-header .institute-name {
         font-size: clamp(1.8em, 9vw, 3em);
     }
+
     .main-header .institute-name.sanskrit {
         font-size: clamp(1.6em, 8vw, 2.5em);
     }
+
     h2 { font-size: clamp(1.6em, 7vw, 2.5em); }
     h3 { font-size: clamp(1.2em, 5vw, 1.8em); }
 
     .quote-text {
         font-size: clamp(0.9em, 3.5vw, 1.3em);
     }
+
     .english-quote-translation {
         font-size: clamp(0.75em, 3vw, 1em);
     }
@@ -1643,6 +1843,7 @@ main {
     .amount-buttons {
         gap: var(--spacing-xxs, 5px); /* Very small gap */
     }
+
     .amount-buttons .preset-amount {
         padding: 8px 12px;
         font-size: 0.8em;
@@ -1658,14 +1859,15 @@ main {
         padding: 12px 20px;
     }
 
-    .form-container iframe {
+    .form-container iframe { /* Removed from HTML */
         height: 350px; /* Smaller iframe height */
     }
 
     .donators-list-container {
         padding: var(--spacing-md);
     }
-    #donators-list li {
+
+    .donator-card-item {
         font-size: 0.9em;
     }
 }
