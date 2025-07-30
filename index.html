@@ -264,8 +264,8 @@
                     <p class="trust-elements"><i class="fas fa-hand-holding-heart icon"></i> 100% of donations go to building the Gurukul infrastructure.</p>
                 </div>
             </div>
-            <!-- "Show My Name on Donation Wall" button removed as per request -->
-            <!-- <a href="https://docs.google.com/forms/d/e/1FAIpQLSfWud6zfT1wH6jP3bNj5SipB_h8pgi73asCOE2e4PkCl7ssyA/viewform?usp=dialog" class="btn secondary-btn" style="margin-top: var(--spacing-lg);">Show My Name on Donation Wall</a> -->
+            <!-- Re-adding "Show My Name on Donation Wall" button -->
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSfWud6zfT1wH6jP3bNj5SipB_h8pgi73asCOE2e4PkCl7ssyA/viewform?usp=dialog" class="btn secondary-btn" style="margin-top: var(--spacing-lg);">Show My Name on Donation Wall</a>
         </section>
 
         <div class="section-divider wave-bottom reverse-colors"></div>
@@ -438,18 +438,19 @@
                 <!-- Address removed as per request -->
                 <!-- <p>Address: [Your Gurukul Address Here]</p> -->
             </div>
-            <!-- Footer social icons section removed as per request -->
-            <!-- <div class="footer-section">
+            <!-- Footer social icons section re-added here -->
+            <div class="footer-section">
                 <h3>Follow Us</h3>
                 <div class="footer-social-icons">
                     <a href="https://www.facebook.com/share/1DA5LbuCHP/" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
                     <a href="https://www.youtube.com/channel/UC_YOUR_YOUTUBE_ID" target="_blank" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
                     <a href="https://www.instagram.com/dharma_raksha_gurukul104?igsh=MWdhc2I2eWQ4eDhucw==" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
                 </div>
-            </div> -->
+            </div>
             <p class="footer-moto english-text">"Dharma Raksha, Desh Raksha" - Protecting righteousness, protecting the nation.</p>
             <p class="footer-moto sanskrit">"धर्म रक्षा, देश रक्षा" - धर्म की रक्षा, राष्ट्र की रक्षा।</p>
-            <div class="footer-links-bottom">
+            <!-- Footer bottom links removed as per request -->
+            <!-- <div class="footer-links-bottom">
                 <a href="#" class="animated-link english-text">Privacy Policy</a>
                 <span class="link-separator">|</span>
                 <a href="#" class="animated-link sanskrit">गोपनीयता नीति</a>
@@ -461,7 +462,7 @@
                 <a href="#contact-us-section" class="animated-link english-text">Contact Us</a>
                 <span class="link-separator">|</span>
                 <a href="#contact-us-section" class="animated-link sanskrit">हमसे संपर्क करें</a>
-            </div>
+            </div> -->
             <p class="copyright english-text">© 2025 Rashtriya Dharma Raksha Gurukul. All Rights Reserved.</p>
             <p class="copyright sanskrit">© 2025 राष्ट्रीय धर्म रक्षा गुरुकुल। सर्वाधिकार सुरक्षित। जय सनातन धर्म</p>
         </div>
@@ -663,11 +664,8 @@
 
             async function fetchUpdates() {
                 try {
-                    // Using new URL() to ensure a properly formed absolute URL
-                    const fullUrl = new URL(updateFilePath, window.location.href).toString();
-                    console.log('Fetching updates from:', fullUrl); // Log the URL being fetched
-
-                    const response = await fetch(fullUrl);
+                    // Simplified fetch call to avoid URL construction issues in some environments
+                    const response = await fetch(updateFilePath);
                     if (!response.ok) {
                         throw new Error(`HTTP error! status: ${response.status} - ${response.statusText}`);
                     }
