@@ -236,8 +236,8 @@ a:hover {
 }
 
 .copy-btn.copied {
-    background-color: #28a745; /* Green for success */
-    border-color: #28a745;
+    background-color: var(--color-primary); /* Changed from green to primary orange */
+    border-color: var(--color-primary); /* Changed from green to primary orange */
     color: white;
     font-weight: bold;
     transform: translateY(0);
@@ -248,7 +248,7 @@ a:hover {
     background-color: var(--color-background-light); /* White */
     color: var(--color-body-text); /* Blackish */
     box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-    padding: 12px 22px; /* Adjusted padding */
+    padding: 12px 22px;
     margin: var(--spacing-xs);
     font-size: 1em;
     border: 1px solid #E0E0E0; /* Lighter border */
@@ -1330,37 +1330,31 @@ main {
   margin-bottom: var(--spacing-lg);
 }
 
-.footer-links-bottom { /* New container for policy links etc. */
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: var(--spacing-sm);
-    margin-top: var(--spacing-lg);
-    width: 100%;
-}
-
-.footer-links-bottom a {
-    color: white;
-    font-size: 1em;
-    padding: 5px 10px;
-    border-radius: 5px;
-    transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-.footer-links-bottom a:hover {
-    background-color: rgba(255, 255, 255, 0.1);
-    color: var(--color-accent); /* Sky Blue */
-}
-
-.link-separator {
-    color: rgba(255, 255, 255, 0.5);
-    padding: 0 5px;
-}
-
-/* Footer social icons - REMOVED from HTML */
+/* Footer social icons - Re-enabled and styled */
 .footer-social-icons {
-    display: none; /* Hide as per request */
+    display: flex; /* Changed from none */
+    justify-content: center; /* Center icons */
+    gap: var(--spacing-lg);
+    margin-top: var(--spacing-md);
+    margin-bottom: var(--spacing-lg); /* Add some space below icons */
+    width: 100%; /* Ensure it spans full width */
 }
+
+.footer-social-icons a {
+    color: white;
+    font-size: 2em;
+    padding: var(--spacing-sm);
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.1);
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
+}
+
+.footer-social-icons a:hover {
+    color: var(--color-accent); /* Sky Blue */
+    background-color: rgba(255, 255, 255, 0.2);
+    transform: scale(1.1);
+}
+
 
 .copyright {
     font-size: 0.9em;
@@ -1657,7 +1651,7 @@ main {
     }
 
     .amount-buttons .preset-amount {
-        padding: 10px 15px; /* Smaller padding */
+        padding: 10px 15px;
         font-size: 0.9em;
     }
 
@@ -1774,18 +1768,20 @@ main {
         margin-left: 0; /* Remove left margin for centered lists */
     }
 
-    .footer-links-bottom {
-        flex-direction: column;
-        gap: var(--spacing-xs);
-    }
-
-    .link-separator {
+    .footer-links-bottom { /* This block is removed from HTML */
         display: none;
     }
 
-    /* Footer social icons - REMOVED from HTML */
+    .link-separator { /* This is no longer used */
+        display: none;
+    }
+
+    /* Footer social icons - Re-enabled and styled for mobile */
     .footer-social-icons {
-        display: none;
+        display: flex; /* Ensure it's visible on mobile */
+        font-size: 1.8em; /* Slightly smaller on mobile */
+        gap: var(--spacing-md);
+        margin-bottom: var(--spacing-md);
     }
 
 }
