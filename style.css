@@ -1,5 +1,4 @@
 /* --- CSS Variables for Premium Spiritual Palette --- */
-
 :root {
     --color-primary: #FF6B00; /* Orange */
     --color-secondary: #333333; /* Dark Grey for nav/dark elements */
@@ -10,11 +9,9 @@
     --color-body-text: #1E1E1E; /* Blackish */
     --color-button-hover: #FDC500; /* Yellow for buttons and highlights */
     --color-highlight-text: #FDC500; /* Yellow for highlights */
-
     --font-heading: 'Inter', sans-serif;
     --font-body: 'Inter', sans-serif;
     --font-hindi: 'Tiro Devanagari Sanskrit', sans-serif;
-
     --spacing-xs: 5px;
     --spacing-sm: 10px;
     --spacing-md: 20px;
@@ -24,7 +21,6 @@
 }
 
 /* --- Global Styles & Resets --- */
-
 * {
     box-sizing: border-box;
     margin: 0;
@@ -36,12 +32,12 @@ html {
 }
 
 body {
-    font-family: var(--font-body); /* Updated */
+    font-family: var(--font-body);
     line-height: 1.6;
-    color: var(--color-body-text); /* Updated */
-    background-color: var(--color-background-light); /* Updated */
-    overflow-x: hidden; /* Prevents horizontal scroll from animations */
-    -webkit-font-smoothing: antialiased; /* Improves font rendering */
+    color: var(--color-body-text);
+    background-color: var(--color-background-light);
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
 }
 
 /* For disabling scroll when mobile nav is open */
@@ -50,14 +46,14 @@ body.no-scroll {
 }
 
 h1, h2, h3, h4, h5, h6 {
-    font-family: var(--font-heading); /* Updated */
-    color: var(--color-heading-text); /* Updated */
+    font-family: var(--font-heading);
+    color: var(--color-heading-text);
     text-align: center;
     margin-bottom: 0.8em;
     line-height: 1.2;
 }
 
-h1 { font-size: clamp(2.5em, 6vw, 4.5em); } /* Responsive font size */
+h1 { font-size: clamp(2.5em, 6vw, 4.5em); }
 h2 { font-size: clamp(2em, 4vw, 3.2em); }
 h3 { font-size: clamp(1.5em, 3vw, 2.2em); }
 
@@ -70,16 +66,16 @@ p {
 }
 
 a {
-    color: var(--color-primary); /* Updated */
+    color: var(--color-primary);
     text-decoration: none;
     transition: color 0.3s ease;
 }
 
 a:hover {
-    color: var(--color-accent); /* Updated */
+    color: var(--color-accent);
 }
 
-.sr-only { /* For accessible but visually hidden labels */
+.sr-only {
     position: absolute;
     width: 1px;
     height: 1px;
@@ -92,10 +88,9 @@ a:hover {
 }
 
 /* --- Utility Classes --- */
-
 .sanskrit {
     font-family: var(--font-hindi);
-    font-weight: 700; /* Bold for Hindi text */
+    font-weight: 700;
     letter-spacing: 0.5px;
 }
 
@@ -106,13 +101,13 @@ a:hover {
 .section-title {
     margin-top: 0;
     margin-bottom: 15px;
-    color: var(--color-heading-text); /* Ensure it's blackish */
+    color: var(--color-heading-text);
 }
 
 .section-description {
     font-size: 1.1em;
     margin-bottom: var(--spacing-lg);
-    color: var(--color-body-text); /* Ensure it's blackish */
+    color: var(--color-body-text);
     max-width: 700px;
     line-height: 1.5;
 }
@@ -126,7 +121,7 @@ a:hover {
 
 .small-print {
     font-size: 0.85em;
-    color: #666; /* Keep a softer grey */
+    color: #666;
     margin-top: var(--spacing-md);
 }
 
@@ -135,12 +130,11 @@ a:hover {
 }
 
 /* --- Buttons --- */
-
 .btn {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    background-color: var(--color-primary); /* Orange */
+    background-color: var(--color-primary);
     color: white;
     padding: 12px 25px;
     border: none;
@@ -149,13 +143,13 @@ a:hover {
     font-size: 1em;
     cursor: pointer;
     transition: background-color 0.3s ease-in-out, transform 0.2s ease-in-out, box-shadow 0.3s ease;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Lighter shadow */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     text-transform: uppercase;
     letter-spacing: 0.5px;
 }
 
 .btn:hover {
-    background-color: var(--color-button-hover); /* Yellow */
+    background-color: var(--color-button-hover);
     transform: translateY(-3px);
     box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
 }
@@ -166,22 +160,22 @@ a:hover {
 }
 
 .primary-cta {
-    background-color: var(--color-primary); /* Orange */
-    box-shadow: 0 6px 15px rgba(255, 107, 0, 0.3); /* Orange shadow */
+    background-color: var(--color-primary);
+    box-shadow: 0 6px 15px rgba(255, 107, 0, 0.3);
     margin-top: var(--spacing-md);
     padding: 15px 35px;
     font-size: 1.1em;
 }
 
 .primary-cta:hover {
-    background-color: var(--color-button-hover); /* Yellow */
+    background-color: var(--color-button-hover);
     transform: translateY(-4px);
-    box-shadow: 0 8px 20px rgba(253, 197, 0, 0.4); /* Yellow shadow */
+    box-shadow: 0 8px 20px rgba(253, 197, 0, 0.4);
 }
 
 .secondary-btn {
     background-color: transparent;
-    border: 2px solid var(--color-primary); /* Orange */
+    border: 2px solid var(--color-primary);
     color: var(--color-primary);
     box-shadow: none;
 }
@@ -193,23 +187,48 @@ a:hover {
     box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
 }
 
+/* New style for "Show My Name" button */
+.show-my-name-btn {
+    background-color: var(--color-accent); /* Use accent color for premium feel */
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 10px;
+    font-weight: 700;
+    font-size: 1.1em;
+    box-shadow: 0 8px 20px rgba(0, 180, 216, 0.4); /* Premium shadow with accent color */
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+.show-my-name-btn:hover {
+    background-color: #00A0C0; /* Slightly darker accent on hover */
+    transform: translateY(-5px);
+    box-shadow: 0 12px 25px rgba(0, 180, 216, 0.5);
+}
+
+.show-my-name-btn:active {
+    transform: translateY(0);
+    box-shadow: 0 4px 10px rgba(0, 180, 216, 0.3);
+}
+
+
 /* Volunteer Button in Mission Section */
 .volunteer-btn-mission {
-    background-color: var(--color-accent); /* Sky Blue */
-    color: white; /* Changed to white for better contrast */
+    background-color: var(--color-accent);
+    color: white;
     padding: 10px 20px;
     font-size: 1em;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0,180,216,0.3);
-    margin-top: var(--spacing-lg); /* Space from text */
+    margin-top: var(--spacing-lg);
     margin-right: var(--spacing-sm);
     margin-left: var(--spacing-sm);
-    white-space: nowrap; /* Prevent text wrapping */
+    white-space: nowrap;
     transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 .volunteer-btn-mission:hover {
-    background-color: var(--color-button-hover); /* Yellow */
+    background-color: var(--color-button-hover);
     transform: translateY(-2px);
     box-shadow: 0 6px 12px rgba(253,197,0,0.4);
 }
@@ -217,16 +236,16 @@ a:hover {
 /* Copy Button Specifics */
 .copy-btn {
     background: none;
-    border: 1px solid var(--color-primary); /* Orange */
+    border: 1px solid var(--color-primary);
     color: var(--color-primary);
-    padding: 8px 15px; /* Increased padding */
+    padding: 8px 15px;
     margin-left: var(--spacing-sm);
-    font-size: 0.9em; /* Slightly larger text */
+    font-size: 0.9em;
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
     box-shadow: none;
-    white-space: nowrap; /* Prevent button text from wrapping */
+    white-space: nowrap;
 }
 
 .copy-btn:hover {
@@ -236,8 +255,8 @@ a:hover {
 }
 
 .copy-btn.copied {
-    background-color: var(--color-primary); /* Changed from green to primary orange */
-    border-color: var(--color-primary); /* Changed from green to primary orange */
+    background-color: var(--color-primary);
+    border-color: var(--color-primary);
     color: white;
     font-weight: bold;
     transform: translateY(0);
@@ -245,54 +264,44 @@ a:hover {
 
 /* Preset Amount Buttons */
 .amount-buttons .preset-amount {
-    background-color: var(--color-background-light); /* White */
-    color: var(--color-body-text); /* Blackish */
+    background-color: var(--color-background-light);
+    color: var(--color-body-text);
     box-shadow: 0 2px 5px rgba(0,0,0,0.05);
     padding: 12px 22px;
     margin: var(--spacing-xs);
     font-size: 1em;
-    border: 1px solid #E0E0E0; /* Lighter border */
+    border: 1px solid #E0E0E0;
 }
 
 .amount-buttons .preset-amount:hover {
-    background-color: #F0F0F0; /* Slightly darker white */
+    background-color: #F0F0F0;
     color: var(--color-heading-text);
     transform: translateY(-2px);
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
 
 .amount-buttons .preset-amount.active {
-    background-color: var(--color-primary); /* Orange */
+    background-color: var(--color-primary);
     color: white;
-    border-color: var(--color-accent); /* Sky Blue */
+    border-color: var(--color-accent);
     transform: scale(1.05);
     box-shadow: 0 5px 12px rgba(0,0,0,0.15);
 }
 
 /* --- Header Section (Hero) --- */
-
 .main-header {
-    background: var(--color-primary); /* Solid Orange */
+    background: var(--color-primary);
     color: white;
     text-align: center;
-    padding: 100px 20px var(--spacing-xxl); /* More padding at top */
-    min-height: 85vh; /* Make it a tall hero section */
+    padding: 100px 20px var(--spacing-xxl);
+    min-height: 85vh;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     position: relative;
     overflow: hidden;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); /* Lighter shadow */
-}
-
-/* Overlay for text readability on background image/pattern - REMOVED */
-.header-overlay {
-    background: none; /* Removed */
-    position: static; /* No need for absolute positioning */
-    width: auto;
-    height: auto;
-    z-index: auto;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
 
 .header-top {
@@ -304,7 +313,7 @@ a:hover {
     justify-content: space-between;
     align-items: center;
     padding: var(--spacing-md);
-    z-index: 100; /* Ensure it's above other elements */
+    z-index: 100;
 }
 
 .hamburger-menu {
@@ -314,17 +323,17 @@ a:hover {
     flex-direction: column;
     justify-content: space-between;
     cursor: pointer;
-    position: relative; /* For animation origin */
-    z-index: 110; /* Above nav when open */
+    position: relative;
+    z-index: 110;
     transition: all 0.3s ease-in-out;
-    margin-right: var(--spacing-md); /* Space from logo */
+    margin-right: var(--spacing-md);
 }
 
 .hamburger-menu span {
     display: block;
     width: 100%;
     height: 3px;
-    background-color: var(--color-background-light); /* White for hamburger lines */
+    background-color: var(--color-background-light);
     border-radius: 2px;
     transition: all 0.3s ease-in-out;
     transform-origin: center;
@@ -345,33 +354,33 @@ a:hover {
 }
 
 .logo-container {
-    flex-grow: 1; /* Allows logo to take available space and center */
-    text-align: center; /* Removed margin-left to allow proper centering with social icons on right */
+    flex-grow: 1;
+    text-align: center;
 }
 
 .logo {
-    max-width: 100px; /* Adjust logo size */
+    max-width: 100px;
     height: auto;
     display: block;
-    margin: 0 auto; /* Center the logo within its container */
+    margin: 0 auto;
     filter: drop-shadow(0 0 5px rgba(0,0,0,0.2));
 }
 
 .header-social-icons {
     display: flex;
     gap: var(--spacing-sm);
-    margin-left: var(--spacing-md); /* Space from logo */
+    margin-left: var(--spacing-md);
 }
 
 .header-social-icons a {
-    color: var(--color-background-light); /* White */
+    color: var(--color-background-light);
     font-size: 1.5em;
     padding: var(--spacing-xs);
     transition: color 0.3s ease, transform 0.2s ease;
 }
 
 .header-social-icons a:hover {
-    color: var(--color-accent); /* Sky Blue */
+    color: var(--color-accent);
     transform: scale(1.1);
 }
 
@@ -381,20 +390,20 @@ a:hover {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: var(--color-secondary); /* Dark Grey for nav background */
+    background-color: var(--color-secondary);
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    transform: translateX(-100%); /* Start off-screen */
+    transform: translateX(-100%);
     transition: transform 0.4s ease-in-out;
-    z-index: 99; /* Below hamburger, above content */
+    z-index: 99;
     opacity: 0;
     visibility: hidden;
 }
 
 .main-nav.nav-open {
-    transform: translateX(0); /* Slide in */
+    transform: translateX(0);
     opacity: 1;
     visibility: visible;
 }
@@ -408,7 +417,7 @@ a:hover {
 
 .main-nav li {
     margin-bottom: var(--spacing-lg);
-    opacity: 0; /* For individual link animation */
+    opacity: 0;
     transform: translateY(20px);
     transition: opacity 0.4s ease-out, transform 0.4s ease-out;
 }
@@ -419,13 +428,14 @@ a:hover {
 }
 
 /* Adjust transition delays for new items */
-.main-nav.nav-open li:nth-child(1) { transition-delay: 0.1s; } /* About Us */
-.main-nav.nav-open li:nth-child(2) { transition-delay: 0.15s; } /* Mission */
-.main-nav.nav-open li:nth-child(3) { transition-delay: 0.2s; } /* Gurukul Life */
-.main-nav.nav-open li:nth-child(4) { transition-delay: 0.25s; } /* Donate */
-.main-nav.nav-open li:nth-child(5) { transition-delay: 0.3s; } /* Thank You Donators */
-.main-nav.nav-open li:nth-child(6) { transition-delay: 0.35s; } /* Updates (New) */
-.main-nav.nav-open li:nth-child(7) { transition-delay: 0.4s; } /* Contact Us */
+.main-nav.nav-open li:nth-child(1) { transition-delay: 0.1s; }
+.main-nav.nav-open li:nth-child(2) { transition-delay: 0.15s; }
+.main-nav.nav-open li:nth-child(3) { transition-delay: 0.2s; }
+.main-nav.nav-open li:nth-child(4) { transition-delay: 0.25s; }
+.main-nav.nav-open li:nth-child(5) { transition-delay: 0.3s; }
+.main-nav.nav-open li:nth-child(6) { transition-delay: 0.35s; }
+.main-nav.nav-open li:nth-child(7) { transition-delay: 0.4s; } /* Templates */
+.main-nav.nav-open li:nth-child(8) { transition-delay: 0.45s; } /* Contact Us */
 
 .main-nav a {
     color: white;
@@ -436,12 +446,12 @@ a:hover {
     padding: var(--spacing-sm) var(--spacing-md);
     transition: color 0.3s ease, background-color 0.3s ease, transform 0.2s ease;
     border-radius: var(--spacing-xs);
-    display: inline-block; /* Allows padding and hover background */
+    display: inline-block;
 }
 
 .main-nav a:hover {
-    color: var(--color-accent); /* Sky Blue */
-    background-color: rgba(255, 255, 255, 0.08); /* More subtle hover */
+    color: var(--color-accent);
+    background-color: rgba(255, 255, 255, 0.08);
     transform: translateX(5px);
 }
 
@@ -461,7 +471,7 @@ a:hover {
 }
 
 .nav-social-icons a:hover {
-    color: var(--color-accent); /* Sky Blue */
+    color: var(--color-accent);
     background-color: rgba(255, 255, 255, 0.15);
     transform: scale(1.1);
 }
@@ -470,20 +480,20 @@ a:hover {
     z-index: 2;
     position: relative;
     max-width: 900px;
-    margin-top: var(--spacing-xxl); /* Space from header-top */
+    margin-top: var(--spacing-xxl);
 }
 
 .main-header .institute-name {
     color: white;
-    text-shadow: 1px 1px 5px rgba(0,0,0,0.3); /* Lighter shadow */
-    margin-bottom: var(--spacing-xs); /* Less space between English and Hindi names */
+    text-shadow: 1px 1px 5px rgba(0,0,0,0.3);
+    margin-bottom: var(--spacing-xs);
     line-height: 1.1;
     text-transform: uppercase;
     letter-spacing: 1px;
 }
 
 .main-header .institute-name.sanskrit {
-  font-size: clamp(2em, 5vw, 4em); /* Slightly smaller for Hindi */
+  font-size: clamp(2em, 5vw, 4em);
   margin-bottom: var(--spacing-md);
 }
 
@@ -494,7 +504,7 @@ a:hover {
 
 .quote-text {
   font-size: clamp(1.1em, 2.5vw, 1.6em);
-  color: rgba(255, 255, 255, 0.9); /* Slightly less opaque */
+  color: rgba(255, 255, 255, 0.9);
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
   line-height: 1.4;
   font-weight: 700;
@@ -502,7 +512,7 @@ a:hover {
 
 .english-quote-translation {
   font-size: clamp(0.9em, 2vw, 1.2em);
-  color: rgba(255, 255, 255, 0.8); /* Slightly less opaque */
+  color: rgba(255, 255, 255, 0.8);
   margin-top: var(--spacing-sm);
   line-height: 1.5;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
@@ -517,10 +527,10 @@ a:hover {
 }
 
 .namaste-boy-image {
-  width: 150px; /* Adjust size as needed */
+  width: 150px;
   height: auto;
-  border-radius: 50%; /* Make it circular */
-  border: 5px solid var(--color-accent); /* Sky Blue border */
+  border-radius: 50%;
+  border: 5px solid var(--color-accent);
   box-shadow: 0 5px 15px rgba(0,0,0,0.3);
   object-fit: cover;
   transition: transform 0.3s ease;
@@ -531,13 +541,12 @@ a:hover {
 }
 
 /* --- Section Dividers (Waves) --- */
-
 .section-divider {
   width: 100%;
-  height: 100px; /* Height of the wave effect */
+  height: 100px;
   background-color: transparent;
   position: relative;
-  z-index: 1; /* Ensures it overlaps sections slightly */
+  z-index: 1;
 }
 
 .section-divider::before {
@@ -545,53 +554,52 @@ a:hover {
   position: absolute;
   width: 100%;
   height: 100%;
-  background-color: var(--color-background-light); /* Default background below wave */
-  z-index: -1; /* Behind the wave SVG */
+  background-color: var(--color-background-light);
+  z-index: -1;
 }
 
 .section-divider.wave-top {
-  margin-top: -60px; /* Overlap with previous section */
-  background: var(--color-background-light); /* Background color of the section below it */
+  margin-top: -60px;
+  background: var(--color-background-light);
 }
 
 .section-divider.wave-top::before {
   top: 0;
-  background-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 1000 100" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none"><path d="M0,0 L0,50 Q125,100 250,50 T500,50 T750,50 T1000,50 L1000,0 Z" fill="%23FFFFFF"/></svg>'); /* White */
+  background-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 1000 100" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none"><path d="M0,0 L0,50 Q125,100 250,50 T500,50 T750,50 T1000,50 L1000,0 Z" fill="%23FFFFFF"/></svg>');
   background-repeat: no-repeat;
   background-size: 100% 100px;
 }
 
 .section-divider.wave-bottom {
-  margin-bottom: -60px; /* Overlap with next section */
-  background: var(--color-background-light); /* Background color of the section above it */
+  margin-bottom: -60px;
+  background: var(--color-background-light);
 }
 
 .section-divider.wave-bottom::before {
   bottom: 0;
-  background-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 1000 100" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none"><path d="M0,100 L0,50 Q125,0 250,50 T500,50 T750,50 T1000,50 L1000,100 Z" fill="%23FFFFFF"/></svg>'); /* White */
+  background-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 1000 100" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none"><path d="M0,100 L0,50 Q125,0 250,50 T500,50 T750,50 T1000,50 L1000,100 Z" fill="%23FFFFFF"/></svg>');
   background-repeat: no-repeat;
   background-size: 100% 100px;
 }
 
 /* Reverse colors for donation section separators */
 .section-divider.reverse-colors.wave-top {
-    background: var(--color-primary); /* Orange */
+    background: var(--color-primary);
 }
 
 .section-divider.reverse-colors.wave-top::before {
-    background-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 1000 100" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none"><path d="M0,0 L0,50 Q125,100 250,50 T500,50 T750,50 T1000,50 L1000,0 Z" fill="%23FF6B00"/></svg>'); /* Orange */
+    background-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 1000 100" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none"><path d="M0,0 L0,50 Q125,100 250,50 T500,50 T750,50 T1000,50 L1000,0 Z" fill="%23FF6B00"/></svg>');
 }
 
 .section-divider.reverse-colors.wave-bottom {
-    background: var(--color-primary); /* Orange */
+    background: var(--color-primary);
 }
 
 .section-divider.reverse-colors.wave-bottom::before {
-    background-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 1000 100" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none"><path d="M0,100 L0,50 Q125,0 250,50 T500,50 T750,50 T1000,50 L1000,100 Z" fill="%23FF6B00"/></svg>'); /* Orange */
+    background-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 1000 100" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none"><path d="M0,100 L0,50 Q125,0 250,50 T500,50 T750,50 T1000,50 L1000,100 Z" fill="%23FF6B00"/></svg>');
 }
 
 /* --- Main Content Sections --- */
-
 main {
     padding: var(--spacing-xxl) 0;
 }
@@ -600,26 +608,25 @@ main {
     padding: var(--spacing-xxl) var(--spacing-md);
     margin: var(--spacing-xl) auto;
     max-width: 1200px;
-    background-color: var(--color-section-bg); /* Very Light Grey for sections */
-    border-radius: 15px; /* More rounded corners */
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1); /* Lighter shadow */
+    background-color: var(--color-section-bg);
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
     display: flex;
     flex-direction: column;
     align-items: center;
     transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-    position: relative; /* For animations */
+    position: relative;
 }
 
 .section:hover {
-    transform: translateY(-5px); /* Subtle lift on hover */
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15); /* Deeper shadow on hover */
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
 }
 
 /* About Us Section specific styles */
-
 .about-us-content {
     display: flex;
-    flex-wrap: wrap; /* Allows wrapping on smaller screens */
+    flex-wrap: wrap;
     gap: var(--spacing-lg);
     align-items: center;
     justify-content: center;
@@ -628,13 +635,13 @@ main {
 }
 
 .about-text {
-    flex: 1 1 500px; /* Allows text to take ample space */
+    flex: 1 1 500px;
     text-align: left;
     padding: var(--spacing-sm);
 }
 
-.about-text h3 { /* For highlighted headings */
-    color: var(--color-primary); /* Orange */
+.about-text h3 {
+    color: var(--color-primary);
     font-size: 1.6em;
     margin-bottom: 0.5em;
     text-align: left;
@@ -643,14 +650,14 @@ main {
 .about-text p {
     text-align: left;
     margin-bottom: 1.2em;
-    max-width: none; /* Override section p max-width */
+    max-width: none;
 }
 
 .about-text p.last-paragraph {
-    margin-bottom: 0; /* No bottom margin for the very last paragraph */
+    margin-bottom: 0;
 }
 
-.about-text ul { /* For bullet points */
+.about-text ul {
     list-style: disc;
     margin-left: var(--spacing-md);
     margin-bottom: 1em;
@@ -663,9 +670,9 @@ main {
 }
 
 .about-image-wrapper {
-    flex: 0 1 400px; /* Image takes less space, but can shrink */
+    flex: 0 1 400px;
     padding: var(--spacing-xs);
-    border: 3px solid var(--color-accent); /* Sky Blue border */
+    border: 3px solid var(--color-accent);
     border-radius: 10px;
     overflow: hidden;
     box-shadow: 0 5px 15px rgba(0,0,0,0.1);
@@ -675,17 +682,16 @@ main {
     width: 100%;
     height: auto;
     display: block;
-    border-radius: 8px; /* Slightly less rounded than wrapper */
+    border-radius: 8px;
     transition: transform 0.5s ease;
 }
 
 .about-image-wrapper:hover .section-image,
-.mission-image-wrapper:hover .section-image { /* Apply to new mission section image too */
-    transform: scale(1.05); /* Zoom effect on hover */
+.mission-image-wrapper:hover .section-image {
+    transform: scale(1.05);
 }
 
 /* New Mission Section Styles */
-
 .mission-content {
     display: flex;
     flex-wrap: wrap;
@@ -702,7 +708,7 @@ main {
     padding: var(--spacing-sm);
     display: flex;
     flex-direction: column;
-    align-items: flex-start; /* Align text to the left */
+    align-items: flex-start;
 }
 
 .mission-text-container p {
@@ -723,7 +729,7 @@ main {
 .mission-image-wrapper {
     flex: 0 1 400px;
     padding: var(--spacing-xs);
-    border: 3px solid var(--color-accent); /* Sky Blue */
+    border: 3px solid var(--color-accent);
     border-radius: 10px;
     overflow: hidden;
     box-shadow: 0 5px 15px rgba(0,0,0,0.1);
@@ -731,40 +737,43 @@ main {
 
 /* Video Section Styles */
 .hero-video-section {
-    padding: var(--spacing-lg) var(--spacing-md); /* Adjust padding */
-    margin-top: var(--spacing-xxl); /* Space from content above it */
-    background-color: transparent; /* No background as it's in header */
-    box-shadow: none; /* No shadow */
+    padding: var(--spacing-lg) var(--spacing-md);
+    margin-top: var(--spacing-xxl);
+    background-color: transparent;
+    box-shadow: none;
 }
 
 .hero-video-section .section-title,
 .hero-video-section .section-description {
-    color: white; /* Match header text color */
+    color: white;
     text-shadow: 1px 1px 5px rgba(0,0,0,0.2);
 }
 
 .video-container {
     width: 100%;
-    max-width: 800px; /* Max width for the video player */
+    max-width: 800px;
     margin-top: var(--spacing-lg);
-    background-color: var(--color-secondary); /* Dark Grey background for video player */
-    border-radius: 15px; /* More rounded */
+    background-color: var(--color-secondary);
+    border-radius: 15px;
     overflow: hidden;
     box-shadow: 0 10px 25px rgba(0,0,0,0.2);
-    border: 5px solid var(--color-accent); /* Sky Blue Decorative frame */
-    display: flex; /* To vertically center the video if it doesn't fill height */
-    align-items: center;
-    justify-content: center;
+    border: 5px solid var(--color-accent);
+    position: relative; /* Added for aspect ratio */
+    padding-bottom: 56.25%; /* 16:9 Aspect Ratio (height / width * 100%) */
+    height: 0; /* Important for aspect ratio */
 }
 
 .video-container video {
+    position: absolute; /* Position video absolutely within container */
+    top: 0;
+    left: 0;
     width: 100%;
-    height: auto;
+    height: 100%;
+    object-fit: cover; /* Ensures video fills the space */
     display: block;
 }
 
 /* Gurukul Life Section Gallery */
-
 .gurukul-gallery {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -779,7 +788,7 @@ main {
   border-radius: 8px;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease;
-  cursor: pointer; /* Indicate it's clickable for lightbox */
+  cursor: pointer;
 }
 
 .gallery-item:hover {
@@ -789,8 +798,8 @@ main {
 
 .gallery-image {
     width: 100%;
-    height: 200px; /* Fixed height for consistency */
-    object-fit: cover; /* Ensures images cover the area */
+    height: 200px;
+    object-fit: cover;
     display: block;
     transition: transform 0.5s ease;
 }
@@ -819,9 +828,8 @@ main {
 }
 
 /* Donation Section Styles */
-
 .donate-page-section {
-    background: var(--color-primary); /* Solid Orange */
+    background: var(--color-primary);
     color: white;
 }
 
@@ -833,27 +841,27 @@ main {
 
 .donation-methods-grid {
     display: grid;
-    grid-template-columns: 1fr; /* Only one column for the amount card */
+    grid-template-columns: 1fr;
     gap: var(--spacing-lg);
     width: 100%;
-    max-width: 600px; /* Max width for the single card */
+    max-width: 600px;
     margin-top: var(--spacing-xl);
 }
 
 .donation-card {
-    background-color: var(--color-background-light); /* White */
+    background-color: var(--color-background-light);
     padding: var(--spacing-xl);
     border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); /* Lighter shadow */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
     text-align: left;
     color: var(--color-body-text);
 }
 
 .donation-card h3 {
-    color: var(--color-heading-text); /* Blackish */
+    color: var(--color-heading-text);
     margin-bottom: var(--spacing-lg);
     font-size: 1.8em;
-    text-align: center; /* Center align card headings */
+    text-align: center;
 }
 
 .donation-card p {
@@ -863,7 +871,7 @@ main {
 
 .donation-card .detail-label {
     font-weight: 600;
-    color: var(--color-primary); /* Orange */
+    color: var(--color-primary);
     margin-bottom: 0;
     font-size: 0.9em;
 }
@@ -879,7 +887,7 @@ main {
 .copy-field {
     display: flex;
     align-items: center;
-    background-color: #F0F0F0; /* Slightly darker white */
+    background-color: #F0F0F0;
     border-radius: 5px;
     padding: var(--spacing-xs) var(--spacing-sm);
     margin-bottom: var(--spacing-md);
@@ -888,44 +896,10 @@ main {
 
 .copy-field span {
     flex-grow: 1;
-    font-family: monospace; /* For codes */
+    font-family: monospace;
     font-size: 1.1em;
     padding-right: var(--spacing-sm);
     color: var(--color-heading-text);
-}
-
-.qr-upi-card { /* This card will be removed from HTML */
-    grid-column: span 1;
-}
-
-.qr-image-wrapper { /* This will be removed from HTML */
-    text-align: center;
-    margin-top: var(--spacing-md);
-}
-
-.qr-image { /* This will be removed from HTML */
-    width: 180px;
-    height: 180px;
-    border: 5px solid var(--color-accent); /* Sky Blue border */
-    border-radius: 8px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-}
-
-.amount-selection-area { /* This class is no longer explicitly used, donation-card covers it now */
-    background-color: var(--color-background-light); /* White */
-    padding: var(--spacing-xl);
-    border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-    margin-top: var(--spacing-lg);
-    width: 100%;
-    max-width: 600px;
-    text-align: center;
-    color: var(--color-body-text);
-}
-
-.amount-selection-area h3 {
-    color: var(--color-heading-text);
-    margin-bottom: var(--spacing-md);
 }
 
 .amount-buttons {
@@ -944,11 +918,11 @@ main {
     width: 100%;
     max-width: 300px;
     padding: 12px 15px;
-    border: 1px solid #E0E0E0; /* Lighter border */
+    border: 1px solid #E0E0E0;
     border-radius: 8px;
     font-size: 1.1em;
     color: var(--color-heading-text);
-    background-color: var(--color-background-light); /* White */
+    background-color: var(--color-background-light);
     transition: border-color 0.3s ease, box-shadow 0.3s ease;
     text-align: center;
 }
@@ -956,7 +930,7 @@ main {
 .custom-amount-input:focus {
     outline: none;
     border-color: var(--color-primary);
-    box-shadow: 0 0 0 3px rgba(255, 107, 0, 0.2); /* Orange focus shadow */
+    box-shadow: 0 0 0 3px rgba(255, 107, 0, 0.2);
 }
 
 .donate-button {
@@ -968,13 +942,13 @@ main {
 .trust-elements {
     margin-top: var(--spacing-md);
     font-size: 0.95em;
-    color: var(--color-body-text); /* Blackish */
+    color: var(--color-body-text);
     font-weight: 500;
     line-height: 1.4;
 }
 
 .trust-elements .icon {
-    color: var(--color-primary); /* Orange for icon */
+    color: var(--color-primary);
     margin-right: 5px;
 }
 
@@ -982,7 +956,7 @@ main {
 .progress-bar-container {
     width: 90%;
     max-width: 800px;
-    background-color: rgba(255, 255, 255, 0.2); /* White with opacity */
+    background-color: rgba(255, 255, 255, 0.2);
     border-radius: 10px;
     overflow: hidden;
     margin: var(--spacing-lg) auto var(--spacing-xl);
@@ -1004,97 +978,28 @@ main {
 .progress-bar {
     width: 100%;
     height: 25px;
-    background-color: rgba(0, 0, 0, 0.2); /* Darker background for the bar itself */
-    border-radius: 0 0 10px 10px; /* Only bottom rounded */
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 0 0 10px 10px;
     position: relative;
     overflow: hidden;
 }
 
 .progress-bar-fill {
     height: 100%;
-    background-color: var(--color-accent); /* Sky Blue for the fill */
-    width: 0%; /* Will be set by inline style in HTML */
+    background-color: var(--color-accent);
+    width: 0%;
     transition: width 1s ease-out;
     display: flex;
     align-items: center;
     justify-content: center;
     font-weight: 700;
-    color: white; /* White text for percentage */
-    font-size: 0.9em;
-}
-
-
-/* Payment Proof/Volunteer Form Section - REMOVED from HTML */
-.form-card { /* Keeping styles in case similar forms are added later */
-    background-color: var(--color-background-light); /* White */
-    padding: var(--spacing-xl);
-    border-radius: 15px;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-    width: 100%;
-    max-width: 700px;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.form-card .form-header {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: var(--spacing-lg);
-    color: var(--color-heading-text);
-}
-
-.form-card .form-header i {
-    font-size: 2.5em;
-    color: var(--color-primary); /* Orange */
-    margin-right: var(--spacing-md);
-}
-
-.form-card .form-header h3 {
-    margin: 0;
-    font-size: clamp(1.6em, 3vw, 2.2em);
-    text-align: center;
-}
-
-.form-card .form-description {
-    font-size: 1em;
-    color: var(--color-body-text);
-    margin-bottom: var(--spacing-lg);
-    max-width: 500px;
-}
-
-.form-container iframe {
-    width: 100%;
-    height: 500px; /* Adjust height as needed */
-    border: none;
-    border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-}
-
-/* Success Message for forms */
-.success-message {
-    background-color: var(--color-primary); /* Orange */
     color: white;
-    padding: var(--spacing-md);
-    border-radius: 8px;
-    margin-top: var(--spacing-lg);
-    opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.5s ease, transform 0.5s ease;
-    text-align: center;
-    max-width: 80%;
-}
-
-.success-message.show {
-    opacity: 1;
-    transform: translateY(0);
+    font-size: 0.9em;
 }
 
 /* Thank You Section (Donation Wall) */
 #thankyou-section {
-    min-height: 600px; /* Make it significantly larger */
+    min-height: 600px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -1102,20 +1007,20 @@ main {
 }
 
 .donators-list-container {
-    background-color: var(--color-background-light); /* White */
+    background-color: var(--color-background-light);
     padding: var(--spacing-xl);
     border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); /* Lighter shadow */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
     margin-top: var(--spacing-lg);
     width: 100%;
-    max-width: 800px; /* Increased max-width */
+    max-width: 800px;
     text-align: center;
 }
 
 .donators-list-container h3 {
     color: var(--color-heading-text);
     margin-bottom: var(--spacing-md);
-    font-size: 2em; /* Larger heading */
+    font-size: 2em;
 }
 
 /* NEW: Styles for individual donator cards */
@@ -1123,14 +1028,14 @@ main {
     list-style: none;
     padding: 0;
     margin-bottom: var(--spacing-lg);
-    display: grid; /* Use grid for better layout of names */
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* 2-3 columns */
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: var(--spacing-md);
-    text-align: left; /* Align list items left within their grid cell */
+    text-align: left;
 }
 
-.donator-card-item { /* New class for individual donor cards */
-    background-color: #F8F8F8; /* Light grey background for donor cards */
+.donator-card-item {
+    background-color: #F8F8F8;
     border-radius: 10px;
     box-shadow: 0 2px 5px rgba(0,0,0,0.05);
     padding: var(--spacing-md);
@@ -1146,11 +1051,11 @@ main {
     box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
 
-.donator-avatar { /* New style for donor avatars */
-    width: 60px; /* Larger avatar */
+.donator-avatar {
+    width: 60px;
     height: 60px;
     border-radius: 50%;
-    background-color: var(--color-accent); /* Sky Blue placeholder */
+    background-color: var(--color-accent);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -1158,7 +1063,7 @@ main {
     font-weight: 700;
     font-size: 1.2em;
     flex-shrink: 0;
-    border: 2px solid var(--color-primary); /* Orange border */
+    border: 2px solid var(--color-primary);
 }
 
 .donator-info {
@@ -1178,14 +1083,12 @@ main {
     color: var(--color-body-text);
 }
 
-
 /* Contact Us Section */
-
 .contact-content {
-    background-color: var(--color-background-light); /* White */
+    background-color: var(--color-background-light);
     padding: var(--spacing-xl);
     border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); /* Lighter shadow */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
     margin-top: var(--spacing-lg);
     width: 100%;
     max-width: 600px;
@@ -1200,8 +1103,8 @@ main {
 .contact-info .email-address a {
     font-size: 1.2em;
     font-weight: 600;
-    color: var(--color-primary); /* Orange */
-    word-break: break-all; /* For long email addresses */
+    color: var(--color-primary);
+    word-break: break-all;
 }
 
 .contact-info .contact-note {
@@ -1254,15 +1157,45 @@ main {
     margin-bottom: var(--spacing-xs);
 }
 
+/* --- Templates Section (NEW) --- */
+#templates-section {
+    background-color: var(--color-section-bg);
+    padding: var(--spacing-xxl) var(--spacing-md);
+    margin: var(--spacing-xl) auto;
+    max-width: 1200px;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.templates-gallery {
+    width: 100%;
+    max-width: 800px; /* Adjust as needed */
+    margin-top: var(--spacing-lg);
+    text-align: center;
+}
+
+.template-image {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.template-image:hover {
+    transform: scale(1.02);
+}
 
 /* --- Footer --- */
-
 .site-footer {
-    background-color: var(--color-secondary); /* Dark Grey */
+    background-color: var(--color-secondary);
     color: white;
     padding: var(--spacing-xxl) var(--spacing-md);
     text-align: center;
-    box-shadow: 0 -3px 10px rgba(0, 0, 0, 0.15); /* Lighter shadow */
+    box-shadow: 0 -3px 10px rgba(0, 0, 0, 0.15);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -1273,19 +1206,19 @@ main {
     margin: 0 auto;
     width: 100%;
     display: flex;
-    flex-wrap: wrap; /* Allows wrapping for smaller screens */
-    justify-content: space-around; /* Distribute items */
-    text-align: left; /* Align text within footer columns */
+    flex-wrap: wrap;
+    justify-content: space-around;
+    text-align: left;
 }
 
-.footer-section { /* New class for footer columns */
-    flex: 1 1 250px; /* Base width for footer columns */
+.footer-section {
+    flex: 1 1 250px;
     margin-bottom: var(--spacing-lg);
     padding: 0 var(--spacing-md);
 }
 
 .footer-section h3 {
-    color: var(--color-accent); /* Sky Blue for footer headings */
+    color: var(--color-accent);
     margin-bottom: var(--spacing-md);
     text-align: left;
     font-size: 1.4em;
@@ -1313,7 +1246,7 @@ main {
 }
 
 .footer-section ul li a:hover {
-    color: var(--color-primary); /* Orange on hover */
+    color: var(--color-primary);
 }
 
 .footer-moto {
@@ -1321,8 +1254,8 @@ main {
     margin-bottom: var(--spacing-md);
     font-style: italic;
     color: rgba(255, 255, 255, 0.9);
-    width: 100%; /* Ensure it spans full width */
-    text-align: center; /* Center the moto */
+    width: 100%;
+    text-align: center;
 }
 
 .footer-moto.sanskrit {
@@ -1332,12 +1265,12 @@ main {
 
 /* Footer social icons - Re-enabled and styled */
 .footer-social-icons {
-    display: flex; /* Changed from none */
-    justify-content: center; /* Center icons */
+    display: flex;
+    justify-content: center;
     gap: var(--spacing-lg);
     margin-top: var(--spacing-md);
-    margin-bottom: var(--spacing-lg); /* Add some space below icons */
-    width: 100%; /* Ensure it spans full width */
+    margin-bottom: var(--spacing-lg);
+    width: 100%;
 }
 
 .footer-social-icons a {
@@ -1350,11 +1283,10 @@ main {
 }
 
 .footer-social-icons a:hover {
-    color: var(--color-accent); /* Sky Blue */
+    color: var(--color-accent);
     background-color: rgba(255, 255, 255, 0.2);
     transform: scale(1.1);
 }
-
 
 .copyright {
     font-size: 0.9em;
@@ -1365,7 +1297,6 @@ main {
 }
 
 /* --- Animations --- */
-
 .fade-in-down {
   opacity: 0;
   transform: translateY(-20px);
@@ -1388,6 +1319,7 @@ main {
 .delay-3 { transition-delay: 0.3s; }
 .delay-4 { transition-delay: 0.4s; }
 .delay-5 { transition-delay: 0.5s; }
+.delay-6 { transition-delay: 0.6s; } /* Added for new templates section */
 
 /* --- Custom Modal for Alerts (NEW) --- */
 .custom-modal-overlay {
@@ -1448,57 +1380,42 @@ main {
     background-color: var(--color-button-hover);
 }
 
-
 /* --- Media Queries for Responsiveness --- */
-
 @media (max-width: 768px) {
-
     /* Header Top & Navigation */
     .header-top {
         padding: var(--spacing-sm);
-        /* Ensure hamburger is always visible and clickable */
-        position: fixed; /* Keep header-top fixed on scroll */
-        background-color: var(--color-primary); /* Give it a background so it's not transparent */
+        position: fixed;
+        background-color: var(--color-primary);
         box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     }
-
     .logo {
         max-width: 80px;
     }
-
     .hamburger-menu {
         margin-right: var(--spacing-sm);
-        /* Ensure it's visually distinct */
         background-color: rgba(255, 255, 255, 0.1);
         padding: 5px;
         border-radius: 3px;
     }
-
     .header-social-icons {
         font-size: 1.2em;
         gap: var(--spacing-sm);
-        /* Hide on mobile to declutter, or move into nav */
         display: none;
     }
-
     .main-nav {
-        /* Adjust for fixed header-top if needed, generally full height is fine */
-        padding-top: 80px; /* Account for fixed header-top height */
+        padding-top: 80px;
     }
-
     .main-nav ul {
         padding-top: var(--spacing-xxl);
     }
-
     .main-nav li {
         margin-bottom: var(--spacing-md);
     }
-
     .main-nav a {
         font-size: 1.5em;
-        padding: 10px 20px; /* Slightly more touch-friendly */
+        padding: 10px 20px;
     }
-
     .nav-social-icons {
         margin-top: var(--spacing-lg);
         font-size: 1.8em;
@@ -1506,227 +1423,159 @@ main {
 
     /* Hero Section */
     .main-header {
-        padding-top: 100px; /* Adjust for fixed header-top */
-        min-height: 80vh; /* Slightly reduced height for mobile */
+        padding-top: 100px;
+        min-height: 80vh;
     }
-
     .main-header .institute-name {
         font-size: clamp(2em, 8vw, 3.5em);
     }
-
     .main-header .institute-name.sanskrit {
         font-size: clamp(1.8em, 7vw, 3em);
     }
-
     h2 { font-size: clamp(1.8em, 6vw, 2.8em); }
     h3 { font-size: clamp(1.3em, 4vw, 2em); }
-
     .quote-text {
         font-size: clamp(1em, 3vw, 1.4em);
-        padding: 0 10px; /* Add horizontal padding for readability */
+        padding: 0 10px;
     }
-
     .english-quote-translation {
         font-size: clamp(0.8em, 2.5vw, 1.1em);
-        padding: 0 10px; /* Add horizontal padding for readability */
+        padding: 0 10px;
     }
-
     .hero-image-and-button {
         flex-direction: column;
         gap: var(--spacing-md);
-        margin-top: var(--spacing-xl); /* More space on mobile */
+        margin-top: var(--spacing-xl);
     }
-
     .namaste-boy-image {
         width: 120px;
-        border-width: 3px; /* Slightly thinner border */
+        border-width: 3px;
         border-color: var(--color-accent);
     }
-
     .btn {
-        padding: 12px 25px; /* Maintain good padding for touch */
+        padding: 12px 25px;
         font-size: 1em;
     }
-
     .primary-cta {
-        padding: 15px 35px; /* Keep large for main CTA */
+        padding: 15px 35px;
         font-size: 1.1em;
     }
 
     /* Main Content Sections */
     .section {
-        padding: var(--spacing-lg) var(--spacing-md); /* Reduced vertical padding */
-        margin: var(--spacing-lg) auto; /* Reduced margin between sections */
-        border-radius: 10px; /* Slightly less rounded */
-        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1); /* Lighter shadow */
+        padding: var(--spacing-lg) var(--spacing-md);
+        margin: var(--spacing-lg) auto;
+        border-radius: 10px;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
     }
-
     .about-us-content, .mission-content {
         flex-direction: column;
         gap: var(--spacing-md);
     }
-
     .about-text, .mission-text-container {
         padding: 0;
-        text-align: center; /* Center align text in stacked layout */
+        text-align: center;
     }
-
     .about-text h3 {
-        text-align: center; /* Center align headings */
+        text-align: center;
     }
-
     .about-text p, .mission-text-container p {
-        text-align: center; /* Center align paragraphs */
-        padding: 0 10px; /* Add horizontal padding */
+        text-align: center;
+        padding: 0 10px;
     }
-
     .about-text ul {
-        text-align: left; /* Keep lists left-aligned within their container */
-        margin-left: 20px; /* Adjust as needed */
+        text-align: left;
+        margin-left: 20px;
     }
-
     .mission-buttons {
         flex-direction: column;
         align-items: center;
-        gap: var(--spacing-sm); /* Smaller gap for stacked buttons */
+        gap: var(--spacing-sm);
     }
-
     .volunteer-btn-mission {
-        width: 90%; /* Make buttons wider on mobile */
-        max-width: 300px; /* Limit max width */
-        margin: var(--spacing-xs) auto; /* Center individual buttons */
+        width: 90%;
+        max-width: 300px;
+        margin: var(--spacing-xs) auto;
     }
-
     .about-image-wrapper, .mission-image-wrapper {
         flex: 1 1 auto;
-        max-width: 90%; /* Slightly smaller max-width for images */
-        border-width: 2px; /* Thinner border */
+        max-width: 90%;
+        border-width: 2px;
         border-color: var(--color-accent);
     }
-
     .video-container {
-        border-width: 3px; /* Thinner video frame */
+        border-width: 3px;
         border-color: var(--color-accent);
     }
 
     /* Gallery */
     .gurukul-gallery {
-        grid-template-columns: 1fr; /* Single column on small screens */
-        gap: var(--spacing-md); /* Maintain good gap */
+        grid-template-columns: 1fr;
+        gap: var(--spacing-md);
     }
-
     .gallery-image {
-        height: 250px; /* Make images taller on single column */
+        height: 250px;
     }
 
     /* Donation Section */
     .donation-methods-grid {
-        grid-template-columns: 1fr; /* Single column layout */
-        gap: var(--spacing-md); /* Slightly smaller gap */
+        grid-template-columns: 1fr;
+        gap: var(--spacing-md);
     }
-
     .donation-card {
-        padding: var(--spacing-lg); /* Reduced padding */
-        margin: 0 var(--spacing-sm); /* Add horizontal margin */
+        padding: var(--spacing-lg);
+        margin: 0 var(--spacing-sm);
         box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     }
-
     .donation-card h3 {
-        text-align: center; /* Center align card headings */
+        text-align: center;
     }
-
     .donation-card p {
-        text-align: center; /* Center align card paragraphs */
+        text-align: center;
     }
-
-    .qr-image { /* Removed from HTML */
-        width: 150px;
-        height: 150px;
-        border-width: 3px;
-        border-color: var(--color-accent);
-    }
-
     .amount-buttons {
-        gap: var(--spacing-xs); /* Smaller gap for amount buttons */
+        gap: var(--spacing-xs);
     }
-
     .amount-buttons .preset-amount {
         padding: 10px 15px;
         font-size: 0.9em;
     }
-
     .custom-amount-input {
         padding: 10px 12px;
         font-size: 1em;
     }
-
     .donate-button {
-        padding: 15px 25px; /* Make donate button more prominent */
+        padding: 15px 25px;
         font-size: 1.1em;
-    }
-
-    /* Forms - REMOVED from HTML */
-    .form-card {
-        padding: var(--spacing-lg);
-        margin: var(--spacing-lg) auto; /* Adjust margin */
-        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-    }
-
-    .form-card .form-header {
-        flex-direction: column;
-        margin-bottom: var(--spacing-md);
-    }
-
-    .form-card .form-header i {
-        margin-right: 0;
-        margin-bottom: var(--spacing-sm);
-    }
-
-    .form-card .form-header h3 {
-        font-size: clamp(1.4em, 5vw, 2em);
-    }
-
-    .form-card .form-description {
-        padding: 0 10px;
-    }
-
-    .form-container iframe {
-        height: 400px; /* Smaller iframe height for mobile */
     }
 
     /* Thank You Section */
     #thankyou-section {
-        min-height: auto; /* Allow height to adapt */
+        min-height: auto;
         padding-bottom: var(--spacing-xl);
     }
-
     .donators-list-container {
         padding: var(--spacing-lg);
         margin: var(--spacing-md) auto;
         box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     }
-
     #donators-list {
-        grid-template-columns: 1fr; /* Single column for names */
+        grid-template-columns: 1fr;
         gap: var(--spacing-sm);
     }
-
     .donator-card-item {
-        font-size: 1em; /* Smaller font size for list items */
+        font-size: 1em;
         padding: var(--spacing-xs);
         background-color: #F8F8F8;
         border: 1px solid #E0E0E0;
     }
-
     .donator-avatar {
-        width: 50px; /* Smaller avatar on mobile */
+        width: 50px;
         height: 50px;
     }
-
     .donator-info .name {
         font-size: 1em;
     }
-
     .donator-info .location {
         font-size: 0.8em;
     }
@@ -1737,7 +1586,6 @@ main {
         margin: var(--spacing-md) auto;
         box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     }
-
     .contact-info .email-address a {
         font-size: 1em;
     }
@@ -1746,124 +1594,88 @@ main {
     .site-footer {
         padding: var(--spacing-xl) var(--spacing-md);
     }
-
     .footer-content {
         flex-direction: column;
         align-items: center;
         text-align: center;
     }
-
     .footer-section {
         flex: 1 1 100%;
         padding: 0;
         text-align: center;
-        margin-bottom: var(--spacing-md); /* Reduce margin between sections */
+        margin-bottom: var(--spacing-md);
     }
-
     .footer-section h3, .footer-section p, .footer-section ul {
         text-align: center;
     }
-
     .footer-section ul {
-        margin-left: 0; /* Remove left margin for centered lists */
+        margin-left: 0;
     }
-
-    .footer-links-bottom { /* This block is removed from HTML */
-        display: none;
-    }
-
-    .link-separator { /* This is no longer used */
-        display: none;
-    }
-
-    /* Footer social icons - Re-enabled and styled for mobile */
     .footer-social-icons {
-        display: flex; /* Ensure it's visible on mobile */
-        font-size: 1.8em; /* Slightly smaller on mobile */
+        display: flex;
+        font-size: 1.8em;
         gap: var(--spacing-md);
         margin-bottom: var(--spacing-md);
     }
-
 }
 
 /* Further refinements for even smaller screens, e.g., max-width: 480px */
-
 @media (max-width: 480px) {
-
     .main-header {
-        padding-top: 80px; /* Ensure space for fixed header on smallest screens */
+        padding-top: 80px;
         min-height: 70vh;
     }
-
     .main-header .institute-name {
         font-size: clamp(1.8em, 9vw, 3em);
     }
-
     .main-header .institute-name.sanskrit {
         font-size: clamp(1.6em, 8vw, 2.5em);
     }
-
     h2 { font-size: clamp(1.6em, 7vw, 2.5em); }
     h3 { font-size: clamp(1.2em, 5vw, 1.8em); }
-
     .quote-text {
         font-size: clamp(0.9em, 3.5vw, 1.3em);
     }
-
     .english-quote-translation {
         font-size: clamp(0.75em, 3vw, 1em);
     }
-
     .namaste-boy-image {
         width: 100px;
     }
-
     .primary-cta {
         font-size: 0.9em;
         padding: 12px 25px;
     }
-
     .section {
-        padding: var(--spacing-md); /* Even less padding */
-        margin: var(--spacing-md) auto; /* Even less margin */
+        padding: var(--spacing-md);
+        margin: var(--spacing-md) auto;
     }
-
     .gallery-image {
-        height: 200px; /* Adjusted height for smaller screens */
+        height: 200px;
     }
-
     .donation-card {
-        padding: var(--spacing-md); /* Even less padding */
+        padding: var(--spacing-md);
     }
-
     .amount-buttons {
-        gap: var(--spacing-xxs, 5px); /* Very small gap */
+        gap: var(--spacing-xxs, 5px);
     }
-
     .amount-buttons .preset-amount {
         padding: 8px 12px;
         font-size: 0.8em;
     }
-
     .custom-amount-input {
         padding: 10px;
         font-size: 0.9em;
     }
-
     .donate-button {
         font-size: 1em;
         padding: 12px 20px;
     }
-
-    .form-container iframe { /* Removed from HTML */
-        height: 350px; /* Smaller iframe height */
-    }
-
     .donators-list-container {
         padding: var(--spacing-md);
     }
-
     .donator-card-item {
         font-size: 0.9em;
     }
 }
+
