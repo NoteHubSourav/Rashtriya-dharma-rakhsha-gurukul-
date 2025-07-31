@@ -1,1687 +1,642 @@
-/* --- CSS Variables for Premium Spiritual Palette --- */
-:root {
-    --color-primary: #FF6B00; /* Orange */
-    --color-secondary: #333333; /* Dark Grey for nav/dark elements */
-    --color-accent: #00B4D8; /* Sky Blue */
-    --color-background-light: #FFFFFF; /* White */
-    --color-section-bg: #F8F8F8; /* Very Light Grey for sections */
-    --color-heading-text: #1E1E1E; /* Blackish */
-    --color-body-text: #1E1E1E; /* Blackish */
-    --color-button-hover: #FDC500; /* Yellow for buttons and highlights */
-    --color-highlight-text: #FDC500; /* Yellow for highlights */
-    --font-heading: 'Inter', sans-serif;
-    --font-body: 'Inter', sans-serif;
-    --font-hindi: 'Tiro Devanagari Sanskrit', sans-serif;
-    --spacing-xs: 5px;
-    --spacing-sm: 10px;
-    --spacing-md: 20px;
-    --spacing-lg: 30px;
-    --spacing-xl: 40px;
-    --spacing-xxl: 60px;
-}
-
-/* --- Global Styles & Resets --- */
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
-
-html {
-  scroll-behavior: smooth;
-}
-
-body {
-    font-family: var(--font-body);
-    line-height: 1.6;
-    color: var(--color-body-text);
-    background-color: var(--color-background-light);
-    overflow-x: hidden;
-    -webkit-font-smoothing: antialiased;
-}
-
-/* For disabling scroll when mobile nav is open */
-body.no-scroll {
-    overflow: hidden;
-}
-
-h1, h2, h3, h4, h5, h6 {
-    font-family: var(--font-heading);
-    color: var(--color-heading-text);
-    text-align: center;
-    margin-bottom: 0.8em;
-    line-height: 1.2;
-}
-
-h1 { font-size: clamp(2.5em, 6vw, 4.5em); }
-h2 { font-size: clamp(2em, 4vw, 3.2em); }
-h3 { font-size: clamp(1.5em, 3vw, 2.2em); }
-
-p {
-    text-align: center;
-    max-width: 800px;
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: 1em;
-}
-
-a {
-    color: var(--color-primary);
-    text-decoration: none;
-    transition: color 0.3s ease;
-}
-
-a:hover {
-    color: var(--color-accent);
-}
-
-.sr-only {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    padding: 0;
-    margin: -1px;
-    overflow: hidden;
-    clip: rect(0, 0, 0, 0);
-    white-space: nowrap;
-    border: 0;
-}
-
-/* --- Utility Classes --- */
-.sanskrit {
-    font-family: var(--font-hindi);
-    font-weight: 700;
-    letter-spacing: 0.5px;
-}
-
-.english-text {
-  font-family: var(--font-body);
-}
-
-.section-title {
-    margin-top: 0;
-    margin-bottom: 15px;
-    color: var(--color-heading-text);
-}
-
-.section-description {
-    font-size: 1.1em;
-    margin-bottom: var(--spacing-lg);
-    color: var(--color-body-text);
-    max-width: 700px;
-    line-height: 1.5;
-}
-
-.note {
-    font-style: italic;
-    color: var(--color-body-text);
-    font-size: 1em;
-    margin-bottom: var(--spacing-md);
-}
-
-.small-print {
-    font-size: 0.85em;
-    color: #666;
-    margin-top: var(--spacing-md);
-}
-
-.italic-text {
-  font-style: italic;
-}
-
-/* --- Buttons --- */
-.btn {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    background-color: var(--color-primary);
-    color: white;
-    padding: 12px 25px;
-    border: none;
-    border-radius: 8px;
-    font-weight: 600;
-    font-size: 1em;
-    cursor: pointer;
-    transition: background-color 0.3s ease-in-out, transform 0.2s ease-in-out, box-shadow 0.3s ease;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-}
-
-.btn:hover {
-    background-color: var(--color-button-hover);
-    transform: translateY(-3px);
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
-}
-
-.btn:active {
-    transform: translateY(0);
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-.primary-cta {
-    background-color: var(--color-primary);
-    box-shadow: 0 6px 15px rgba(255, 107, 0, 0.3);
-    margin-top: var(--spacing-md);
-    padding: 15px 35px;
-    font-size: 1.1em;
-}
-
-.primary-cta:hover {
-    background-color: var(--color-button-hover);
-    transform: translateY(-4px);
-    box-shadow: 0 8px 20px rgba(253, 197, 0, 0.4);
-}
-
-.secondary-btn {
-    background-color: transparent;
-    border: 2px solid var(--color-primary);
-    color: var(--color-primary);
-    box-shadow: none;
-}
-
-.secondary-btn:hover {
-    background-color: var(--color-primary);
-    color: white;
-    transform: translateY(-3px);
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
-}
-
-/* New style for "Show My Name" button */
-.show-my-name-btn {
-    background-color: var(--color-accent); /* Use accent color for premium feel */
-    color: white;
-    border: none;
-    padding: 15px 30px;
-    border-radius: 10px;
-    font-weight: 700;
-    font-size: 1.1em;
-    box-shadow: 0 8px 20px rgba(0, 180, 216, 0.4); /* Premium shadow with accent color */
-    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
-}
-
-.show-my-name-btn:hover {
-    background-color: #00A0C0; /* Slightly darker accent on hover */
-    transform: translateY(-5px);
-    box-shadow: 0 12px 25px rgba(0, 180, 216, 0.5);
-}
-
-.show-my-name-btn:active {
-    transform: translateY(0);
-    box-shadow: 0 4px 10px rgba(0, 180, 216, 0.3);
-}
-
-
-/* Volunteer Button in Mission Section */
-.volunteer-btn-mission {
-    background-color: var(--color-accent);
-    color: white;
-    padding: 10px 20px;
-    font-size: 1em;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0,180,216,0.3);
-    margin-top: var(--spacing-lg);
-    margin-right: var(--spacing-sm);
-    margin-left: var(--spacing-sm);
-    white-space: nowrap;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-}
-
-.volunteer-btn-mission:hover {
-    background-color: var(--color-button-hover);
-    transform: translateY(-2px);
-    box-shadow: 0 6px 12px rgba(253,197,0,0.4);
-}
-
-/* Copy Button Specifics */
-.copy-btn {
-    background: none;
-    border: 1px solid var(--color-primary);
-    color: var(--color-primary);
-    padding: 8px 15px;
-    margin-left: var(--spacing-sm);
-    font-size: 0.9em;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
-    box-shadow: none;
-    white-space: nowrap;
-}
-
-.copy-btn:hover {
-    background-color: var(--color-primary);
-    color: white;
-    transform: translateY(-1px);
-}
-
-.copy-btn.copied {
-    background-color: var(--color-primary);
-    border-color: var(--color-primary);
-    color: white;
-    font-weight: bold;
-    transform: translateY(0);
-}
-
-/* Preset Amount Buttons */
-.amount-buttons .preset-amount {
-    background-color: var(--color-background-light);
-    color: var(--color-body-text);
-    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-    padding: 12px 22px;
-    margin: var(--spacing-xs);
-    font-size: 1em;
-    border: 1px solid #E0E0E0;
-}
-
-.amount-buttons .preset-amount:hover {
-    background-color: #F0F0F0;
-    color: var(--color-heading-text);
-    transform: translateY(-2px);
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-}
-
-.amount-buttons .preset-amount.active {
-    background-color: var(--color-primary);
-    color: white;
-    border-color: var(--color-accent);
-    transform: scale(1.05);
-    box-shadow: 0 5px 12px rgba(0,0,0,0.15);
-}
-
-/* Custom Amount Input */
-.custom-amount-wrapper {
-    margin-bottom: var(--spacing-lg);
-}
-
-.custom-amount-input {
-    width: 100%;
-    max-width: 300px;
-    padding: 12px 15px;
-    border: 1px solid #E0E0E0;
-    border-radius: 8px;
-    font-size: 1.1em;
-    color: var(--color-heading-text);
-    background-color: var(--color-background-light);
-    transition: border-color 0.3s ease, box-shadow 0.3s ease;
-    text-align: center;
-}
-
-.custom-amount-input:focus {
-    outline: none;
-    border-color: var(--color-primary);
-    box-shadow: 0 0 0 3px rgba(255, 107, 0, 0.2);
-}
-
-.donate-button {
-    width: 100%;
-    max-width: 300px;
-}
-
-/* --- Header Section (Hero) --- */
-.main-header {
-    background: var(--color-primary);
-    color: white;
-    text-align: center;
-    padding: 100px 20px var(--spacing-xxl);
-    min-height: 85vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    overflow: hidden;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-}
-
-.header-top {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: var(--spacing-md);
-    z-index: 100;
-}
-
-.hamburger-menu {
-    width: 30px;
-    height: 20px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    cursor: pointer;
-    position: relative;
-    z-index: 110;
-    transition: all 0.3s ease-in-out;
-    margin-right: var(--spacing-md);
-}
-
-.hamburger-menu span {
-    display: block;
-    width: 100%;
-    height: 3px;
-    background-color: var(--color-background-light);
-    border-radius: 2px;
-    transition: all 0.3s ease-in-out;
-    transform-origin: center;
-}
-
-/* Hamburger menu animation on click */
-.hamburger-menu.open span:nth-child(1) {
-    transform: translateY(8.5px) rotate(45deg);
-}
-
-.hamburger-menu.open span:nth-child(2) {
-    opacity: 0;
-    transform: translateX(-10px);
-}
-
-.hamburger-menu.open span:nth-child(3) {
-    transform: translateY(-8.5px) rotate(-45deg);
-}
-
-.logo-container {
-    flex-grow: 1;
-    text-align: center;
-}
-
-.logo {
-    max-width: 100px;
-    height: auto;
-    display: block;
-    margin: 0 auto;
-    filter: drop-shadow(0 0 5px rgba(0,0,0,0.2));
-}
-
-.header-social-icons {
-    display: flex;
-    gap: var(--spacing-sm);
-    margin-left: var(--spacing-md);
-}
-
-.header-social-icons a {
-    color: var(--color-background-light);
-    font-size: 1.5em;
-    padding: var(--spacing-xs);
-    transition: color 0.3s ease, transform 0.2s ease;
-}
-
-.header-social-icons a:hover {
-    color: var(--color-accent);
-    transform: scale(1.1);
-}
-
-.main-nav {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: var(--color-secondary);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    transform: translateX(-100%);
-    transition: transform 0.4s ease-in-out;
-    z-index: 99;
-    opacity: 0;
-    visibility: hidden;
-}
-
-.main-nav.nav-open {
-    transform: translateX(0);
-    opacity: 1;
-    visibility: visible;
-}
-
-.main-nav ul {
-    list-style: none;
-    padding: 0;
-    text-align: center;
-    width: 100%;
-}
-
-.main-nav li {
-    margin-bottom: var(--spacing-lg);
-    opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.4s ease-out, transform 0.4s ease-out;
-}
-
-.main-nav.nav-open li {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-/* Adjust transition delays for new items */
-.main-nav.nav-open li:nth-child(1) { transition-delay: 0.1s; }
-.main-nav.nav-open li:nth-child(2) { transition-delay: 0.15s; }
-.main-nav.nav-open li:nth-child(3) { transition-delay: 0.2s; }
-.main-nav.nav-open li:nth-child(4) { transition-delay: 0.25s; }
-.main-nav.nav-open li:nth-child(5) { transition-delay: 0.3s; }
-.main-nav.nav-open li:nth-child(6) { transition-delay: 0.35s; }
-.main-nav.nav-open li:nth-child(7) { transition-delay: 0.4s; } /* Templates */
-.main-nav.nav-open li:nth-child(8) { transition-delay: 0.45s; } /* Contact Us */
-
-.main-nav a {
-    color: white;
-    font-size: 1.8em;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    padding: var(--spacing-sm) var(--spacing-md);
-    transition: color 0.3s ease, background-color 0.3s ease, transform 0.2s ease;
-    border-radius: var(--spacing-xs);
-    display: inline-block;
-}
-
-.main-nav a:hover {
-    color: var(--color-accent);
-    background-color: rgba(255, 255, 255, 0.08);
-    transform: translateX(5px);
-}
-
-.nav-social-icons {
-    margin-top: var(--spacing-xl);
-    display: flex;
-    gap: var(--spacing-lg);
-}
-
-.nav-social-icons a {
-    color: white;
-    font-size: 2em;
-    padding: var(--spacing-sm);
-    border-radius: 50%;
-    background-color: rgba(255, 255, 255, 0.1);
-    transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
-}
-
-.nav-social-icons a:hover {
-    color: var(--color-accent);
-    background-color: rgba(255, 255, 255, 0.15);
-    transform: scale(1.1);
-}
-
-.header-content {
-    z-index: 2;
-    position: relative;
-    max-width: 900px;
-    margin-top: var(--spacing-xxl);
-}
-
-.main-header .institute-name {
-    color: white;
-    text-shadow: 1px 1px 5px rgba(0,0,0,0.3);
-    margin-bottom: var(--spacing-xs);
-    line-height: 1.1;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-}
-
-.main-header .institute-name.sanskrit {
-    font-size: clamp(2em, 5vw, 4em);
-    margin-bottom: var(--spacing-md);
-}
-
-.quote-section {
-    margin-top: var(--spacing-lg);
-    margin-bottom: var(--spacing-xl);
-}
-
-.quote-text {
-    font-size: clamp(1.1em, 2.5vw, 1.6em);
-    color: rgba(255, 255, 255, 0.9);
-    text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
-    line-height: 1.4;
-    font-weight: 700;
-}
-
-.english-quote-translation {
-    font-size: clamp(0.9em, 2vw, 1.2em);
-    color: rgba(255, 255, 255, 0.8);
-    margin-top: var(--spacing-sm);
-    line-height: 1.5;
-    text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
-}
-
-.hero-image-and-button {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: var(--spacing-md);
-    margin-top: var(--spacing-lg);
-}
-
-.namaste-boy-image {
-    width: 150px;
-    height: auto;
-    border-radius: 50%;
-    border: 5px solid var(--color-accent);
-    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-    object-fit: cover;
-    transition: transform 0.3s ease;
-}
-
-.namaste-boy-image:hover {
-    transform: scale(1.05);
-}
-
-/* --- Section Dividers (Waves) --- */
-.section-divider {
-    width: 100%;
-    height: 100px;
-    background-color: transparent;
-    position: relative;
-    z-index: 1;
-}
-
-.section-divider::before {
-    content: '';
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background-color: var(--color-background-light);
-    z-index: -1;
-}
-
-.section-divider.wave-top {
-    margin-top: -60px;
-    background: var(--color-background-light);
-}
-
-.section-divider.wave-top::before {
-    top: 0;
-    background-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 1000 100" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none"><path d="M0,0 L0,50 Q125,100 250,50 T500,50 T750,50 T1000,50 L1000,0 Z" fill="%23FFFFFF"/></svg>');
-    background-repeat: no-repeat;
-    background-size: 100% 100px;
-}
-
-.section-divider.wave-bottom {
-    margin-bottom: -60px;
-    background: var(--color-background-light);
-}
-
-.section-divider.wave-bottom::before {
-    bottom: 0;
-    background-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 1000 100" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none"><path d="M0,100 L0,50 Q125,0 250,50 T500,50 T750,50 T1000,50 L1000,100 Z" fill="%23FFFFFF"/></svg>');
-    background-repeat: no-repeat;
-    background-size: 100% 100px;
-}
-
-/* Reverse colors for donation section separators */
-.section-divider.reverse-colors.wave-top {
-    background: var(--color-primary);
-}
-
-.section-divider.reverse-colors.wave-top::before {
-    background-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 1000 100" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none"><path d="M0,0 L0,50 Q125,100 250,50 T500,50 T750,50 T1000,50 L1000,0 Z" fill="%23FF6B00"/></svg>');
-}
-
-.section-divider.reverse-colors.wave-bottom {
-    background: var(--color-primary);
-}
-
-.section-divider.reverse-colors.wave-bottom::before {
-    bottom: 0;
-    background-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 1000 100" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none"><path d="M0,100 L0,50 Q125,0 250,50 T500,50 T750,50 T1000,50 L1000,100 Z" fill="%23FF6B00"/></svg>');
-}
-
-/* --- Main Content Sections --- */
-main {
-    padding: var(--spacing-xxl) 0;
-}
-
-.section {
-    padding: var(--spacing-xxl) var(--spacing-md);
-    margin: var(--spacing-xl) auto;
-    max-width: 1200px;
-    background-color: var(--color-section-bg);
-    border-radius: 15px;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-    position: relative;
-}
-
-.section:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
-}
-
-/* About Us Section specific styles */
-.about-us-content {
-    display: flex;
-    flex-wrap: wrap;
-    gap: var(--spacing-lg);
-    align-items: center;
-    justify-content: center;
-    max-width: 1000px;
-    margin-top: var(--spacing-md);
-}
-
-.about-text {
-    flex: 1 1 500px;
-    text-align: left;
-    padding: var(--spacing-sm);
-}
-
-.about-text h3 {
-    color: var(--color-primary);
-    font-size: 1.6em;
-    margin-bottom: 0.5em;
-    text-align: left;
-}
-
-.about-text p {
-    text-align: left;
-    margin-bottom: 1.2em;
-    max-width: none;
-}
-
-.about-text p.last-paragraph {
-    margin-bottom: 0;
-}
-
-.about-text ul {
-    list-style: disc;
-    margin-left: var(--spacing-md);
-    margin-bottom: 1em;
-    text-align: left;
-    color: var(--color-body-text);
-}
-
-.about-text ul li {
-    margin-bottom: 0.5em;
-}
-
-.about-image-wrapper {
-    flex: 0 1 400px;
-    padding: var(--spacing-xs);
-    border: 3px solid var(--color-accent);
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-}
-
-.section-image {
-    width: 100%;
-    height: auto;
-    display: block;
-    border-radius: 8px;
-    transition: transform 0.5s ease;
-}
-
-.about-image-wrapper:hover .section-image,
-.mission-image-wrapper:hover .section-image {
-    transform: scale(1.05);
-}
-
-/* New Mission Section Styles */
-.mission-content {
-    display: flex;
-    flex-wrap: wrap;
-    gap: var(--spacing-lg);
-    align-items: center;
-    justify-content: center;
-    max-width: 1000px;
-    margin-top: var(--spacing-md);
-}
-
-.mission-text-container {
-    flex: 1 1 500px;
-    text-align: left;
-    padding: var(--spacing-sm);
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-}
-
-.mission-text-container p {
-    text-align: left;
-    margin-bottom: 1.2em;
-    max-width: none;
-}
-
-.mission-buttons {
-    display: flex;
-    gap: var(--spacing-md);
-    margin-top: var(--spacing-md);
-    flex-wrap: wrap;
-    justify-content: center;
-    width: 100%;
-}
-
-.mission-image-wrapper {
-    flex: 0 1 400px;
-    padding: var(--spacing-xs);
-    border: 3px solid var(--color-accent);
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-}
-
-/* Video Section Styles */
-.hero-video-section {
-    padding: var(--spacing-lg) var(--spacing-md);
-    margin-top: var(--spacing-xxl);
-    background-color: transparent;
-    box-shadow: none;
-}
-
-.hero-video-section .section-title,
-.hero-video-section .section-description {
-    color: white;
-    text-shadow: 1px 1px 5px rgba(0,0,0,0.2);
-}
-
-.video-container {
-    width: 100%;
-    max-width: 800px;
-    margin-top: var(--spacing-lg);
-    background-color: var(--color-secondary);
-    border-radius: 15px;
-    overflow: hidden;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
-    border: 5px solid var(--color-accent);
-    position: relative; /* Added for aspect ratio */
-    padding-bottom: 56.25%; /* 16:9 Aspect Ratio (height / width * 100%) */
-    height: 0; /* Important for aspect ratio */
-}
-
-.video-container video {
-    position: absolute; /* Position video absolutely within container */
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* Ensures video fills the space */
-    display: block;
-}
-
-/* Gurukul Life Section Gallery */
-.gurukul-gallery {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: var(--spacing-md);
-    width: 100%;
-    margin-top: var(--spacing-lg);
-}
-
-.gallery-item {
-  position: relative;
-  overflow: hidden;
-  border-radius: 8px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease;
-  cursor: pointer;
-}
-
-.gallery-item:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
-}
-
-.gallery-image {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-    display: block;
-    transition: transform 0.5s ease;
-}
-
-.gallery-item:hover .gallery-image {
-    transform: scale(1.08);
-}
-
-.gallery-overlay {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    background: rgba(0, 0, 0, 0.6);
-    color: white;
-    padding: var(--spacing-sm);
-    text-align: center;
-    font-weight: 600;
-    font-size: 1.1em;
-    transform: translateY(100%);
-    transition: transform 0.3s ease;
-}
-
-.gallery-item:hover .gallery-overlay {
-    transform: translateY(0);
-}
-
-/* Donation Section Styles */
-.donate-page-section {
-    background: var(--color-primary);
-    color: white;
-}
-
-.donate-page-section .section-title,
-.donate-page-section .section-description {
-    color: white;
-    text-shadow: 1px 1px 5px rgba(0,0,0,0.2);
-}
-
-.donation-methods-grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: var(--spacing-lg);
-    width: 100%;
-    max-width: 600px;
-    margin-top: var(--spacing-xl);
-}
-
-.donation-card {
-    background-color: var(--color-background-light);
-    padding: var(--spacing-xl);
-    border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-    text-align: left;
-    color: var(--color-body-text);
-}
-
-.donation-card h3 {
-    color: var(--color-heading-text);
-    margin-bottom: var(--spacing-lg);
-    font-size: 1.8em;
-    text-align: center;
-}
-
-.donation-card p {
-    text-align: left;
-    margin-bottom: var(--spacing-sm);
-}
-
-.donation-card .detail-label {
-    font-weight: 600;
-    color: var(--color-primary);
-    margin-bottom: 0;
-    font-size: 0.9em;
-}
-
-.donation-card .detail-value {
-    font-size: 1.1em;
-    margin-top: 0;
-    margin-bottom: var(--spacing-md);
-    font-weight: 500;
-    color: var(--color-heading-text);
-}
-
-.copy-field {
-    display: flex;
-    align-items: center;
-    background-color: #F0F0F0;
-    border-radius: 5px;
-    padding: var(--spacing-xs) var(--spacing-sm);
-    margin-bottom: var(--spacing-md);
-    border: 1px solid #E0E0E0;
-}
-
-.copy-field span {
-    flex-grow: 1;
-    font-family: monospace;
-    font-size: 1.1em;
-    padding-right: var(--spacing-sm);
-    color: var(--color-heading-text);
-}
-
-.amount-buttons {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: var(--spacing-sm);
-    margin-bottom: var(--spacing-lg);
-}
-
-.custom-amount-wrapper {
-    margin-bottom: var(--spacing-lg);
-}
-
-.custom-amount-input {
-    width: 100%;
-    max-width: 300px;
-    padding: 12px 15px;
-    border: 1px solid #E0E0E0;
-    border-radius: 8px;
-    font-size: 1.1em;
-    color: var(--color-heading-text);
-    background-color: var(--color-background-light);
-    transition: border-color 0.3s ease, box-shadow 0.3s ease;
-    text-align: center;
-}
-
-.custom-amount-input:focus {
-    outline: none;
-    border-color: var(--color-primary);
-    box-shadow: 0 0 0 3px rgba(255, 107, 0, 0.2);
-}
-
-.donate-button {
-    width: 100%;
-    max-width: 300px;
-}
-
-/* Trust Elements */
-.trust-elements {
-    margin-top: var(--spacing-md);
-    font-size: 0.95em;
-    color: var(--color-body-text);
-    font-weight: 500;
-    line-height: 1.4;
-}
-
-.trust-elements .icon {
-    color: var(--color-primary);
-    margin-right: 5px;
-}
-
-/* Progress Bar Styles - NEW */
-.progress-bar-container {
-    width: 90%;
-    max-width: 800px;
-    background-color: rgba(255, 255, 255, 0.2);
-    border-radius: 10px;
-    overflow: hidden;
-    margin: var(--spacing-lg) auto var(--spacing-xl);
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-    color: white;
-    text-align: center;
-}
-
-.progress-bar-info {
-    display: flex;
-    justify-content: space-between;
-    padding: var(--spacing-sm) var(--spacing-md);
-    font-weight: 600;
-    font-size: 0.95em;
-    color: white;
-    text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
-}
-
-.progress-bar {
-    width: 100%;
-    height: 25px;
-    background-color: rgba(0, 0, 0, 0.2);
-    border-radius: 0 0 10px 10px;
-    position: relative;
-    overflow: hidden;
-}
-
-.progress-bar-fill {
-    height: 100%;
-    background-color: var(--color-accent);
-    width: 0%;
-    transition: width 1s ease-out;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: 700;
-    color: white;
-    font-size: 0.9em;
-}
-
-/* Thank You Section (Donation Wall) */
-#thankyou-section {
-    min-height: 600px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-.donators-list-container {
-    background-color: var(--color-background-light);
-    padding: var(--spacing-xl);
-    border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-    margin-top: var(--spacing-lg);
-    width: 100%;
-    max-width: 800px;
-    text-align: center;
-}
-
-.donators-list-container h3 {
-    color: var(--color-heading-text);
-    margin-bottom: var(--spacing-md);
-    font-size: 2em;
-}
-
-/* NEW: Styles for individual donator cards */
-#donators-list {
-    list-style: none;
-    padding: 0;
-    margin-bottom: var(--spacing-lg);
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: var(--spacing-md);
-    text-align: left;
-}
-
-.donator-card-item {
-    background-color: #F8F8F8;
-    border-radius: 10px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-    padding: var(--spacing-md);
-    display: flex;
-    align-items: center;
-    gap: var(--spacing-md);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    border: 1px solid #E0E0E0;
-}
-
-.donator-card-item:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-}
-
-.donator-avatar {
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    background-color: var(--color-accent);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    font-weight: 700;
-    font-size: 1.2em;
-    flex-shrink: 0;
-    border: 2px solid var(--color-primary);
-}
-
-.donator-info {
-    flex-grow: 1;
-    text-align: left;
-}
-
-.donator-info .name {
-    font-weight: 700;
-    color: var(--color-heading-text);
-    font-size: 1.1em;
-    margin-bottom: 5px;
-}
-
-.donator-info .location {
-    font-size: 0.9em;
-    color: var(--color-body-text);
-}
-
-/* Contact Us Section */
-.contact-content {
-    background-color: var(--color-background-light);
-    padding: var(--spacing-xl);
-    border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-    margin-top: var(--spacing-lg);
-    width: 100%;
-    max-width: 600px;
-    text-align: center;
-}
-
-.contact-info h3 {
-    color: var(--color-heading-text);
-    margin-bottom: var(--spacing-md);
-}
-
-.contact-info .email-address a {
-    font-size: 1.2em;
-    font-weight: 600;
-    color: var(--color-primary);
-    word-break: break-all;
-}
-
-.contact-info .contact-note {
-    font-size: 0.9em;
-    color: var(--color-body-text);
-    margin-top: var(--spacing-sm);
-}
-
-/* --- Updates Section (NEW) --- */
-#updates-section {
-    background-color: var(--color-section-bg);
-    padding: var(--spacing-xxl) var(--spacing-md);
-    margin: var(--spacing-xl) auto;
-    max-width: 1200px;
-    border-radius: 15px;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-#updates-content {
-    width: 100%;
-    max-width: 800px;
-    text-align: left;
-    line-height: 1.8;
-    color: var(--color-body-text);
-}
-
-#updates-content h3 {
-    color: var(--color-primary);
-    margin-top: var(--spacing-lg);
-    margin-bottom: var(--spacing-sm);
-    text-align: left;
-}
-
-#updates-content p {
-    margin-bottom: var(--spacing-md);
-    text-align: left;
-}
-
-#updates-content ul {
-    list-style: disc;
-    margin-left: var(--spacing-lg);
-    margin-bottom: var(--spacing-md);
-    text-align: left;
-}
-
-#updates-content li {
-    margin-bottom: var(--spacing-xs);
-}
-
-/* --- Templates Section (NEW) --- */
-#templates-section {
-    background-color: var(--color-section-bg);
-    padding: var(--spacing-xxl) var(--spacing-md);
-    margin: var(--spacing-xl) auto;
-    max-width: 1200px;
-    border-radius: 15px;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.templates-gallery {
-    width: 100%;
-    max-width: 800px; /* Adjust as needed */
-    margin-top: var(--spacing-lg);
-    text-align: center;
-}
-
-.template-image {
-    width: 100%;
-    height: auto;
-    border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-    transition: transform 0.3s ease;
-}
-
-.template-image:hover {
-    transform: scale(1.02);
-}
-
-/* --- Footer --- */
-.site-footer {
-    background-color: var(--color-secondary);
-    color: white;
-    padding: var(--spacing-xxl) var(--spacing-md);
-    text-align: center;
-    box-shadow: 0 -3px 10px rgba(0, 0, 0, 0.15);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.footer-content {
-    max-width: 1200px;
-    margin: 0 auto;
-    width: 100%;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    text-align: left;
-}
-
-.footer-section {
-    flex: 1 1 250px;
-    margin-bottom: var(--spacing-lg);
-    padding: 0 var(--spacing-md);
-}
-
-.footer-section h3 {
-    color: var(--color-accent);
-    margin-bottom: var(--spacing-md);
-    text-align: left;
-    font-size: 1.4em;
-}
-
-.footer-section p, .footer-section ul {
-    color: rgba(255, 255, 255, 0.85);
-    font-size: 0.95em;
-    line-height: 1.5;
-    text-align: left;
-}
-
-.footer-section ul {
-    list-style: none;
-    padding: 0;
-}
-
-.footer-section ul li {
-    margin-bottom: 0.5em;
-}
-
-.footer-section ul li a {
-    color: rgba(255, 255, 255, 0.85);
-    transition: color 0.3s ease;
-}
-
-.footer-section ul li a:hover {
-    color: var(--color-primary);
-}
-
-.footer-social-icons {
-    display: flex;
-    justify-content: center;
-    gap: var(--spacing-md);
-    margin-top: var(--spacing-md);
-}
-
-.footer-social-icons a {
-    color: white;
-    font-size: 1.5em;
-    transition: color 0.3s ease;
-}
-
-.footer-social-icons a:hover {
-    color: var(--color-primary);
-}
-
-.footer-moto, .copyright {
-    font-size: 0.85em;
-    color: rgba(255, 255, 255, 0.7);
-    margin-top: var(--spacing-md);
-}
-
-.footer-moto.sanskrit {
-    font-size: 1.3em;
-    margin-bottom: var(--spacing-lg);
-}
-
-.copyright {
-    font-size: 0.9em;
-    color: rgba(255, 255, 255, 0.7);
-    margin-top: var(--spacing-md);
-    width: 100%;
-    text-align: center;
-}
-
-.copyright.sanskrit {
-    margin-top: var(--spacing-xs);
-}
-
-/* --- Animations --- */
-.fade-in-down {
-    opacity: 0;
-    transform: translateY(-20px);
-    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-}
-
-.fade-in-up {
-    opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-}
-
-.in-view {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-.delay-1 { transition-delay: 0.1s; }
-.delay-2 { transition-delay: 0.2s; }
-.delay-3 { transition-delay: 0.3s; }
-.delay-4 { transition-delay: 0.4s; }
-.delay-5 { transition-delay: 0.5s; }
-.delay-6 { transition-delay: 0.6s; } /* Added for new templates section */
-
-/* --- Custom Modal for Alerts (NEW) --- */
-.custom-modal-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.6);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 1000;
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity 0.3s ease;
-}
-
-.custom-modal-overlay.show {
-    opacity: 1;
-    visibility: visible;
-}
-
-.custom-modal-content {
-    background: var(--color-background-light);
-    padding: var(--spacing-xl);
-    border-radius: 10px;
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
-    text-align: center;
-    max-width: 400px;
-    width: 90%;
-    transform: translateY(-20px);
-    transition: transform 0.3s ease;
-}
-
-.custom-modal-overlay.show .custom-modal-content {
-    transform: translateY(0);
-}
-
-.custom-modal-content p {
-    margin-bottom: var(--spacing-lg);
-    color: var(--color-body-text);
-    font-size: 1.1em;
-}
-
-.custom-modal-content button {
-    background-color: var(--color-primary);
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 1em;
-    transition: background-color 0.3s ease;
-}
-
-.custom-modal-content button:hover {
-    background-color: var(--color-button-hover);
-}
-
-/* --- Media Queries for Responsiveness --- */
-@media (max-width: 768px) {
-    /* Header Top & Navigation */
-    .header-top {
-        padding: var(--spacing-sm);
-        position: fixed;
-        background-color: var(--color-primary);
-        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    }
-    .logo {
-        max-width: 80px;
-    }
-    .hamburger-menu {
-        margin-right: var(--spacing-sm);
-        background-color: rgba(255, 255, 255, 0.1);
-        padding: 5px;
-        border-radius: 3px;
-    }
-    .header-social-icons {
-        font-size: 1.2em;
-        gap: var(--spacing-sm);
-        display: none;
-    }
-    .main-nav {
-        padding-top: 80px;
-    }
-    .main-nav ul {
-        padding-top: var(--spacing-xxl);
-    }
-    .main-nav li {
-        margin-bottom: var(--spacing-md);
-    }
-    .main-nav a {
-        font-size: 1.5em;
-        padding: 10px 20px;
-    }
-    .nav-social-icons {
-        margin-top: var(--spacing-lg);
-        font-size: 1.8em;
-    }
-
-    /* Hero Section */
-    .hero-section {
-        padding-top: 100px;
-        min-height: 80vh;
-    }
-    .hero-main-text {
-        font-size: clamp(2em, 8vw, 3.5em);
-    }
-    .hero-main-text .sanskrit-line {
-        font-size: clamp(1.8em, 7vw, 3em);
-    }
-    h2 { font-size: clamp(1.8em, 6vw, 2.8em); }
-    h3 { font-size: clamp(1.3em, 4vw, 2em); }
-    .hero-description-block .english-quote-translation {
-        font-size: clamp(0.9em, 2.5vw, 1.1em);
-        padding: 0 10px;
-    }
-    .hero-description-block .quote-text.highlight-quote {
-        font-size: clamp(1em, 3vw, 1.4em);
-        padding: 0 10px;
-    }
-    .hero-btn {
-        padding: 12px 25px;
-        font-size: 1em;
-    }
-
-    /* Main Content Sections */
-    .section {
-        padding: var(--spacing-lg) var(--spacing-md);
-        margin: var(--spacing-lg) auto;
-        border-radius: 10px;
-        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-    }
-    .about-us-content, .mission-content {
-        flex-direction: column;
-        gap: var(--spacing-md);
-    }
-    .about-text, .mission-text-container {
-        padding: 0;
-        text-align: center;
-    }
-    .about-text h3 {
-        text-align: center;
-    }
-    .about-text p, .mission-text-container p {
-        text-align: center;
-        padding: 0 10px;
-    }
-    .about-text ul {
-        text-align: left;
-        margin-left: 20px;
-    }
-    .mission-buttons {
-        flex-direction: column;
-        align-items: center;
-        gap: var(--spacing-sm);
-    }
-    .volunteer-btn-mission {
-        width: 90%;
-        max-width: 300px;
-        margin: var(--spacing-xs) auto;
-    }
-    .about-image-wrapper, .mission-image-wrapper {
-        flex: 1 1 auto;
-        max-width: 90%;
-        border-width: 2px;
-    }
-    .video-container {
-        border-width: 3px;
-    }
-
-    /* Gallery Slideshow */
-    .gurukul-gallery-slideshow {
-        margin: var(--spacing-lg) auto;
-    }
-    .gallery-image {
-        height: 250px;
-    }
-    .prev-button, .next-button {
-        padding: var(--spacing-sm) var(--spacing-xs);
-        font-size: 1.5rem;
-    }
-
-    /* Donation Section */
-    .donation-methods-grid {
-        grid-template-columns: 1fr;
-        gap: var(--spacing-md);
-    }
-    .donation-card {
-        padding: var(--spacing-lg);
-        margin: 0 var(--spacing-sm);
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    }
-    .donation-card h3 {
-        text-align: center;
-    }
-    .donation-card p {
-        text-align: center;
-    }
-    .amount-buttons {
-        gap: var(--spacing-xs);
-    }
-    .amount-buttons .preset-amount {
-        padding: 10px 15px;
-        font-size: 0.9em;
-    }
-    .custom-amount-input {
-        padding: 10px 12px;
-        font-size: 1em;
-    }
-    .donate-button {
-        padding: 15px 25px;
-        font-size: 1.1em;
-    }
-
-    /* Thank You Section */
-    #thankyou-section {
-        min-height: auto;
-        padding-bottom: var(--spacing-xl);
-    }
-    .donators-list-container {
-        padding: var(--spacing-lg);
-        margin: var(--spacing-md) auto;
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    }
-    #donators-list {
-        grid-template-columns: 1fr;
-        gap: var(--spacing-sm);
-    }
-    .donator-card-item {
-        font-size: 1em;
-        padding: var(--spacing-xs);
-        background-color: #F8F8F8;
-        border: 1px solid #E0E0E0;
-    }
-    .donator-avatar {
-        width: 50px;
-        height: 50px;
-    }
-    .donator-info .name {
-        font-size: 1em;
-    }
-    .donator-info .location {
-        font-size: 0.8em;
-    }
-
-    /* Contact Section */
-    .contact-content {
-        padding: var(--spacing-lg);
-        margin: var(--spacing-md) auto;
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    }
-    .contact-info .email-address a {
-        font-size: 1em;
-    }
-
-    /* Footer */
-    .site-footer {
-        padding: var(--spacing-xl) var(--spacing-md);
-    }
-    .footer-content {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-    }
-    .footer-section {
-        flex: 1 1 100%;
-        padding: 0;
-        text-align: center;
-        margin-bottom: var(--spacing-md);
-    }
-    .footer-section h3, .footer-section p, .footer-section ul {
-        text-align: center;
-    }
-    .footer-section ul {
-        margin-left: 0;
-    }
-    .footer-social-icons {
-        display: flex;
-        font-size: 1.8em;
-        gap: var(--spacing-md);
-        margin-bottom: var(--spacing-md);
-    }
-}
-
-/* Further refinements for even smaller screens, e.g., max-width: 480px */
-@media (max-width: 480px) {
-    .hero-section {
-        padding-top: 80px;
-        min-height: 70vh;
-    }
-    .hero-main-text {
-        font-size: clamp(1.8em, 9vw, 3em);
-    }
-    .hero-main-text .sanskrit-line {
-        font-size: clamp(1.6em, 8vw, 2.5em);
-    }
-    h2 { font-size: clamp(1.6em, 7vw, 2.5em); }
-    h3 { font-size: clamp(1.2em, 5vw, 1.8em); }
-    .hero-description-block .english-quote-translation {
-        font-size: clamp(0.75em, 3vw, 1em);
-    }
-    .hero-description-block .quote-text.highlight-quote {
-        font-size: clamp(0.9em, 3.5vw, 1.3em);
-    }
-    .hero-btn {
-        font-size: 0.9em;
-        padding: 12px 25px;
-    }
-    .section {
-        padding: var(--spacing-md);
-        margin: var(--spacing-md) auto;
-    }
-    .gallery-image {
-        height: 200px;
-    }
-    .donation-card {
-        padding: var(--spacing-md);
-    }
-    .amount-buttons {
-        gap: var(--spacing-xs);
-    }
-    .amount-buttons .preset-amount {
-        padding: 8px 12px;
-        font-size: 0.8em;
-    }
-    .custom-amount-input {
-        padding: 10px;
-        font-size: 0.9em;
-    }
-    .donate-button {
-        font-size: 1em;
-        padding: 12px 20px;
-    }
-    .donators-list-container {
-        padding: var(--spacing-md);
-    }
-    .donator-card-item {
-        font-size: 0.9em;
-    }
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Rashtriya Dharma Raksha Gurukul - Nurturing Futures</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Updated font links to include Inter, Tiro Devanagari Sanskrit, and Bebas Neue for hero -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Tiro+Devanagari+Sanskrit:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <header class="main-header">
+        <div class="header-content-wrapper">
+            <div class="logo-container">
+                <a href="#" class="logo-link">
+                    <img src="assets/images/logo.png" alt="Rashtriya Dharma Raksha Gurukul Logo" class="logo">
+                    <span class="site-title">Gurukul</span>
+                </a>
+            </div>
+            <div class="hamburger-menu" id="hamburger-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <nav class="main-nav" id="main-nav">
+                <ul>
+                    <li><a href="#about-us-section" class="nav-link">About Us</a></li>
+                    <li><a href="#mission-section" class="nav-link">Mission</a></li>
+                    <li><a href="#gurukul-life-section" class="nav-link">Gurukul Life</a></li>
+                    <li><a href="#donate-section" class="nav-link">Donate</a></li>
+                    <li><a href="#thankyou-section" class="nav-link">Thank You Donators</a></li>
+                    <li><a href="#updates-section" class="nav-link">Updates</a></li>
+                    <li><a href="#templates-section" class="nav-link">Templates</a></li>
+                    <li><a href="#contact-us-section" class="nav-link">Contact Us</a></li>
+                </ul>
+                <div class="nav-social-icons">
+                    <a href="https://www.facebook.com/share/1DA5LbuCHP/" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.youtube.com/channel/UC_YOUR_YOUTUBE_ID" target="_blank" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                    <a href="https://www.instagram.com/dharma_raksha_gurukul104?igsh=MWdhc2I2eWQ4eDhucw==" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero-section">
+        <div class="hero-content">
+            <h1 class="hero-main-text fade-in-down">
+                <span class="english-line">NURTURING</span>
+                <span class="english-line">FUTURE</span>
+                <span class="sanskrit-line sanskrit">सनातन संस्कार</span>
+            </h1>
+            <div class="hero-description-block fade-in-down delay-1">
+                <p class="english-quote-translation">
+                    "Produce abundant food. That should be the vow. Do not speak ill of food. That should be the vow."
+                </p>
+                <p class="sanskrit quote-text highlight-quote">
+                    "अन्नं बहु कुर्वित। तद् व्रतम्। अन्नं न निन्द्यात्। तद् व्रतम्।"
+                </p>
+                <a href="#donate-section" class="btn primary-cta hero-btn">
+                    Donate Now <i class="fas fa-arrow-right"></i>
+                </a>
+                <div class="scroll-indicator">
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+            </div>
+        </div>
+        <!-- Background image is set via CSS for better control and responsiveness -->
+    </section>
+
+    <main>
+        <section id="intro-video-section" class="section hero-video-section fade-in-up delay-1">
+            <h2 class="section-title">A Glimpse Into Our World</h2>
+            <h2 class="section-title sanskrit">हमारे विश्व की एक झलक</h2>
+            <p class="section-description">Watch this short video to understand the essence of Rashtriya Dharma Raksha Gurukul.</p>
+            <div class="video-container">
+                <video controls preload="metadata" poster="assets/images/video-thumbnail.jpg">
+                    <source src="assets/videos/intro.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <p class="small-print">
+                    (Ensure 'intro.mp4' is uploaded to the 'assets/videos/' directory on GitHub.)
+                </p>
+            </div>
+        </section>
+
+        <div class="section-divider wave-top"></div>
+        <section id="about-us-section" class="section card-section fade-in-up">
+            <h2 class="section-title">About Our Vision</h2>
+            <h2 class="section-title sanskrit">हमारे बारे में – राष्ट्रीय धर्म रक्षा गुरुकुल</h2>
+            <div class="about-us-content">
+                <div class="about-text">
+                    <p class="english-text">
+                        In a time when values fade in the noise of modern life, Rashtriya Dharma Raksha Gurukul rises like the sun—spreading warmth, wisdom, and Sanatan culture to the hearts of our children.
+                    </p>
+                    <p class="hindi-text sanskrit">
+                        जब आधुनिक जीवन की आपाधापी में संस्कार लुप्त हो रहे हैं, ऐसे समय में ‘राष्ट्रीय धर्म रक्षा गुरुकुल’ सूर्य की भाँति उदित होता है — हमारे बच्चों के हृदय में ज्ञान, गरिमा और सनातन संस्कृति की ज्योति फैलाने के लिए।
+                    </p>
+                    <h3>Our Purpose:</h3> <p class="english-text">
+                        Founded with the vision to preserve, protect, and propagate Sanatan Dharma, our Gurukul is not just a school—it is a sacred space where tradition meets transformation.
+                    </p>
+                    <p class="hindi-text sanskrit">
+                        सनातन धर्म की रक्षा, संरक्षण और प्रचार के संकल्प के साथ स्थापित यह गुरुकुल मात्र एक शिक्षण संस्थान नहीं, बल्कि वह पवित्र भूमि है जहाँ परंपरा और परिवर्तन का संगम होता है।
+                    </p>
+                    <h3>What Children Learn:</h3> <ul class="english-text">
+                        <li>Vedas, Yoga, Sanskrit, Dharmashastra, Gita</li>
+                        <li>Indian martial arts (like Dhanurveda and Kalaripayattu)</li>
+                        <li>Modern life skills</li>
+                    </ul>
+                    <ul class="hindi-text sanskrit">
+                        <li>वेद, योग, संस्कृत, धर्मशास्त्र, गीता</li>
+                        <li>भारतीय युद्धकला (जैसे धनुर्वेद व कलारीपयट्टू)</li>
+                        <li>आधुनिक जीवन कौशल</li>
+                    </ul>
+                    <p class="english-text">
+                        We are on a mission to reawaken Bharat’s spiritual consciousness and raise the next generation as warriors of Dharma—disciplined, compassionate, and rooted in our timeless knowledge.
+                    </p>
+                    <p class="hindi-text sanskrit">
+                        हम भारत की आध्यात्मिक चेतना को पुनः जाग्रत करने के अभियान पर हैं और अगली पीढ़ी को धर्मयोद्धा के रूप में तैयार कर रहे हैं — अनुशासित, करुणामय और सनातन ज्ञान से ओतप्रोत।
+                    </p>
+                    <p class="english-text last-paragraph">
+                        Each child at the Gurukul wears a simple dhoti, folds their hands in Namaste, and begins the day with a prayer under the rising sun.
+                        It’s not just learning, it’s living.
+                    </p>
+                    <p class="hindi-text sanskrit last-paragraph">
+                        गुरुकुल का हर बच्चा एक सादा धोती पहनता है, ‘नमस्ते’ के साथ दिन की शुरुआत करता है और उगते सूर्य के समक्ष प्रार्थना करता है।
+                        यह केवल पढ़ाई नहीं, बल्कि एक जीवनशैली है।
+                    </p>
+                    <p class="english-text last-paragraph italic-text">Jai Sanatan Dharma.</p>
+                    <p class="hindi-text sanskrit last-paragraph italic-text">जय सनातन धर्म।</p>
+                </div>
+                <div class="about-image-wrapper">
+                    <img src="assets/images/gurukul-about.jpg" alt="Children learning in a traditional Gurukul setting" class="section-image" />
+                </div>
+            </div>
+        </section>
+        <div class="section-divider wave-bottom"></div>
+        <section id="mission-section" class="section card-section fade-in-up delay-0">
+            <h2 class="section-title">Our Sacred Mission</h2>
+            <h2 class="section-title sanskrit">हमारा पावन लक्ष्य</h2>
+            <div class="mission-content">
+                <div class="mission-text-container">
+                    <p class="english-text" id="mission-text-english">
+                        Our mission is to revive the ancient wisdom of Sanatan Dharma by providing a holistic education that blends traditional Vedic studies with modern skills.
+                        We aim to nurture children into disciplined, compassionate, and spiritually aware individuals who can contribute positively to society and uphold cultural values.
+                        Through rigorous training in scriptures, yoga, martial arts, and ethical living, we empower the next generation to become true Dharma Warriors.
+                    </p>
+                    <p class="hindi-text sanskrit" id="mission-text-hindi">
+                        हमारा लक्ष्य सनातन धर्म की प्राचीन ज्ञान परंपरा को पुनर्जीवित करना है, जहाँ आधुनिक कौशल के साथ पारंपरिक वैदिक शिक्षा का समन्वय हो।
+                        हमारा उद्देश्य बच्चों को अनुशासित, करुणामय और आध्यात्मिक रूप से जागरूक व्यक्तियों के रूप में पोषित करना है, जो समाज में सकारात्मक योगदान दे सकें और सांस्कृतिक मूल्यों को बनाए रख सकें।
+                        शास्त्रों, योग, युद्धकला और नैतिक जीवन के कठोर प्रशिक्षण के माध्यम से, हम अगली पीढ़ी को सच्चे धर्म योद्धा बनाने के लिए सशक्त करते हैं।
+                    </p>
+                    <p class="small-print">
+                        (The full content from 'mission.txt' will appear here upon upload.)
+                    </p>
+                    <div class="mission-buttons">
+                        <a href="https://docs.google.com/forms/d/e/1FAIpQLSd7jqr_QUwm9U6wk1qZeKm-IyM9zf62Qb7dlwjgC4i8dz31tg/viewform?embedded=true" class="btn volunteer-btn-mission">Join Our Mission</a>
+                        <a href="https://docs.google.com/forms/d/e/1FAIpQLSd7jqr_QUwm9U6wk1qZeKm-IyM9zf62Qb7dlwjgC4i8dz31tg/viewform?embedded=true" class="btn volunteer-btn-mission sanskrit">निशुल्क सेवा करें</a>
+                    </div>
+                </div>
+                <div class="mission-image-wrapper">
+                    <img src="assets/images/mission-image.jpg" alt="Children in Gurukul meditating or learning" class="section-image" />
+                </div>
+            </div>
+        </section>
+        <div class="section-divider wave-top"></div>
+        <div class="section-divider wave-bottom"></div>
+        <section id="gurukul-life-section" class="section card-section fade-in-up delay-1">
+            <h2 class="section-title">Glimpses of Gurukul Life</h2>
+            <p class="section-description">Experience the serene and disciplined rhythm of life at Rashtriya Dharma Raksha Gurukul, where every day is a step towards holistic growth.</p>
+            <div class="gurukul-gallery-slideshow">
+                <div class="slides-container">
+                    <div class="gallery-item" data-caption="Morning Prayers at Gurukul">
+                        <img src="assets/images/gurukul-life-1.jpg" alt="Morning prayers at Gurukul" class="gallery-image"/>
+                        <div class="gallery-overlay">Morning Prayers</div>
+                    </div>
+                    <div class="gallery-item" data-caption="Vedic Studies Session">
+                        <img src="assets/images/gurukul-life-2.jpg" alt="Children studying in Gurukul" class="gallery-image"/>
+                        <div class="gallery-overlay">Vedic Studies</div>
+                    </div>
+                    <div class="gallery-item" data-caption="Yoga & Meditation Practice">
+                        <img src="assets/images/gurukul-life-3.jpg" alt="Yoga practice at Gurukul" class="gallery-image"/>
+                        <div class="gallery-overlay">Yoga & Meditation</div>
+                    </div>
+                    <div class="gallery-item" data-caption="Outdoor Learning Environment">
+                        <img src="assets/images/gurukul-life-4.jpg" alt="Outdoor learning at Gurukul" class="gallery-image"/>
+                        <div class="gallery-overlay">Outdoor Learning</div>
+                    </div>
+                    <div class="gallery-item" data-caption="Community Seva by Students">
+                        <img src="assets/images/gurukul-life-5.jpg" alt="Gurukul children performing duties" class="gallery-image"/>
+                        <div class="gallery-overlay">Community Seva</div>
+                    </div>
+                    <div class="gallery-item" data-caption="Cultural Arts & Performances">
+                        <img src="assets/images/gurukul-life-6.jpg" alt="Cultural activities at Gurukul" class="gallery-image"/>
+                        <div class="gallery-overlay">Cultural Arts</div>
+                    </div>
+                </div>
+                <button class="prev-button"><i class="fas fa-chevron-left"></i></button>
+                <button class="next-button"><i class="fas fa-chevron-right"></i></button>
+            </div>
+        </section>
+        <div class="section-divider wave-top reverse-colors"></div>
+        <section id="donate-section" class="section donate-page-section card-section fade-in-up delay-2">
+            <h2 class="section-title">Support Our Sacred Cause</h2>
+            <h2 class="section-title sanskrit">हमारे पवित्र कार्य का समर्थन करें</h2>
+            <p class="section-description">Your generous contribution directly transforms lives. Every rupee helps us provide education, shelter, and a bright future for these deserving children.</p>
+            <!-- Donation Progress Bar (NEW) -->
+            <div class="progress-bar-container">
+                <div class="progress-bar-info">
+                    <span id="current-raised">₹1,50,000</span>
+                    <span id="goal-amount">₹2,00,00,000 Goal</span>
+                </div>
+                <div class="progress-bar">
+                    <div class="progress-bar-fill"></div>
+                </div>
+            </div>
+            <div class="donation-methods-grid">
+                <!-- Only the amount selection card remains -->
+                <div class="donation-card">
+                    <h3>Choose or Enter Amount</h3>
+                    <p class="note">Donations start from ₹11 onwards</p>
+                    <div class="amount-buttons">
+                        <button class="preset-amount btn" data-amount="11">₹11</button>
+                        <button class="preset-amount btn" data-amount="51">₹51</button>
+                        <button class="preset-amount btn" data-amount="101">₹101</button>
+                        <button class="preset-amount btn" data-amount="501">₹501</button>
+                        <button class="preset-amount btn" data-amount="1100">₹1,100</button>
+                        <button class="preset-amount btn" data-amount="2100">₹2,100</button>
+                    </div>
+                    <div class="custom-amount-wrapper">
+                        <label for="custom-amount-input" class="sr-only">Enter custom amount</label>
+                        <input type="number" id="custom-amount-input" placeholder="Enter custom amount (e.g., 500)" class="custom-amount-input" min="11" />
+                    </div>
+                    <button class="donate-button primary-cta btn">Proceed to Donate</button>
+                    <p class="small-print">You will be redirected to your UPI app to complete the payment.</p>
+                    <p class="trust-elements"><i class="fas fa-hand-holding-heart icon"></i> 100% of donations go to building the Gurukul infrastructure.</p>
+                </div>
+            </div>
+            <!-- Re-adding "Show My Name on Donation Wall" button -->
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSfWud6zfT1wH6jP3bNj5SipB_h8pgi73asCOE2e4PkCl7ssyA/viewform?usp=dialog" class="btn secondary-btn show-my-name-btn">Show My Name on Donation Wall</a>
+        </section>
+        <div class="section-divider wave-bottom reverse-colors"></div>
+        <div class="section-divider wave-top"></div>
+        <section id="thankyou-section" class="section card-section fade-in-up delay-3">
+            <h2 class="section-title">A Heartfelt Thank Thank You!</h2>
+            <h2 class="section-title sanskrit">हृदय से धन्यवाद!</h2>
+            <p class="section-description">
+                We are immensely grateful for your generosity and support.
+                Your contributions make a significant difference in the lives of our children and the preservation of Sanatan Dharma.
+            </p>
+            <p class="section-description">
+                Below are the names of our esteemed donators who have supported our mission.
+            </p>
+            <div class="donators-list-container">
+                <h3>Our Valued Donators:</h3>
+                <ul id="donators-list">
+                    <li class="donator-card-item">
+                        <div class="donator-avatar">SR</div>
+                        <div class="donator-info">
+                            <div class="name">Shri Ram Lal Sharma</div>
+                            <div class="location">New Delhi, India</div>
+                        </div>
+                    </li>
+                    <li class="donator-card-item">
+                        <div class="donator-avatar">GD</div>
+                        <div class="donator-info">
+                            <div class="name">Smt. Gayatri Devi</div>
+                            <div class="location">Mumbai, India</div>
+                        </div>
+                    </li>
+                    <li class="donator-card-item">
+                        <div class="donator-avatar">AK</div>
+                        <div class="donator-info">
+                            <div class="name">Dr. Anil Kumar</div>
+                            <div class="location">Bengaluru, India</div>
+                        </div>
+                    </li>
+                    <li class="donator-card-item">
+                        <div class="donator-avatar">GF</div>
+                        <div class="donator-info">
+                            <div class="name">The Gupta Family</div>
+                            <div class="location">Chennai, India</div>
+                        </div>
+                    </li>
+                    <li class="donator-card-item">
+                        <div class="donator-avatar">AS</div>
+                        <div class="donator-info">
+                            <div class="name">Anonymous Supporter</div>
+                            <div class="location">New York, USA</div>
+                        </div>
+                    </li>
+                    <li class="donator-card-item">
+                        <div class="donator-avatar">PS</div>
+                        <div class="donator-info">
+                            <div class="name">Priya Singh</div>
+                            <div class="location">London, UK</div>
+                        </div>
+                    </li>
+                    <li class="donator-card-item">
+                        <div class="donator-avatar">VP</div>
+                        <div class="donator-info">
+                            <div class="name">Vivek Patel</div>
+                            <div class="location">Ahmedabad, India</div>
+                        </div>
+                    </li>
+                    <li class="donator-card-item">
+                        <div class="donator-avatar">MR</div>
+                        <div class="donator-info">
+                            <div class="name">Meenakshi Reddy</div>
+                            <div class="location">Hyderabad, India</div>
+                        </div>
+                    </li>
+                    <li class="donator-card-item">
+                        <div class="donator-avatar">RS</div>
+                        <div class="donator-info">
+                            <div class="name">Rahul Sharma</div>
+                            <div class="location">Toronto, Canada</div>
+                        </div>
+                    </li>
+                    <li class="donator-card-item">
+                        <div class="donator-avatar">AD</div>
+                        <div class="donator-info">
+                            <div class="name">Ananya Das</div>
+                            <div class="location">Kolkata, India</div>
+                        </div>
+                    </li>
+                </ul>
+                <p class="small-print">
+                    This wall is updated periodically. Names are displayed with consent.
+                </p>
+            </div>
+        </section>
+        <div class="section-divider wave-top"></div>
+        <!-- NEW: Updates Section -->
+        <section id="updates-section" class="section card-section fade-in-up delay-4">
+            <h2 class="section-title">Latest Updates</h2>
+            <h2 class="section-title sanskrit">नवीनतम अपडेट्स</h2>
+            <p class="section-description">Stay informed about the progress and activities at Rashtriya Dharma Raksha Gurukul.</p>
+            <div id="updates-content">
+                <p>Loading updates...</p>
+            </div>
+        </section>
+        <div class="section-divider wave-top"></div>
+        <!-- NEW: Templates Section -->
+        <section id="templates-section" class="section card-section fade-in-up delay-5">
+            <h2 class="section-title">Our Templates</h2>
+            <h2 class="section-title sanskrit">हमारे टेम्पलेट्स</h2>
+            <p class="section-description">Explore our beautifully designed templates for various purposes.</p>
+            <div class="templates-gallery">
+                <!-- Replace 'assets/images/templates.png' with your actual image path -->
+                <img src="assets/images/templates.png" alt="Gurukul Templates" class="template-image"/>
+                <p class="small-print">
+                    (Ensure 'templates.png' is uploaded to the 'assets/images/' directory on GitHub.)
+                </p>
+            </div>
+        </section>
+        <div class="section-divider wave-top"></div>
+        <section id="contact-us-section" class="section card-section fade-in-up delay-6"> <!-- Adjusted delay -->
+            <h2 class="section-title">Contact Us</h2>
+            <h2 class="section-title sanskrit">हमसे संपर्क करें</h2>
+            <p class="section-description">Have questions or want to learn more about our mission? Reach out to us!</p>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3>Email Us</h3>
+                    <p class="email-address">
+                        <a href="mailto:rashtriyadharmarakshagurukul@gmail.com">rashtriyadharmarakshagurukul@gmail.com</a>
+                    </p>
+                    <p class="contact-note">We aim to respond to all inquiries within 2-3 business days.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="site-footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>About Gurukul</h3>
+                <p>Rashtriya Dharma Raksha Gurukul is dedicated to preserving Sanatan Dharma through holistic education and traditional values.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#about-us-section">About Us</a></li>
+                    <li><a href="#mission-section">Our Mission</a></li>
+                    <li><a href="#gurukul-life-section">Gurukul Life</a></li>
+                    <li><a href="#donate-section">Donate Now</a></li>
+                    <li><a href="#updates-section">Updates</a></li>
+                    <li><a href="#templates-section">Templates</a></li>
+                    <li><a href="#contact-us-section">Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <p>Email: <a href="mailto:rashtriyadharmarakshagurukul@gmail.com">rashtriyadharmarakshagurukul@gmail.com</a></p>
+            </div>
+            <div class="footer-section">
+                <h3>Follow Us</h3>
+                <div class="footer-social-icons">
+                    <a href="https://www.facebook.com/share/1DA5LbuCHP/" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.youtube.com/channel/UC_YOUR_YOUTUBE_ID" target="_blank" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                    <a href="https://www.instagram.com/dharma_raksha_gurukul104?igsh=MWdhc2I2eWQ4eDhucw==" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+            <p class="footer-moto english-text">"Dharma Raksha, Desh Raksha" - Protecting righteousness, protecting the nation.</p>
+            <p class="footer-moto sanskrit">"धर्म रक्षा, देश रक्षा" - धर्म की रक्षा, राष्ट्र की रक्षा।</p>
+            <p class="copyright english-text">© 2025 Rashtriya Dharma Raksha Gurukul. All Rights Reserved.</p>
+            <p class="copyright sanskrit">© 2025 राष्ट्रीय धर्म रक्षा गुरुकुल। सर्वाधिकार सुरक्षित। जय सनातन धर्म</p>
+        </div>
+    </footer>
+    <!-- Custom Modal HTML (NEW) -->
+    <div id="custom-alert-modal" class="custom-modal-overlay">
+        <div class="custom-modal-content">
+            <p id="custom-alert-message"></p>
+            <button id="custom-alert-ok-btn">OK</button>
+        </div>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // --- Custom Alert/Modal Function ---
+            function showAlert(message) {
+                const modal = document.getElementById('custom-alert-modal');
+                const msgElement = document.getElementById('custom-alert-message');
+                const okBtn = document.getElementById('custom-alert-ok-btn');
+                const body = document.body;
+                msgElement.textContent = message;
+                modal.classList.add('show');
+                body.classList.add('no-scroll'); // Disable scroll
+                okBtn.onclick = () => {
+                    modal.classList.remove('show');
+                    body.classList.remove('no-scroll'); // Enable scroll
+                };
+                modal.onclick = (e) => { // Close if clicked outside content
+                    if (e.target === modal) {
+                        modal.classList.remove('show');
+                        body.classList.remove('no-scroll');
+                    }
+                };
+            }
+
+            // --- Copy to clipboard functionality ---
+            document.querySelectorAll('.copy-btn').forEach(button => {
+                button.addEventListener('click', () => {
+                    const targetId = button.getAttribute('data-clipboard-target');
+                    const textToCopy = document.getElementById(targetId).textContent;
+                    try {
+                        const tempInput = document.createElement('textarea');
+                        tempInput.value = textToCopy;
+                        document.body.appendChild(tempInput);
+                        tempInput.select();
+                        document.execCommand('copy');
+                        document.body.removeChild(tempInput);
+                        const originalText = button.textContent;
+                        button.textContent = 'Copied!';
+                        button.classList.add('copied');
+                        setTimeout(() => {
+                            button.textContent = originalText;
+                            button.classList.remove('copied');
+                        }, 2000);
+                    } catch (err) {
+                        console.error('Failed to copy: ', err);
+                        showAlert('Failed to copy. Please copy manually: ' + textToCopy);
+                    }
+                });
+            });
+
+            // --- Preset amount selection ---
+            const customAmountInput = document.getElementById('custom-amount-input');
+            const presetButtons = document.querySelectorAll('.preset-amount');
+            presetButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    presetButtons.forEach(btn => btn.classList.remove('active'));
+                    button.classList.add('active');
+                    const amount = button.getAttribute('data-amount');
+                    customAmountInput.value = amount;
+                });
+            });
+
+            // --- Main Donate Button functionality (UPI Deep Link) ---
+            document.querySelector('.donate-button').addEventListener('click', () => {
+                let donationAmount = customAmountInput.value;
+                if (!donationAmount || parseFloat(donationAmount) < 11) {
+                    showAlert("Please enter a valid donation amount (minimum ₹11).");
+                    return;
+                }
+                const upiId = '917428689506@federal';
+                const payeeName = 'ROSHAN SINGH';
+                const merchantCode = '0000';
+                const purposeCode = '00';
+                const currency = 'INR';
+                const mode = '01';
+                const orgId = '159049';
+                const signature = 'MEYCIQCuY2p5bzPOBIIG7BW7RkDn46Lwl4VtkyMDpIlW8M40HgIhAK0VFahWBLmPyL6PfTL3d6klWknZcieTJzmVHzVJfKlQ'; // Corrected signature
+                const upiLink = `upi://pay?pa=${upiId}&pn=${encodeURIComponent(payeeName)}&mc=${merchantCode}&purpose=${purposeCode}&cu=${currency}&am=${donationAmount}&mode=${mode}&orgid=${orgId}&sign=${signature}`;
+                window.location.href = upiLink;
+            });
+
+            // --- Scroll Reveal Animations ---
+            const animateOnScroll = (entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('in-view');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            };
+            const observer = new IntersectionObserver(animateOnScroll, {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.1
+            });
+            document.querySelectorAll('.fade-in-up, .fade-in-down').forEach(element => {
+                observer.observe(element);
+            });
+
+            // --- Smooth scroll to anchor links ---
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth'
+                        });
+                    }
+                    const mainNav = document.getElementById('main-nav');
+                    const hamburger = document.getElementById('hamburger-menu');
+                    const body = document.body;
+                    if (mainNav.classList.contains('nav-open')) {
+                        mainNav.classList.remove('nav-open');
+                        hamburger.classList.remove('open');
+                        body.classList.remove('no-scroll');
+                    }
+                });
+            });
+
+            // --- Hamburger Menu (Functional Toggle) ---
+            const hamburger = document.getElementById('hamburger-menu');
+            const mainNav = document.getElementById('main-nav');
+            const body = document.body;
+            if (hamburger && mainNav && body) {
+                hamburger.addEventListener('click', () => {
+                    hamburger.classList.toggle('open');
+                    mainNav.classList.toggle('nav-open');
+                    body.classList.toggle('no-scroll');
+                });
+            }
+
+            // --- Gallery Slideshow (NEW) ---
+            const slideshowContainer = document.querySelector('.gurukul-gallery-slideshow');
+            const slidesContainer = slideshowContainer.querySelector('.slides-container');
+            const slides = Array.from(slidesContainer.children); // Convert HTMLCollection to Array
+            const prevButton = slideshowContainer.querySelector('.prev-button');
+            const nextButton = slideshowContainer.querySelector('.next-button');
+
+            let currentSlideIndex = 0;
+            const totalSlides = slides.length;
+
+            function showSlide(index) {
+                slides.forEach((slide, i) => {
+                    slide.style.display = 'none'; // Hide all slides
+                });
+
+                if (index >= totalSlides) {
+                    currentSlideIndex = 0;
+                } else if (index < 0) {
+                    currentSlideIndex = totalSlides - 1;
+                } else {
+                    currentSlideIndex = index;
+                }
+
+                slides[currentSlideIndex].style.display = 'block'; // Show current slide
+            }
+
+            // Initial display
+            showSlide(currentSlideIndex);
+
+            prevButton.addEventListener('click', () => {
+                showSlide(currentSlideIndex - 1);
+            });
+
+            nextButton.addEventListener('click', () => {
+                showSlide(currentSlideIndex + 1);
+            });
+
+            // Optional: Auto-play functionality
+            // let autoPlayInterval = setInterval(() => {
+            //     showSlide(currentSlideIndex + 1);
+            // }, 5000); // Change slide every 5 seconds
+
+            // // Pause auto-play on hover
+            // slideshowContainer.addEventListener('mouseenter', () => {
+            //     clearInterval(autoPlayInterval);
+            // });
+
+            // slideshowContainer.addEventListener('mouseleave', () => {
+            //     autoPlayInterval = setInterval(() => {
+            //         showSlide(currentSlideIndex + 1);
+            //     }, 5000);
+            // });
+
+
+            // --- Fetch and Display Updates ---
+            const updatesContentDiv = document.getElementById('updates-content');
+            const updateFilePath = 'update.txt'; // Path to your update.txt file
+            async function fetchUpdates() {
+                try {
+                    const response = await fetch(updateFilePath);
+                    if (!response.ok) {
+                        throw new Error(`HTTP error! status: ${response.status} - ${response.statusText}`);
+                    }
+                    const text = await response.text();
+                    const htmlContent = text.split('\n').map(line => {
+                        if (line.startsWith('### ')) {
+                            return `<h3>${line.substring(4)}</h3>`;
+                        } else if (line.startsWith('**') && line.endsWith('**')) {
+                            return `<p><strong>${line.substring(2, line.length - 2)}</strong></p>`;
+                        } else if (line.trim() === '') {
+                            return '';
+                        } else if (line.startsWith('* ')) {
+                            return `<li>${line.substring(2)}</li>`;
+                        }
+                        return `<p>${line}</p>`;
+                    }).join('');
+                    let finalHtml = htmlContent;
+                    if (finalHtml.includes('<li>')) {
+                        finalHtml = finalHtml.replace(/<p>\* (.*?)<\/p>/g, '<li>$1</li>');
+                        const listRegex = /(<li>.*?<\/li>(\s*<li>.*?<\/li>)*)/g;
+                        finalHtml = finalHtml.replace(listRegex, '<ul>$1</ul>');
+                    }
+                    updatesContentDiv.innerHTML = finalHtml;
+                } catch (error) {
+                    console.error('Error fetching updates:', error);
+                    updatesContentDiv.innerHTML = '<p>Failed to load updates. Please try again later.</p>';
+                }
+            }
+            fetchUpdates();
+        });
+    </script>
+</body>
+</html>
