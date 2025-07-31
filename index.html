@@ -6,9 +6,8 @@
     <title>Rashtriya Dharma Raksha Gurukul - Nurturing Futures</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <!-- Updated font links to include Inter and a bold display font for the hero -->
+    <!-- Updated font links to include Inter, Tiro Devanagari Sanskrit, and Bebas Neue for hero -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Tiro+Devanagari+Sanskrit:wght@400;700&display=swap" rel="stylesheet">
-    <!-- Example of a bold display font. You might want to choose one that fits better, e.g., 'Bebas Neue', 'Oswald', or a more decorative one. -->
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="style.css" />
@@ -58,7 +57,7 @@
                 <p class="english-quote-translation">
                     "Produce abundant food. That should be the vow. Do not speak ill of food. That should be the vow."
                 </p>
-                <p class="sanskrit quote-text">
+                <p class="sanskrit quote-text highlight-quote">
                     "अन्नं बहु कुर्वित। तद् व्रतम्। अन्नं न निन्द्यात्। तद् व्रतम्।"
                 </p>
                 <a href="#donate-section" class="btn primary-cta hero-btn">
@@ -172,36 +171,35 @@
         <section id="gurukul-life-section" class="section card-section fade-in-up delay-1">
             <h2 class="section-title">Glimpses of Gurukul Life</h2>
             <p class="section-description">Experience the serene and disciplined rhythm of life at Rashtriya Dharma Raksha Gurukul, where every day is a step towards holistic growth.</p>
-            <div class="gurukul-gallery">
-                <div class="gallery-item" data-caption="Morning Prayers at Gurukul">
-                    <img src="assets/images/gurukul-life-1.jpg" alt="Morning prayers at Gurukul" class="gallery-image"/>
-                    <div class="gallery-overlay">Morning Prayers</div>
+            <div class="gurukul-gallery-slideshow">
+                <div class="slides-container">
+                    <div class="gallery-item" data-caption="Morning Prayers at Gurukul">
+                        <img src="assets/images/gurukul-life-1.jpg" alt="Morning prayers at Gurukul" class="gallery-image"/>
+                        <div class="gallery-overlay">Morning Prayers</div>
+                    </div>
+                    <div class="gallery-item" data-caption="Vedic Studies Session">
+                        <img src="assets/images/gurukul-life-2.jpg" alt="Children studying in Gurukul" class="gallery-image"/>
+                        <div class="gallery-overlay">Vedic Studies</div>
+                    </div>
+                    <div class="gallery-item" data-caption="Yoga & Meditation Practice">
+                        <img src="assets/images/gurukul-life-3.jpg" alt="Yoga practice at Gurukul" class="gallery-image"/>
+                        <div class="gallery-overlay">Yoga & Meditation</div>
+                    </div>
+                    <div class="gallery-item" data-caption="Outdoor Learning Environment">
+                        <img src="assets/images/gurukul-life-4.jpg" alt="Outdoor learning at Gurukul" class="gallery-image"/>
+                        <div class="gallery-overlay">Outdoor Learning</div>
+                    </div>
+                    <div class="gallery-item" data-caption="Community Seva by Students">
+                        <img src="assets/images/gurukul-life-5.jpg" alt="Gurukul children performing duties" class="gallery-image"/>
+                        <div class="gallery-overlay">Community Seva</div>
+                    </div>
+                    <div class="gallery-item" data-caption="Cultural Arts & Performances">
+                        <img src="assets/images/gurukul-life-6.jpg" alt="Cultural activities at Gurukul" class="gallery-image"/>
+                        <div class="gallery-overlay">Cultural Arts</div>
+                    </div>
                 </div>
-                <div class="gallery-item" data-caption="Vedic Studies Session">
-                    <img src="assets/images/gurukul-life-2.jpg" alt="Children studying in Gurukul" class="gallery-image"/>
-                    <div class="gallery-overlay">Vedic Studies</div>
-                </div>
-                <div class="gallery-item" data-caption="Yoga & Meditation Practice">
-                    <img src="assets/images/gurukul-life-3.jpg" alt="Yoga practice at Gurukul" class="gallery-image"/>
-                    <div class="gallery-overlay">Yoga & Meditation</div>
-                </div>
-                <div class="gallery-item" data-caption="Outdoor Learning Environment">
-                    <img src="assets/images/gurukul-life-4.jpg" alt="Outdoor learning at Gurukul" class="gallery-image"/>
-                    <div class="gallery-overlay">Outdoor Learning</div>
-                </div>
-                <div class="gallery-item" data-caption="Community Seva by Students">
-                    <img src="assets/images/gurukul-life-5.jpg" alt="Gurukul children performing duties" class="gallery-image"/>
-                    <div class="gallery-overlay">Community Seva</div>
-                </div>
-                <div class="gallery-item" data-caption="Cultural Arts & Performances">
-                    <img src="assets/images/gurukul-life-6.jpg" alt="Cultural activities at Gurukul" class="gallery-image"/>
-                    <div class="gallery-overlay">Cultural Arts</div>
-                </div>
-            </div>
-            <div id="lightbox" class="lightbox">
-                <span class="close-btn">×</span>
-                <img class="lightbox-content" id="lightbox-img">
-                <div id="lightbox-caption" class="lightbox-caption"></div>
+                <button class="prev-button"><i class="fas fa-chevron-left"></i></button>
+                <button class="next-button"><i class="fas fa-chevron-right"></i></button>
             </div>
         </section>
         <div class="section-divider wave-top reverse-colors"></div>
@@ -420,7 +418,7 @@
     </div>
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            // --- Custom Alert/Modal Function (NEW) ---
+            // --- Custom Alert/Modal Function ---
             function showAlert(message) {
                 const modal = document.getElementById('custom-alert-modal');
                 const msgElement = document.getElementById('custom-alert-message');
@@ -549,32 +547,61 @@
                 });
             }
 
-            // --- Lightbox for Gallery ---
-            const galleryItems = document.querySelectorAll('.gallery-item');
-            const lightbox = document.getElementById('lightbox');
-            const lightboxImg = document.getElementById('lightbox-img');
-            const lightboxCaption = document.getElementById('lightbox-caption');
-            const closeBtn = document.querySelector('.close-btn');
-            galleryItems.forEach(item => {
-                item.addEventListener('click', () => {
-                    lightbox.style.display = 'block';
-                    lightboxImg.src = item.querySelector('.gallery-image').src;
-                    lightboxCaption.textContent = item.getAttribute('data-caption');
-                    body.classList.add('no-scroll');
+            // --- Gallery Slideshow (NEW) ---
+            const slideshowContainer = document.querySelector('.gurukul-gallery-slideshow');
+            const slidesContainer = slideshowContainer.querySelector('.slides-container');
+            const slides = Array.from(slidesContainer.children); // Convert HTMLCollection to Array
+            const prevButton = slideshowContainer.querySelector('.prev-button');
+            const nextButton = slideshowContainer.querySelector('.next-button');
+
+            let currentSlideIndex = 0;
+            const totalSlides = slides.length;
+
+            function showSlide(index) {
+                slides.forEach((slide, i) => {
+                    slide.style.display = 'none'; // Hide all slides
                 });
-            });
-            closeBtn.addEventListener('click', () => {
-                lightbox.style.display = 'none';
-                body.classList.remove('no-scroll');
-            });
-            lightbox.addEventListener('click', (e) => {
-                if (e.target === lightbox) {
-                    lightbox.style.display = 'none';
-                    body.classList.remove('no-scroll');
+
+                if (index >= totalSlides) {
+                    currentSlideIndex = 0;
+                } else if (index < 0) {
+                    currentSlideIndex = totalSlides - 1;
+                } else {
+                    currentSlideIndex = index;
                 }
+
+                slides[currentSlideIndex].style.display = 'block'; // Show current slide
+            }
+
+            // Initial display
+            showSlide(currentSlideIndex);
+
+            prevButton.addEventListener('click', () => {
+                showSlide(currentSlideIndex - 1);
             });
 
-            // --- Fetch and Display Updates (NEW) ---
+            nextButton.addEventListener('click', () => {
+                showSlide(currentSlideIndex + 1);
+            });
+
+            // Optional: Auto-play functionality
+            // let autoPlayInterval = setInterval(() => {
+            //     showSlide(currentSlideIndex + 1);
+            // }, 5000); // Change slide every 5 seconds
+
+            // // Pause auto-play on hover
+            // slideshowContainer.addEventListener('mouseenter', () => {
+            //     clearInterval(autoPlayInterval);
+            // });
+
+            // slideshowContainer.addEventListener('mouseleave', () => {
+            //     autoPlayInterval = setInterval(() => {
+            //         showSlide(currentSlideIndex + 1);
+            //     }, 5000);
+            // });
+
+
+            // --- Fetch and Display Updates ---
             const updatesContentDiv = document.getElementById('updates-content');
             const updateFilePath = 'update.txt'; // Path to your update.txt file
             async function fetchUpdates() {
