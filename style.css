@@ -549,7 +549,7 @@ a:hover {
     font-size: 1.5rem; /* Larger font size */
     font-weight: 700; /* Bolder */
     color: var(--color-highlight-text); /* Use the highlight color */
-    text-shadow: 0 0 10px rgba(255, 193, 7, 0.8); /* Subtle glow */
+    text-shadow: 0 0 5px rgba(255, 193, 7, 0.8); /* Subtle glow */
     margin-top: var(--spacing-md);
     margin-bottom: var(--spacing-md);
     line-height: 1.4;
