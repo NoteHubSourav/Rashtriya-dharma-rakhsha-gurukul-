@@ -1340,7 +1340,7 @@ main {
     }
 
     .hero-main-text {
-        font-size: 6rem; /* Larger on desktop */
+        font-size: 4rem; /* Larger on desktop */
     }
 
     .hero-main-text .english-line {
