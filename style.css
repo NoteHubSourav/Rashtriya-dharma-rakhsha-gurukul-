@@ -1,7 +1,7 @@
-/* Custom Properties (Variables) */
+/* --- CSS Variables for Premium Spiritual Palette --- */
 :root {
     --color-primary: #4CAF50; /* Natural Leaf Green */
-    --color-secondary: #333333; /* Dark Grey for nav/dark elements */
+    --color-secondary: #FF6B00; /* Orange - Changed from Dark Grey */
     --color-accent: #FFC107; /* Golden Yellow for highlights */
     --color-background-light: #FFFFFF; /* White */
     --color-section-bg: #F8F8F8; /* Very Light Grey for sections */
@@ -281,6 +281,11 @@ a:hover {
     box-shadow: 0 0 0 3px rgba(76, 175, 80, 0.2);
 }
 
+.donate-button {
+    width: 100%;
+    max-width: 300px;
+}
+
 /* --- Header & Navigation (Fixed at Top) --- */
 .main-header {
     width: 100%;
@@ -343,7 +348,7 @@ a:hover {
     display: block;
     width: 100%;
     height: 3px;
-    background-color: var(--color-secondary); /* Dark lines */
+    background-color: var(--color-secondary); /* Orange lines */
     transition: all 0.3s ease;
     border-radius: 2px;
 }
@@ -368,7 +373,7 @@ a:hover {
     width: 80%;
     max-width: 300px;
     height: 100vh;
-    background-color: var(--color-secondary); /* Dark background for mobile menu */
+    background-color: var(--color-secondary); /* Orange background for mobile menu */
     color: var(--color-background-light);
     display: flex;
     flex-direction: column;
@@ -722,7 +727,7 @@ main {
 .hero-video-section {
     padding: var(--spacing-lg) var(--spacing-md);
     margin-top: var(--spacing-xxl);
-    background-color: var(--color-secondary); /* Dark background for video section */
+    background-color: var(--color-secondary); /* Orange background for video section */
     box-shadow: none; /* Remove card shadow */
     border-radius: var(--border-radius-lg); /* Rounded corners for the section */
     overflow: hidden;
@@ -730,7 +735,7 @@ main {
 
 .hero-video-section .section-title,
 .hero-video-section .section-description {
-    color: var(--color-background-light); /* White text on dark background */
+    color: var(--color-background-light); /* White text on orange background */
     text-shadow: 1px 1px 5px rgba(0,0,0,0.2);
 }
 
@@ -738,7 +743,7 @@ main {
     width: 100%;
     max-width: 800px;
     margin-top: var(--spacing-lg);
-    background-color: var(--color-secondary); /* Ensure video background is dark */
+    background-color: var(--color-secondary); /* Ensure video background is orange */
     border-radius: var(--border-radius-lg);
     overflow: hidden;
     box-shadow: 0 10px 25px rgba(0,0,0,0.2);
@@ -885,6 +890,7 @@ main {
 .progress-bar-fill {
     height: 100%;
     background-color: var(--color-accent);
+    width: 0.75%; /* Set to 0.75% */
     border-radius: var(--border-radius-lg);
     display: flex;
     align-items: center;
@@ -937,6 +943,12 @@ main {
     margin-bottom: var(--spacing-md);
     font-size: 1rem;
     text-align: center;
+}
+
+.custom-amount-input:focus {
+    outline: none;
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 3px rgba(76, 175, 80, 0.2);
 }
 
 .donate-button {
@@ -1110,7 +1122,7 @@ main {
 
 /* Footer */
 .site-footer {
-    background-color: var(--color-secondary);
+    background-color: var(--color-secondary); /* Orange background for footer */
     color: var(--color-background-light);
     padding: var(--spacing-xl) var(--spacing-md);
     text-align: center;
