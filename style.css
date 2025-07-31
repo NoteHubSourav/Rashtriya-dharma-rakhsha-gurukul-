@@ -402,6 +402,22 @@ a:hover {
     text-align: left; /* Ensure text alignment for ul */
 }
 
+/* Templates Section */
+.templates-gallery {
+    margin-top: var(--spacing-xl);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.template-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: var(--border-radius-lg);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
 /* Contact Us Section */
 .contact-info {
     background-color: var(--color-background-light);
@@ -631,7 +647,6 @@ a:hover {
         flex-direction: row;
         box-shadow: none;
         padding-top: 0;
-        padding-bottom: 0; /* Reset padding for desktop */
         opacity: 1; /* Ensure visible */
         visibility: visible; /* Ensure visible */
     }
