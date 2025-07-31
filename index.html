@@ -6,60 +6,74 @@
     <title>Rashtriya Dharma Raksha Gurukul - Nurturing Futures</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <!-- Updated font links to include Inter -->
+    <!-- Updated font links to include Inter and a bold display font for the hero -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Tiro+Devanagari+Sanskrit:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Example of a bold display font. You might want to choose one that fits better, e.g., 'Bebas Neue', 'Oswald', or a more decorative one. -->
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="style.css" />
 </head>
 <body>
     <header class="main-header">
-        <div class="header-top">
+        <div class="header-content-wrapper">
+            <div class="logo-container">
+                <a href="#" class="logo-link">
+                    <img src="assets/images/logo.png" alt="Rashtriya Dharma Raksha Gurukul Logo" class="logo">
+                    <span class="site-title">Gurukul</span>
+                </a>
+            </div>
             <div class="hamburger-menu" id="hamburger-menu">
                 <span></span>
                 <span></span>
                 <span></span>
             </div>
-            <div class="logo-container">
-                <img src="assets/images/logo.png" alt="Rashtriya Dharma Raksha Gurukul Logo" class="logo">
+            <nav class="main-nav" id="main-nav">
+                <ul>
+                    <li><a href="#about-us-section" class="nav-link">About Us</a></li>
+                    <li><a href="#mission-section" class="nav-link">Mission</a></li>
+                    <li><a href="#gurukul-life-section" class="nav-link">Gurukul Life</a></li>
+                    <li><a href="#donate-section" class="nav-link">Donate</a></li>
+                    <li><a href="#thankyou-section" class="nav-link">Thank You Donators</a></li>
+                    <li><a href="#updates-section" class="nav-link">Updates</a></li>
+                    <li><a href="#templates-section" class="nav-link">Templates</a></li>
+                    <li><a href="#contact-us-section" class="nav-link">Contact Us</a></li>
+                </ul>
+                <div class="nav-social-icons">
+                    <a href="https://www.facebook.com/share/1DA5LbuCHP/" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.youtube.com/channel/UC_YOUR_YOUTUBE_ID" target="_blank" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                    <a href="https://www.instagram.com/dharma_raksha_gurukul104?igsh=MWdhc2I2eWQ4eDhucw==" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero-section">
+        <div class="hero-content">
+            <h1 class="hero-main-text fade-in-down">
+                <span class="english-line">NURTURING</span>
+                <span class="english-line">FUTURE</span>
+                <span class="sanskrit-line sanskrit">सनातन संस्कार</span>
+            </h1>
+            <div class="hero-description-block fade-in-down delay-1">
+                <p class="english-quote-translation">
+                    "Produce abundant food. That should be the vow. Do not speak ill of food. That should be the vow."
+                </p>
+                <p class="sanskrit quote-text">
+                    "अन्नं बहु कुर्वित। तद् व्रतम्। अन्नं न निन्द्यात्। तद् व्रतम्।"
+                </p>
+                <a href="#donate-section" class="btn primary-cta hero-btn">
+                    Donate Now <i class="fas fa-arrow-right"></i>
+                </a>
+                <div class="scroll-indicator">
+                    <i class="fas fa-chevron-down"></i>
+                </div>
             </div>
         </div>
-        <nav class="main-nav" id="main-nav">
-            <ul>
-                <li><a href="#about-us-section" class="nav-link">About Us</a></li>
-                <li><a href="#mission-section" class="nav-link">Mission</a></li>
-                <li><a href="#gurukul-life-section" class="nav-link">Gurukul Life</a></li>
-                <li><a href="#donate-section" class="nav-link">Donate</a></li>
-                <li><a href="#thankyou-section" class="nav-link">Thank You Donators</a></li>
-                <li><a href="#updates-section" class="nav-link">Updates</a></li>
-                <li><a href="#templates-section" class="nav-link">Templates</a></li> <!-- New Link for Templates -->
-                <li><a href="#contact-us-section" class="nav-link">Contact Us</a></li>
-            </ul>
-            <div class="nav-social-icons">
-                <a href="https://www.facebook.com/share/1DA5LbuCHP/" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                <a href="https://www.youtube.com/channel/UC_YOUR_YOUTUBE_ID" target="_blank" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
-                <a href="https://www.instagram.com/dharma_raksha_gurukul104?igsh=MWdhc2I2eWQ4eDhucw==" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-            </div>
-        </nav>
-        <div class="header-content">
-            <h1 class="institute-name fade-in-down">Rashtriya Dharma Raksha Gurukul</h1>
-            <h1 class="institute-name sanskrit fade-in-down delay-1">राष्ट्रीय धर्म रक्षा गुरुकुल</h1>
-            <div class="quote-section">
-                <p class="sanskrit quote-text fade-in-down delay-2">
-                    "अन्नं बहु कुर्वित।
-                    तद् व्रतम्। अन्नं न निन्द्यात्। तद् व्रतम्।"
-                </p>
-                <p class="english-quote-translation fade-in-down delay-3">
-                    "Produce abundant food.
-                    That should be the vow. Do not speak ill of food. That should be the vow.
-                    <br>Please donate some money for the cause or for the well-being of this world."
-                </p>
-            </div>
-            <div class="hero-image-and-button fade-in-up delay-4">
-                <img src="assets/images/bow.png" alt="Boy doing Namaste" class="namaste-boy-image">
-                <a href="#donate-section" class="btn primary-cta hero-btn">Donate Now</a>
-            </div>
-        </div>
-        <section id="intro-video-section" class="hero-video-section fade-in-up delay-1">
+        <!-- Background image is set via CSS for better control and responsiveness -->
+    </section>
+
+    <main>
+        <section id="intro-video-section" class="section hero-video-section fade-in-up delay-1">
             <h2 class="section-title">A Glimpse Into Our World</h2>
             <h2 class="section-title sanskrit">हमारे विश्व की एक झलक</h2>
             <p class="section-description">Watch this short video to understand the essence of Rashtriya Dharma Raksha Gurukul.</p>
@@ -73,8 +87,7 @@
                 </p>
             </div>
         </section>
-    </header>
-    <main>
+
         <div class="section-divider wave-top"></div>
         <section id="about-us-section" class="section card-section fade-in-up">
             <h2 class="section-title">About Our Vision</h2>
@@ -109,19 +122,13 @@
                     <p class="hindi-text sanskrit">
                         हम भारत की आध्यात्मिक चेतना को पुनः जाग्रत करने के अभियान पर हैं और अगली पीढ़ी को धर्मयोद्धा के रूप में तैयार कर रहे हैं — अनुशासित, करुणामय और सनातन ज्ञान से ओतप्रोत।
                     </p>
-                    <p class="english-text">
+                    <p class="english-text last-paragraph">
                         Each child at the Gurukul wears a simple dhoti, folds their hands in Namaste, and begins the day with a prayer under the rising sun.
                         It’s not just learning, it’s living.
                     </p>
-                    <p class="hindi-text sanskrit">
+                    <p class="hindi-text sanskrit last-paragraph">
                         गुरुकुल का हर बच्चा एक सादा धोती पहनता है, ‘नमस्ते’ के साथ दिन की शुरुआत करता है और उगते सूर्य के समक्ष प्रार्थना करता है।
                         यह केवल पढ़ाई नहीं, बल्कि एक जीवनशैली है।
-                    </p>
-                    <p class="english-text last-paragraph">
-                        Join us as we build this movement—brick by brick, soul by soul.
-                    </p>
-                    <p class="hindi-text sanskrit last-paragraph">
-                        आइए, इस अभियान में सहभागी बनें — एक ईंट से, एक आत्मा से, इस गुरुकुल को निर्मित करें।
                     </p>
                     <p class="english-text last-paragraph italic-text">Jai Sanatan Dharma.</p>
                     <p class="hindi-text sanskrit last-paragraph italic-text">जय सनातन धर्म।</p>
@@ -235,7 +242,7 @@
                 </div>
             </div>
             <!-- Re-adding "Show My Name on Donation Wall" button -->
-            <a href="https://docs.google.com/forms/d/e/1FAIpQLSfWud6zfT1wH6jP3bNj5SipB_h8pgi73asCOE2e4PkCl7ssyA/viewform?usp=dialog" class="btn secondary-btn show-my-name-btn" style="margin-top: var(--spacing-lg);">Show My Name on Donation Wall</a>
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSfWud6zfT1wH6jP3bNj5SipB_h8pgi73asCOE2e4PkCl7ssyA/viewform?usp=dialog" class="btn secondary-btn show-my-name-btn">Show My Name on Donation Wall</a>
         </section>
         <div class="section-divider wave-bottom reverse-colors"></div>
         <div class="section-divider wave-top"></div>
@@ -382,7 +389,7 @@
                     <li><a href="#gurukul-life-section">Gurukul Life</a></li>
                     <li><a href="#donate-section">Donate Now</a></li>
                     <li><a href="#updates-section">Updates</a></li>
-                    <li><a href="#templates-section">Templates</a></li> <!-- New Link for Templates -->
+                    <li><a href="#templates-section">Templates</a></li>
                     <li><a href="#contact-us-section">Contact Us</a></li>
                 </ul>
             </div>
@@ -606,4 +613,3 @@
     </script>
 </body>
 </html>
-
